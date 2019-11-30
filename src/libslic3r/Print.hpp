@@ -14,6 +14,7 @@
 #if ENABLE_THUMBNAIL_GENERATOR
 #include "GCode/ThumbnailData.hpp"
 #endif // ENABLE_THUMBNAIL_GENERATOR
+#include "ValidationResult.hpp"
 
 namespace Slic3r {
 
@@ -327,7 +328,7 @@ public:
     bool                has_skirt() const;
 
     // Returns an empty string if valid, otherwise returns an error message.
-    std::string         validate() const override;
+    ValidationResult    validate() const override;
     BoundingBox         bounding_box() const;
     BoundingBox         total_bounding_box() const;
     double              skirt_first_layer_height() const;

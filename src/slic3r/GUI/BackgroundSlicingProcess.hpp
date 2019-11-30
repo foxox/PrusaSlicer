@@ -12,6 +12,7 @@
 #include "libslic3r/Print.hpp"
 #include "slic3r/Utils/PrintHost.hpp"
 #include "slic3r/Utils/Thread.hpp"
+#include "libslic3r/ValidationResult.hpp"
 
 namespace Slic3r {
 
@@ -92,9 +93,9 @@ public:
 	void 		set_task(const PrintBase::TaskParams &params);
 	// After calling apply, the empty() call will report whether there is anything to slice.
 	bool 		empty() const;
-	// Validate the print. Returns an empty string if valid, returns an error message if invalid.
-	// Call validate before calling start().
-	std::string validate();
+	// Validate the print.
+	// Call validate and examine its results before calling start().
+	ValidationResult validate();
 
 	// Set the export path of the G-code.
 	// Once the path is set, the G-code 

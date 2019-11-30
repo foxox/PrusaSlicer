@@ -248,6 +248,7 @@ public:
     void 				set_num_extruders(unsigned int num_extruders);
 
     // Validate the PrintConfig. Returns an empty string on success, otherwise an error message is returned.
+    // TODO: consider switching return type to ValidationResult
     std::string         validate();
 
     // Verify whether the opt_key has not been obsoleted or renamed.
@@ -949,6 +950,7 @@ class FullPrintConfig :
 
 public:
     // Validate the FullPrintConfig. Returns an empty string on success, otherwise an error message is returned.
+    // TODO: consider switching return type to ValidationResult
     std::string                 validate();
 
 protected:
@@ -1212,7 +1214,8 @@ class SLAFullPrintConfig : public SLAPrinterConfig, public SLAPrintConfig, publi
 
 public:
     // Validate the SLAFullPrintConfig. Returns an empty string on success, otherwise an error message is returned.
-//    std::string                 validate();
+    // TODO: consider switching return type to ValidationResult
+    // std::string                 validate();
 
 protected:
     // Protected constructor to be called to initialize ConfigCache::m_default.

@@ -3016,7 +3016,7 @@ void DynamicPrintConfig::set_num_extruders(unsigned int num_extruders)
     }
 }
 
-std::string DynamicPrintConfig::validate()
+std::string DynamicPrintConfig::validate() // TODO: consider switching return type to ValidationResult
 {
     // Full print config is initialized from the defaults.
     const ConfigOption *opt = this->option("printer_technology", false);
@@ -3052,7 +3052,7 @@ double PrintConfig::min_object_distance(const ConfigBase *config)
 }
 
 //FIXME localize this function.
-std::string FullPrintConfig::validate()
+std::string FullPrintConfig::validate() // TODO: consider switching return type to ValidationResult
 {
     // --layer-height
     if (this->get_abs_value("layer_height") <= 0)

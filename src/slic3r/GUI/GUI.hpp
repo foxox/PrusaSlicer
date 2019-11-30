@@ -41,7 +41,7 @@ void change_opt_value(DynamicPrintConfig& config, const t_config_option_key& opt
 void show_error(wxWindow* parent, const wxString& message);
 void show_error_id(int id, const std::string& message);   // For Perl
 void show_info(wxWindow* parent, const wxString& message, const wxString& title);
-void warning_catcher(wxWindow* parent, const wxString& message);
+void show_warning(wxWindow* parent, const wxString& message);
 
 // Creates a wxCheckListBoxComboPopup inside the given wxComboCtrl, filled with the given text and items.
 // Items are all initialized to the given value.

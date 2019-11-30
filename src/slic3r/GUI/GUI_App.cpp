@@ -1220,7 +1220,7 @@ bool GUI_App::config_wizard_startup()
 }
 
 // static method accepting a wxWindow object as first parameter
-// void warning_catcher{
+// void show_warning{
 //     my($self, $message_dialog) = @_;
 //     return sub{
 //         my $message = shift;

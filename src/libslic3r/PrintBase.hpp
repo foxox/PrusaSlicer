@@ -16,6 +16,7 @@
 #include "Model.hpp"
 #include "PlaceholderParser.hpp"
 #include "PrintConfig.hpp"
+#include "ValidationResult.hpp"
 
 namespace Slic3r {
 
@@ -228,8 +229,8 @@ public:
     // or after apply() over a model, where no object is printable (all outside the print volume).
     virtual bool            empty() const = 0;
 
-    // Validate the print, return empty string if valid, return error if process() cannot (or should not) be started.
-    virtual std::string     validate() const { return std::string(); }
+    // Validate the print. Result determines if process() cannot (or should not) be started.
+    virtual ValidationResult     validate() const { return {}; }
 
     enum ApplyStatus {
         // No change after the Print::apply() call.

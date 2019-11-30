@@ -12,6 +12,7 @@
 #include "GCode.hpp"
 #include "GCode/WipeTower.hpp"
 #include "Utils.hpp"
+#include "ValidationResult.hpp"
 
 //#include "PrintExport.hpp"
 
@@ -1162,13 +1163,23 @@ bool Print::has_skirt() const
 }
 
 // Precondition: Print::validate() requires the Print::apply() to be called its invocation.
-std::string Print::validate() const
+ValidationResult Print::validate() const
 {
-    if (m_objects.empty())
-        return L("All objects are outside of the print volume.");
+    // Accumulate validation warnings and errors here.
+    ValidationResult result;
 
-    if (extruders().empty())
-        return L("The supplied settings will cause an empty print.");
+    // Helper lambda to populate the ValidationResult with the provided error and return a reference to it. See how it is used below.
+    // This may allow one or more warnings to be set first before a show-stopping error is added and returned.
+    auto validation_error = [&result](auto&& error_string) -> ValidationResult& {
+        result.errors.emplace_back(error_string);
+        return result;
+    };
+
+    if (m_objects.empty())
+        return validation_error(L("All objects are outside of the print volume."));
+
+    if (this->extruders().empty())
+        return validation_error(L("The supplied settings will cause an empty print."));
 
     if (m_config.complete_objects) {
         // Check horizontal clearance.
@@ -1195,7 +1206,7 @@ std::string Print::validate() const
                     Polygon convex_hull = convex_hull0;
                     convex_hull.translate(copy);
                     if (! intersection(convex_hulls_other, convex_hull).empty())
-                        return L("Some objects are too close; your extruder will collide with them.");
+                        return validation_error(L("Some objects are too close; your extruder will collide with them."));
                     polygons_append(convex_hulls_other, convex_hull);
                 }
             }
@@ -1210,7 +1221,7 @@ std::string Print::validate() const
             // it will be printed as last one so its height doesn't matter.
             object_height.pop_back();
             if (! object_height.empty() && object_height.back() > scale_(m_config.extruder_clearance_height.value))
-                return L("Some objects are too tall and cannot be printed without extruder collisions.");
+                return validation_error(L("Some objects are too tall and cannot be printed without extruder collisions."));
         }
     } // end if (m_config.complete_objects)
 
@@ -1220,14 +1231,14 @@ std::string Print::validate() const
             total_copies_count += object->copies().size();
         // #4043
         if (total_copies_count > 1 && ! m_config.complete_objects.value)
-            return L("The Spiral Vase option can only be used when printing a single object.");
+            return validation_error(L("The Spiral Vase option can only be used when printing a single object."));
         assert(m_objects.size() == 1);
         size_t num_regions = 0;
         for (const std::vector<std::pair<t_layer_height_range, int>> &volumes_per_region : m_objects.front()->region_volumes)
         	if (! volumes_per_region.empty())
         		++ num_regions;
         if (num_regions > 1)
-            return L("The Spiral Vase option can only be used when printing single material objects.");
+            return validation_error(L("The Spiral Vase option can only be used when printing single material objects."));
     }
 
     if (this->has_wipe_tower() && ! m_objects.empty()) {
@@ -1240,18 +1251,18 @@ std::string Print::validate() const
             double filament_diam = m_config.filament_diameter.get_at(extruder_idx);
             if (nozzle_diam - EPSILON > first_nozzle_diam || nozzle_diam + EPSILON < first_nozzle_diam
              || std::abs((filament_diam-first_filament_diam)/first_filament_diam) > 0.1)
-                 return L("The wipe tower is only supported if all extruders have the same nozzle diameter "
-                          "and use filaments of the same diameter.");
+                 return validation_error(L("The wipe tower is only supported if all extruders have the same nozzle diameter "
+                          "and use filaments of the same diameter."));
         }
 
         if (m_config.gcode_flavor != gcfRepRap && m_config.gcode_flavor != gcfRepetier && m_config.gcode_flavor != gcfMarlin)
-            return L("The Wipe Tower is currently only supported for the Marlin, RepRap/Sprinter and Repetier G-code flavors.");
+            return validation_error(L("The Wipe Tower is currently only supported for the Marlin, RepRap/Sprinter and Repetier G-code flavors."));
         if (! m_config.use_relative_e_distances)
-            return L("The Wipe Tower is currently only supported with the relative extruder addressing (use_relative_e_distances=1).");
+            return validation_error(L("The Wipe Tower is currently only supported with the relative extruder addressing (use_relative_e_distances=1)."));
         if (m_config.ooze_prevention)
-            return L("Ooze prevention is currently not supported with the wipe tower enabled.");
+            return validation_error(L("Ooze prevention is currently not supported with the wipe tower enabled."));
         if (m_config.use_volumetric_e)
-            return L("The Wipe Tower currently does not support volumetric E (use_volumetric_e=0).");
+            return validation_error(L("The Wipe Tower currently does not support volumetric E (use_volumetric_e=0)."));
         
         if (m_objects.size() > 1) {
             bool                                has_custom_layering = false;
@@ -1272,13 +1283,13 @@ std::string Print::validate() const
                 const SlicingParameters &slicing_params = object->slicing_parameters();
                 if (std::abs(slicing_params.first_print_layer_height - slicing_params0.first_print_layer_height) > EPSILON ||
                     std::abs(slicing_params.layer_height             - slicing_params0.layer_height            ) > EPSILON)
-                    return L("The Wipe Tower is only supported for multiple objects if they have equal layer heights");
+                    return validation_error(L("The Wipe Tower is only supported for multiple objects if they have equal layer heights"));
                 if (slicing_params.raft_layers() != slicing_params0.raft_layers())
-                    return L("The Wipe Tower is only supported for multiple objects if they are printed over an equal number of raft layers");
+                    return validation_error(L("The Wipe Tower is only supported for multiple objects if they are printed over an equal number of raft layers"));
                 if (object->config().support_material_contact_distance != m_objects.front()->config().support_material_contact_distance)
-                    return L("The Wipe Tower is only supported for multiple objects if they are printed with the same support_material_contact_distance");
+                    return validation_error(L("The Wipe Tower is only supported for multiple objects if they are printed with the same support_material_contact_distance"));
                 if (! equal_layering(slicing_params, slicing_params0))
-                    return L("The Wipe Tower is only supported for multiple objects if they are sliced equally.");
+                    return validation_error(L("The Wipe Tower is only supported for multiple objects if they are sliced equally."));
                 if (has_custom_layering) {
                     PrintObject::update_layer_height_profile(*object->model_object(), slicing_params, layer_height_profiles[i]);
                     if (*(layer_height_profiles[i].end()-2) > *(layer_height_profiles[tallest_object_idx].end()-2))
@@ -1320,7 +1331,7 @@ std::string Print::validate() const
                             } while (ref_z == next_ref_z);
                         }
                         if (std::abs(this_height - ref_height) > EPSILON)
-                            return L("The Wipe tower is only supported if all objects have the same layer height profile");
+                            return validation_error(L("The Wipe tower is only supported if all objects have the same layer height profile"));
                         i += 2;
                     }
                 }
@@ -1346,19 +1357,22 @@ std::string Print::validate() const
         unsigned int total_extruders_count = m_config.nozzle_diameter.size();
         for (const auto& extruder_idx : extruders)
             if ( extruder_idx >= total_extruders_count )
-                return L("One or more object were assigned an extruder that the printer does not have.");
+                return validation_error(L("One or more object were assigned an extruder that the printer does not have."));
 #endif
 
-		auto validate_extrusion_width = [min_nozzle_diameter, max_nozzle_diameter](const ConfigBase &config, const char *opt_key, double layer_height, std::string &err_msg) -> bool {
+        // Helper to validate extrusion widths.
+        // If this finds a problem, it stores a message into warn_msg.
+        // If no problems are found, warn_msg is left untouched.
+		auto validate_extrusion_width = [min_nozzle_diameter, max_nozzle_diameter](const ConfigBase &config, const char *opt_key, double layer_height, std::string &warn_msg) -> bool {
         	double extrusion_width_min = config.get_abs_value(opt_key, min_nozzle_diameter);
         	double extrusion_width_max = config.get_abs_value(opt_key, max_nozzle_diameter);
         	if (extrusion_width_min == 0) {
         		// Default "auto-generated" extrusion width is always valid.
         	} else if (extrusion_width_min <= layer_height) {
-        		err_msg = (boost::format(L("%1%=%2% mm is too low to be printable at a layer height %3% mm")) % opt_key % extrusion_width_min % layer_height).str();
+        		warn_msg = (boost::format(L("%1%=%2% mm is too low to be printable at a layer height %3% mm")) % opt_key % extrusion_width_min % layer_height).str();
 				return false;
 			} else if (extrusion_width_max >= max_nozzle_diameter * 3.) {
-				err_msg = (boost::format(L("Excessive %1%=%2% mm to be printable with a nozzle diameter %3% mm")) % opt_key % extrusion_width_max % max_nozzle_diameter).str();
+				warn_msg = (boost::format(L("Excessive %1%=%2% mm to be printable with a nozzle diameter %3% mm")) % opt_key % extrusion_width_max % max_nozzle_diameter).str();
 				return false;
 			}
 			return true;
@@ -1369,25 +1383,25 @@ std::string Print::validate() const
                     // The object has some form of support and either support_material_extruder or support_material_interface_extruder
                     // will be printed with the current tool without a forced tool change. Play safe, assert that all object nozzles
                     // are of the same diameter.
-                    return L("Printing with multiple extruders of differing nozzle diameters. "
+                    return validation_error(L("Printing with multiple extruders of differing nozzle diameters. "
                            "If support is to be printed with the current extruder (support_material_extruder == 0 or support_material_interface_extruder == 0), "
-                           "all nozzles have to be of the same diameter.");
+                           "all nozzles have to be of the same diameter."));
                 }
                 if (this->has_wipe_tower()) {
     				if (object->config().support_material_contact_distance == 0) {
     					// Soluble interface
     					if (object->config().support_material_contact_distance == 0 && ! object->config().support_material_synchronize_layers)
-    						return L("For the Wipe Tower to work with the soluble supports, the support layers need to be synchronized with the object layers.");
+    						return validation_error(L("For the Wipe Tower to work with the soluble supports, the support layers need to be synchronized with the object layers."));
     				} else {
     					// Non-soluble interface
     					if (object->config().support_material_extruder != 0 || object->config().support_material_interface_extruder != 0)
-    						return L("The Wipe Tower currently supports the non-soluble supports only if they are printed with the current extruder without triggering a tool change. "
-    							     "(both support_material_extruder and support_material_interface_extruder need to be set to 0).");
+    						return validation_error(L("The Wipe Tower currently supports the non-soluble supports only if they are printed with the current extruder without triggering a tool change. "
+    							     "(both support_material_extruder and support_material_interface_extruder need to be set to 0)."));
     				}
                 }
             }
-            
-            // validate first_layer_height
+
+            // validate first_layer_height (produces warning)
             double first_layer_height = object->config().get_abs_value("first_layer_height");
             double first_layer_min_nozzle_diameter;
             if (object->config().raft_layers > 0) {
@@ -1403,27 +1417,34 @@ std::string Print::validate() const
                 first_layer_min_nozzle_diameter = min_nozzle_diameter;
             }
             if (first_layer_height > first_layer_min_nozzle_diameter)
-                return L("First layer height can't be greater than nozzle diameter");
+                result.warnings.emplace_back(L("First layer height can't be greater than nozzle diameter"));
             
-            // validate layer_height
+            // validate layer_height (produces warning)
             double layer_height = object->config().layer_height.value;
             if (layer_height > min_nozzle_diameter)
-                return L("Layer height can't be greater than nozzle diameter");
+                result.warnings.emplace_back(L("Layer height can't be greater than nozzle diameter"));
 
-            // Validate extrusion widths.
-            std::string err_msg;
-            if (! validate_extrusion_width(object->config(), "extrusion_width", layer_height, err_msg))
-            	return err_msg;
-            if ((object->config().support_material || object->config().raft_layers > 0) && ! validate_extrusion_width(object->config(), "support_material_extrusion_width", layer_height, err_msg))
-            	return err_msg;
+            // Validate extrusion widths (produces warnings)
+            std::string warn_msg;
+            if (!validate_extrusion_width(object->config(), "extrusion_width", layer_height, warn_msg))
+            {
+                result.warnings.push_back(std::move(warn_msg));
+            }
+            if ((object->config().support_material || object->config().raft_layers > 0) && ! validate_extrusion_width(object->config(), "support_material_extrusion_width", layer_height, warn_msg))
+            {
+                result.warnings.push_back(std::move(warn_msg));
+            }
             for (const char *opt_key : { "perimeter_extrusion_width", "external_perimeter_extrusion_width", "infill_extrusion_width", "solid_infill_extrusion_width", "top_infill_extrusion_width" })
 				for (size_t i = 0; i < object->region_volumes.size(); ++ i)
-            		if (! object->region_volumes[i].empty() && ! validate_extrusion_width(this->get_region(i)->config(), opt_key, layer_height, err_msg))
-		            	return err_msg;
+            		if (! object->region_volumes[i].empty() && ! validate_extrusion_width(this->get_region(i)->config(), opt_key, layer_height, warn_msg))
+                    {
+                        result.warnings.push_back(std::move(warn_msg));
+                    }
         }
     }
 
-    return std::string();
+    // If we get this far, no validation problems were found!
+    return result;
 }
 
 // the bounding box of objects placed in copies position

@@ -6,6 +6,8 @@
 #include <cmath>
 #include <string>
 
+#include "ValidationResult.hpp"
+
 namespace Slic3r {
 
 class ExPolygon;
@@ -79,7 +81,7 @@ struct PadConfig {
     /// Returns the elevation needed for compensating the pad.
     inline double required_elevation() const { return wall_thickness_mm; }
 
-    std::string validate() const;
+    ValidationResult validate() const;
 };
 
 void create_pad(const ExPolygons &support_contours,

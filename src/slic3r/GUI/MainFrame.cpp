@@ -840,7 +840,7 @@ void MainFrame::quick_slice(const int qs)
 //             sprint->export_gcode();
 //         }
 //         sprint->status_cb(undef);
-//         Slic3r::GUI::warning_catcher($self)->($_) for @warnings;
+//         Slic3r::GUI::show_warning($self)->($_) for @warnings;
     }
     m_progress_dialog->Destroy();
     m_progress_dialog = nullptr;

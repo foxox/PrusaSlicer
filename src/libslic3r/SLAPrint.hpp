@@ -8,6 +8,7 @@
 #include "Point.hpp"
 #include "MTUtils.hpp"
 #include "Zipper.hpp"
+#include "ValidationResult.hpp"
 #include <libnest2d/backends/clipper/clipper_polygon.hpp>
 
 namespace Slic3r {
@@ -385,7 +386,7 @@ public:
 
     const SLAPrintStatistics&   print_statistics() const { return m_print_statistics; }
 
-    std::string validate() const override;
+    ValidationResult validate() const override;
 
     // An aggregation of SliceRecord-s from all the print objects for each
     // occupied layer. Slice record levels dont have to match exactly.

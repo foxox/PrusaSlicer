@@ -8,6 +8,7 @@
 #include "ClipperUtils.hpp"
 #include "Tesselate.hpp"
 #include "MTUtils.hpp"
+#include "ValidationResult.hpp"
 
 // For debugging:
 // #include <fstream>
@@ -680,16 +681,18 @@ void create_pad(const ExPolygons &sup_blueprint,
     out.merge(mesh(std::move(t)));
 }
 
-std::string PadConfig::validate() const
+ValidationResult PadConfig::validate() const
 {
+    ValidationResult result;
+
     static const double constexpr MIN_BRIM_SIZE_MM = .1;
 
     if (brim_size_mm < MIN_BRIM_SIZE_MM ||
         bottom_offset() > brim_size_mm + wing_distance() ||
         get_waffle_offset(*this) <= MIN_BRIM_SIZE_MM)
-        return L("Pad brim size is too small for the current configuration.");
+        result.errors.emplace_back(L("Pad brim size is too small for the current configuration."));
 
-    return "";
+    return result;
 }
 
 }} // namespace Slic3r::sla

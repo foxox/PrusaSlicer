@@ -141,7 +141,7 @@ void PreferencesDialog::build()
 void PreferencesDialog::accept()
 {
     if (m_values.find("no_defaults") != m_values.end()) {
-        warning_catcher(this, wxString::Format(_(L("You need to restart %s to make the changes effective.")), SLIC3R_APP_NAME));
+        show_warning(this, wxString::Format(_(L("You need to restart %s to make the changes effective.")), SLIC3R_APP_NAME));
 	}
 
 	auto app_config = get_app_config();

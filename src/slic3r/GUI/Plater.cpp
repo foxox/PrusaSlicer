@@ -42,6 +42,7 @@
 #include "libslic3r/SLAPrint.hpp"
 #include "libslic3r/SLA/SLARotfinder.hpp"
 #include "libslic3r/Utils.hpp"
+#include "libslic3r/ValidationResult.hpp"
 
 //#include "libslic3r/ClipperUtils.hpp"
 
@@ -77,6 +78,7 @@
 #include "../Utils/FixModelByWin10.hpp"
 #include "../Utils/UndoRedo.hpp"
 #include "../Utils/Thread.hpp"
+#include "I18N.hpp"
 
 #include <wx/glcanvas.h>    // Needs to be last because reasons :-/
 #include "WipeTowerDialog.hpp"
@@ -93,6 +95,14 @@ static const std::pair<unsigned int, unsigned int> THUMBNAIL_SIZE_3MF = { 256, 2
 
 namespace Slic3r {
 namespace GUI {
+
+namespace
+{
+
+// Lambda translating std::string input using existing method to generate a wxString
+auto std_string_translate_fn = [](const std::string& str) {return std::string{ _(str) }; };
+
+} // namespace
 
 wxDEFINE_EVENT(EVT_SCHEDULE_BACKGROUND_PROCESS,     SimpleEvent);
 wxDEFINE_EVENT(EVT_SLICING_UPDATE,                  SlicingStatusEvent);
@@ -1789,7 +1799,7 @@ struct Plater::priv
     } m_ui_jobs{this};
 
     bool                        delayed_scene_refresh;
-    std::string                 delayed_error_message;
+    ValidationResult            delayed_validation_result;
 
     wxTimer                     background_process_timer;
 
@@ -1893,11 +1903,17 @@ struct Plater::priv
     bool restart_background_process(unsigned int state);
     // returns bit mask of UpdateBackgroundProcessReturnState
     unsigned int update_restart_background_process(bool force_scene_update, bool force_preview_update);
-	void show_delayed_error_message() {
-		if (!this->delayed_error_message.empty()) {
-			std::string msg = std::move(this->delayed_error_message);
-			this->delayed_error_message.clear();
-			GUI::show_error(this->q, msg);
+	void show_delayed_validation_result() {
+		if (!this->delayed_validation_result.empty()) {
+            const auto message = delayed_validation_result.get_errors_and_warnings_concatenated(std_string_translate_fn);
+            if (!delayed_validation_result.errors.empty())
+                // If there was any validation error, show all warnings and errors with an error dialog
+                GUI::show_error(this->q, message);
+            else
+                // Otherwise, there must have only been warnings so show a warning dialog
+                GUI::show_warning(this->q, message);
+            // Either way, clear out validation result since it has been shown and is no longer needed
+			this->delayed_validation_result.clear();
 		}
 	}
     void export_gcode(fs::path output_path, PrintHostJob upload_job);
@@ -2903,7 +2919,7 @@ void Plater::priv::split_object()
 
     if (current_model_object->volumes.size() > 1)
     {
-        Slic3r::GUI::warning_catcher(q, _(L("The selected object can't be split because it contains more than one volume/material.")));
+        Slic3r::GUI::show_warning(q, _(L("The selected object can't be split because it contains more than one volume/material.")));
         return;
     }
 
@@ -2911,7 +2927,7 @@ void Plater::priv::split_object()
     ModelObjectPtrs new_objects;
     current_model_object->split(&new_objects);
     if (new_objects.size() == 1)
-        Slic3r::GUI::warning_catcher(q, _(L("The selected object couldn't be split because it contains only one part.")));
+        Slic3r::GUI::show_warning(q, _(L("The selected object couldn't be split because it contains only one part.")));
     else
     {
         Plater::TakeSnapshot snapshot(q, _(L("Split to Objects")));
@@ -2946,7 +2962,7 @@ void Plater::priv::scale_selection_to_fit_print_volume()
 
 void Plater::priv::schedule_background_process()
 {
-    delayed_error_message.clear();
+    delayed_validation_result.clear();
     // Trigger the timer event after 0.5s
     this->background_process_timer.Start(500, wxTIMER_ONE_SHOT);
     // Notify the Canvas3D that something has changed, so it may invalidate some of the layer editing stuff.
@@ -3001,29 +3017,40 @@ unsigned int Plater::priv::update_background_process(bool force_validation, bool
 
     if ((invalidated != Print::APPLY_STATUS_UNCHANGED || force_validation) && ! this->background_process.empty()) {
 		// The delayed error message is no more valid.
-		this->delayed_error_message.clear();
+		this->delayed_validation_result.clear();
 		// The state of the Print changed, and it is non-zero. Let's validate it and give the user feedback on errors.
-        std::string err = this->background_process.validate();
-        if (err.empty()) {
+        auto validation_result{this->background_process.validate()};
+        // Determine the return_state based on whether there were show-stopping validation errors
+        if (validation_result.errors.empty()) {
             if (invalidated != Print::APPLY_STATUS_UNCHANGED && this->background_processing_enabled())
                 return_state |= UPDATE_BACKGROUND_PROCESS_RESTART;
         } else {
+                return_state |= UPDATE_BACKGROUND_PROCESS_INVALID;
+        }
+        // If there were any errors or warnings to display...
+        if (!validation_result.empty()) {
             // The print is not valid.
             // Only show the error message immediately, if the top level parent of this window is active.
             auto p = dynamic_cast<wxWindow*>(this->q);
             while (p->GetParent())
                 p = p->GetParent();
             auto *top_level_wnd = dynamic_cast<wxTopLevelWindow*>(p);
+            // Determine whether to show the error/warning right away or to store it for display later
             if (! postpone_error_messages && top_level_wnd && top_level_wnd->IsActive()) {
-                // The error returned from the Print needs to be translated into the local language.
-                GUI::show_error(this->q, _(err));
+                // Show the error right away
+                const auto message = validation_result.get_errors_and_warnings_concatenated(std_string_translate_fn);
+                if (!validation_result.errors.empty())
+                    // If there was any validation error, show all warnings and errors with an error dialog
+                    GUI::show_error(this->q, message);
+                else
+                    // Otherwise, there must have only been warnings so show a warning dialog
+                    GUI::show_warning(this->q, message);
             } else {
-                // Show the error message once the main window gets activated.
-                this->delayed_error_message = _(err);
+                // Show the error/warning message once the main window gets activated.
+                this->delayed_validation_result = std::move(validation_result);
             }
-            return_state |= UPDATE_BACKGROUND_PROCESS_INVALID;
         }
-    } else if (! this->delayed_error_message.empty()) {
+    } else if (! this->delayed_validation_result.errors.empty()) {
     	// Reusing the old state.
         return_state |= UPDATE_BACKGROUND_PROCESS_INVALID;
     }
@@ -4258,7 +4285,7 @@ void Plater::priv::update_after_undo_redo(const UndoRedo::Snapshot& snapshot, bo
 	// this->update() above was called with POSTPONE_VALIDATION_ERROR_MESSAGE, so that if an error message was generated when updating the back end, it would not open immediately, 
 	// but it would be saved to be show later. Let's do it now. We do not want to display the message box earlier, because on Windows & OSX the message box takes over the message
 	// queue pump, which in turn executes the rendering function before a full update after the Undo / Redo jump.
-	this->show_delayed_error_message();
+	this->show_delayed_validation_result();
 
     //FIXME what about the state of the manipulators?
     //FIXME what about the focus? Cursor in the side panel?
@@ -5052,7 +5079,7 @@ void Plater::on_activate()
         this->p->preview->get_wxglcanvas()->SetFocus();
 #endif
 
-	this->p->show_delayed_error_message();
+	this->p->show_delayed_validation_result();
 }
 
 const DynamicPrintConfig* Plater::get_plater_config() const

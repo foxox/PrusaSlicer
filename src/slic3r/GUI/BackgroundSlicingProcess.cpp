@@ -21,6 +21,7 @@
 #include "libslic3r/GCode/PostProcessor.hpp"
 #include "libslic3r/GCode/PreviewData.hpp"
 #include "libslic3r/libslic3r.h"
+#include "libslic3r/ValidationResult.hpp"
 
 #include <cassert>
 #include <stdexcept>
@@ -355,7 +356,7 @@ bool BackgroundSlicingProcess::empty() const
 	return m_print->empty();
 }
 
-std::string BackgroundSlicingProcess::validate()
+ValidationResult BackgroundSlicingProcess::validate()
 {
 	assert(m_print != nullptr);
 	return m_print->validate();
