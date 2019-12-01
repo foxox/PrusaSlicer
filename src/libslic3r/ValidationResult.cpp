@@ -1,6 +1,6 @@
 #include "ValidationResult.hpp"
 
-#include <vector>
+#include <unordered_set>
 #include <string>
 #include <sstream>
 #include <ostream>
@@ -15,11 +15,11 @@ namespace
 // Helper method to concatenate all strings in a vector.
 // Newline included between each.
 // Each run through internationalization to be translated.
-std::string concatenate(const std::vector<std::string>& vector_of_strings,
+std::string concatenate(const std::unordered_set<std::string>& strings,
     const ValidationResult::TranslateStdStringFn& translate)
 {
     std::ostringstream oss;
-    for (auto it = vector_of_strings.cbegin(); it != vector_of_strings.cend(); )
+    for (auto it = strings.cbegin(); it != strings.cend(); )
     {
         // Translate and add to the output stream
         if (translate)
@@ -31,7 +31,7 @@ std::string concatenate(const std::vector<std::string>& vector_of_strings,
             oss << *it;
         }
         // Put a newline between each but not at the end of the list
-        if (++it != vector_of_strings.cend())
+        if (++it != strings.cend())
         {
             oss << std::endl;
         }
@@ -56,7 +56,9 @@ std::string ValidationResult::get_errors_and_warnings_concatenated(const Validat
 {
     std::ostringstream oss;
     oss << concatenate(errors, translate);
-    oss << std::endl;
+    // Only insert newlines separating errors and warnings if there were both errors and warnings
+    if (!errors.empty() && !warnings.empty())
+        oss << std::endl << std::endl;
     oss << concatenate(warnings, translate);
     return oss.str();
 }
@@ -74,8 +76,10 @@ void ValidationResult::clear()
 
 void ValidationResult::append(ValidationResult&& other)
 {
-    errors.insert(errors.cend(), std::make_move_iterator(other.errors.begin()), std::make_move_iterator(other.errors.end()));
-    warnings.insert(warnings.cend(), std::make_move_iterator(other.warnings.begin()), std::make_move_iterator(other.warnings.end()));
+    errors.insert(std::make_move_iterator(other.errors.begin()),
+                  std::make_move_iterator(other.errors.end()));
+    warnings.insert(std::make_move_iterator(other.warnings.begin()),
+                    std::make_move_iterator(other.warnings.end())); 
 }
 
 }  // namespace Slic3r

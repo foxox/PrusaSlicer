@@ -1171,7 +1171,7 @@ ValidationResult Print::validate() const
     // Helper lambda to populate the ValidationResult with the provided error and return a reference to it. See how it is used below.
     // This may allow one or more warnings to be set first before a show-stopping error is added and returned.
     auto validation_error = [&result](auto&& error_string) -> ValidationResult& {
-        result.errors.emplace_back(error_string);
+        result.errors.emplace(error_string);
         return result;
     };
 
@@ -1417,28 +1417,28 @@ ValidationResult Print::validate() const
                 first_layer_min_nozzle_diameter = min_nozzle_diameter;
             }
             if (first_layer_height > first_layer_min_nozzle_diameter)
-                result.warnings.emplace_back(L("First layer height can't be greater than nozzle diameter"));
+                result.warnings.emplace(L("First layer height can't be greater than nozzle diameter"));
             
             // validate layer_height (produces warning)
             double layer_height = object->config().layer_height.value;
             if (layer_height > min_nozzle_diameter)
-                result.warnings.emplace_back(L("Layer height can't be greater than nozzle diameter"));
+                result.warnings.emplace(L("Layer height can't be greater than nozzle diameter"));
 
             // Validate extrusion widths (produces warnings)
             std::string warn_msg;
             if (!validate_extrusion_width(object->config(), "extrusion_width", layer_height, warn_msg))
             {
-                result.warnings.push_back(std::move(warn_msg));
+                result.warnings.insert(std::move(warn_msg));
             }
             if ((object->config().support_material || object->config().raft_layers > 0) && ! validate_extrusion_width(object->config(), "support_material_extrusion_width", layer_height, warn_msg))
             {
-                result.warnings.push_back(std::move(warn_msg));
+                result.warnings.insert(std::move(warn_msg));
             }
             for (const char *opt_key : { "perimeter_extrusion_width", "external_perimeter_extrusion_width", "infill_extrusion_width", "solid_infill_extrusion_width", "top_infill_extrusion_width" })
 				for (size_t i = 0; i < object->region_volumes.size(); ++ i)
             		if (! object->region_volumes[i].empty() && ! validate_extrusion_width(this->get_region(i)->config(), opt_key, layer_height, warn_msg))
                     {
-                        result.warnings.push_back(std::move(warn_msg));
+                        result.warnings.insert(std::move(warn_msg));
                     }
         }
     }

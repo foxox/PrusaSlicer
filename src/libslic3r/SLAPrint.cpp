@@ -670,7 +670,7 @@ ValidationResult SLAPrint::validate() const
         if(supports_en &&
            mo->sla_points_status == sla::PointsStatus::UserModified &&
            mo->sla_support_points.empty()) {
-            result.errors.emplace_back(L("Cannot proceed without support points! "
+            result.errors.emplace(L("Cannot proceed without support points! "
                      "Add support points or disable support generation."));
             return result;
         }
@@ -683,7 +683,7 @@ ValidationResult SLAPrint::validate() const
         sla::PadConfig::EmbedObject &builtinpad = padcfg.embed_object;
         
         if(supports_en && !builtinpad.enabled && elv < cfg.head_fullwidth()) {
-            result.errors.emplace_back(L(
+            result.errors.emplace(L(
                 "Elevation is too low for object. Use the \"Pad around "
                 "object\" feature to print the object without elevation."));
             return result;
@@ -691,7 +691,7 @@ ValidationResult SLAPrint::validate() const
         
         if(supports_en && builtinpad.enabled &&
            cfg.pillar_base_safety_distance_mm < builtinpad.object_gap_mm) {
-            result.errors.emplace_back(L(
+            result.errors.emplace(L(
                 "The endings of the support pillars will be deployed on the "
                 "gap between the object and the pad. 'Support base safety "
                 "distance' has to be greater than the 'Pad object gap' "
@@ -712,7 +712,7 @@ ValidationResult SLAPrint::validate() const
     double expt_cur = m_material_config.exposure_time.getFloat();
 
     if (expt_cur < expt_min || expt_cur > expt_max) {
-        result.errors.emplace_back(L("Exposition time is out of printer profile bounds."));
+        result.errors.emplace(L("Exposition time is out of printer profile bounds."));
         return result;
     }
 
@@ -721,7 +721,7 @@ ValidationResult SLAPrint::validate() const
     double iexpt_cur = m_material_config.initial_exposure_time.getFloat();
 
     if (iexpt_cur < iexpt_min || iexpt_cur > iexpt_max) {
-        result.errors.emplace_back(L("Initial exposition time is out of printer profile bounds."));
+        result.errors.emplace(L("Initial exposition time is out of printer profile bounds."));
         return result;
     }
 

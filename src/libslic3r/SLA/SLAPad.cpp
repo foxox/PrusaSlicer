@@ -690,7 +690,7 @@ ValidationResult PadConfig::validate() const
     if (brim_size_mm < MIN_BRIM_SIZE_MM ||
         bottom_offset() > brim_size_mm + wing_distance() ||
         get_waffle_offset(*this) <= MIN_BRIM_SIZE_MM)
-        result.errors.emplace_back(L("Pad brim size is too small for the current configuration."));
+        result.errors.emplace(L("Pad brim size is too small for the current configuration."));
 
     return result;
 }

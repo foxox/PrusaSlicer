@@ -1,7 +1,7 @@
 #ifndef slic3r_ValidationResult_hpp_
 #define slic3r_ValidationResult_hpp_
 
-#include <vector>
+#include <unordered_set>
 #include <string>
 #include <functional>
 
@@ -38,11 +38,11 @@ struct ValidationResult
 
     // Error message strings.
     // It is expected that these will be pre-translation strings which can be run through I18N later.
-    std::vector<std::string> errors;
+    std::unordered_set<std::string> errors;
 
     // Warning message strings.
     // It is expected that these will be pre-translation strings which can be run through I18N later.
-    std::vector<std::string> warnings;
+    std::unordered_set<std::string> warnings;
 };
 
 }
