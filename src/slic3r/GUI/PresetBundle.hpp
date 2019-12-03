@@ -79,7 +79,7 @@ public:
         { this->load_config_file_config(name, false, std::move(config)); }
 
     // Load configuration that comes from a model file containing configuration, such as 3MF et al.
-    // This method is called by the Plater.
+    // This method is called by the Platter.
     void                        load_config_model(const std::string &name, DynamicPrintConfig config)
         { this->load_config_file_config(name, true, std::move(config)); }
 

@@ -87,7 +87,7 @@ void BackgroundSlicingProcess::process_fff()
 {
 	assert(m_print == m_fff_print);
     m_print->process();
-	wxQueueEvent(GUI::wxGetApp().mainframe->m_plater, new wxCommandEvent(m_event_slicing_completed_id));
+	wxQueueEvent(GUI::wxGetApp().mainframe->m_platter, new wxCommandEvent(m_event_slicing_completed_id));
 #if ENABLE_THUMBNAIL_GENERATOR
     m_fff_print->export_gcode(m_temp_output_path, m_gcode_preview_data, m_thumbnail_cb);
 #else
@@ -220,7 +220,7 @@ void BackgroundSlicingProcess::thread_proc()
 			wxCommandEvent evt(m_event_finished_id);
 			evt.SetString(error);
 			evt.SetInt(m_print->canceled() ? -1 : (error.empty() ? 1 : 0));
-        	wxQueueEvent(GUI::wxGetApp().mainframe->m_plater, evt.Clone());
+        	wxQueueEvent(GUI::wxGetApp().mainframe->m_platter, evt.Clone());
         }
 	    m_print->restart();
 		lck.unlock();

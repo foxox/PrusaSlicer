@@ -1,5 +1,5 @@
-#ifndef slic3r_Plater_hpp_
-#define slic3r_Plater_hpp_
+#ifndef slic3r_Platter_hpp_
+#define slic3r_Platter_hpp_
 
 #include <memory>
 #include <vector>
@@ -45,7 +45,7 @@ class Mouse3DController;
 
 using t_optgroups = std::vector <std::shared_ptr<ConfigOptionsGroup>>;
 
-class Plater;
+class Platter;
 enum class ActionButtonType : int;
 
 class PresetComboBox : public wxBitmapComboBox
@@ -86,7 +86,7 @@ class Sidebar : public wxPanel
 {
     ConfigOptionMode    m_mode;
 public:
-    Sidebar(Plater *parent);
+    Sidebar(Platter *parent);
     Sidebar(Sidebar &&) = delete;
     Sidebar(const Sidebar &) = delete;
     Sidebar &operator=(Sidebar &&) = delete;
@@ -128,17 +128,17 @@ private:
     std::unique_ptr<priv> p;
 };
 
-class Plater: public wxPanel
+class Platter: public wxPanel
 {
 public:
     using fs_path = boost::filesystem::path;
 
-    Plater(wxWindow *parent, MainFrame *main_frame);
-    Plater(Plater &&) = delete;
-    Plater(const Plater &) = delete;
-    Plater &operator=(Plater &&) = delete;
-    Plater &operator=(const Plater &) = delete;
-    ~Plater();
+    Platter(wxWindow *parent, MainFrame *main_frame);
+    Platter(Platter &&) = delete;
+    Platter(const Platter &) = delete;
+    Platter &operator=(Platter &&) = delete;
+    Platter &operator=(const Platter &) = delete;
+    ~Platter();
 
     Sidebar& sidebar();
     Model& model();
@@ -221,8 +221,8 @@ public:
     void force_filament_colors_update();
     // On activating the parent window.
     void on_activate();
-    const DynamicPrintConfig* get_plater_config() const;
-    std::vector<std::string> get_extruder_colors_from_plater_config() const;
+    const DynamicPrintConfig* get_platter_config() const;
+    std::vector<std::string> get_extruder_colors_from_platter_config() const;
     std::vector<std::string> get_colors_for_color_print() const;
 
     void update_object_menu();
@@ -269,33 +269,33 @@ public:
 	class SuppressSnapshots
 	{
 	public:
-		SuppressSnapshots(Plater *plater) : m_plater(plater)
+		SuppressSnapshots(Platter *platter) : m_platter(platter)
 		{
-			m_plater->suppress_snapshots();
+			m_platter->suppress_snapshots();
 		}
 		~SuppressSnapshots()
 		{
-			m_plater->allow_snapshots();
+			m_platter->allow_snapshots();
 		}
 	private:
-		Plater *m_plater;
+		Platter *m_platter;
 	};
 
 	// ROII wrapper for taking an Undo / Redo snapshot while disabling the snapshot taking by the methods called from inside this snapshot.
 	class TakeSnapshot
 	{
 	public:
-		TakeSnapshot(Plater *plater, const wxString &snapshot_name) : m_plater(plater)
+		TakeSnapshot(Platter *platter, const wxString &snapshot_name) : m_platter(platter)
 		{
-			m_plater->take_snapshot(snapshot_name);
-			m_plater->suppress_snapshots();
+			m_platter->take_snapshot(snapshot_name);
+			m_platter->suppress_snapshots();
 		}
 		~TakeSnapshot()
 		{
-			m_plater->allow_snapshots();
+			m_platter->allow_snapshots();
 		}
 	private:
-		Plater *m_plater;
+		Platter *m_platter;
 	};
 
 private:

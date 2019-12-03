@@ -67,7 +67,7 @@ std::string get_mem_info(bool format_as_html)
         out << value << line_end;
     }
 
-    const Slic3r::UndoRedo::Stack &stack = wxGetApp().plater()->undo_redo_stack_main();
+    const Slic3r::UndoRedo::Stack &stack = wxGetApp().platter()->undo_redo_stack_main();
     out << b_start << "RAM size reserved for the Undo / Redo stack: "  << b_end << Slic3r::format_memsize_MB(stack.get_memory_limit()) << line_end;
     out << b_start << "RAM size occupied by the Undo / Redo stack: "  << b_end << Slic3r::format_memsize_MB(stack.memsize()) << line_end << line_end;
 

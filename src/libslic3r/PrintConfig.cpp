@@ -354,7 +354,7 @@ void PrintConfigDef::init_fff_params()
 
     def = this->add("duplicate_distance", coFloat);
     def->label = L("Distance between copies");
-    def->tooltip = L("Distance used for the auto-arrange feature of the plater.");
+    def->tooltip = L("Distance used for the auto-arrange feature of the platter.");
     def->sidetext = L("mm");
     def->aliases = { "multiply_distance" };
     def->min = 0;
@@ -501,7 +501,7 @@ void PrintConfigDef::init_fff_params()
     def->tooltip = L("Set this to the clearance radius around your extruder. "
                    "If the extruder is not centered, choose the largest value for safety. "
                    "This setting is used to check for collisions and to display the graphical preview "
-                   "in the plater.");
+                   "in the platter.");
     def->sidetext = L("mm");
     def->min = 0;
     def->mode = comExpert;

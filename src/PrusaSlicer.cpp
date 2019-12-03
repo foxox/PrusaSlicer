@@ -506,7 +506,7 @@ int CLI::run(int argc, char **argv)
                 gui->mainframe->load_config_file(load_configs.back());
             // If loading a 3MF file, the config is loaded from the last one.
             if (! m_input_files.empty())
-                gui->plater()->load_files(m_input_files, true, true);
+                gui->platter()->load_files(m_input_files, true, true);
             if (! m_extra_config.empty())
                 gui->mainframe->load_config(m_extra_config);
         });

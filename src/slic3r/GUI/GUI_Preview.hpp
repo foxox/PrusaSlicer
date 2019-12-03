@@ -94,7 +94,7 @@ class Preview : public wxPanel
     bool m_volumes_cleanup_required;
 #endif /* __linux__ */
 
-    // Calling this function object forces Plater::schedule_background_process.
+    // Calling this function object forces Platter::schedule_background_process.
     std::function<void()> m_schedule_background_process;
 
     unsigned int m_number_extruders;

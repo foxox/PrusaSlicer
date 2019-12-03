@@ -37,7 +37,7 @@ use Slic3r::Test;
     # Define 4 extruders.
     $config->set('nozzle_diameter', [0.4, 0.4, 0.4, 0.4]);
     
-    # user adds one object to the plater
+    # user adds one object to the platter
     my $print = Slic3r::Test::init_print(my $model = Slic3r::Test::model('20mm_cube'), config => $config);
     
     # user sets a per-region option

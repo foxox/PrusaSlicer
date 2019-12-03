@@ -473,7 +473,7 @@ std::vector<wxBitmap*> get_extruder_color_icons(bool thin_icon/* = false*/)
 {
     // Create the bitmap with color bars.
     std::vector<wxBitmap*> bmps;
-    std::vector<std::string> colors = Slic3r::GUI::wxGetApp().plater()->get_extruder_colors_from_plater_config();
+    std::vector<std::string> colors = Slic3r::GUI::wxGetApp().platter()->get_extruder_colors_from_platter_config();
 
     if (colors.empty())
         return bmps;
@@ -2830,7 +2830,7 @@ void DoubleSlider::draw_colored_band(wxDC& dc)
         dc.DrawRectangle(band_rc);
     };
 
-    const std::vector<std::string>& colors = Slic3r::GUI::wxGetApp().plater()->get_extruder_colors_from_plater_config();
+    const std::vector<std::string>& colors = Slic3r::GUI::wxGetApp().platter()->get_extruder_colors_from_platter_config();
     int colors_cnt = colors.size();
 
     const wxColour bg_clr = GetParent()->GetBackgroundColour();
@@ -3176,7 +3176,7 @@ void DoubleSlider::OnLeftUp(wxMouseEvent& event)
                 change_extruder_menu_item->SetBitmap(create_scaled_bitmap(nullptr, "change_extruder"));
             }
 
-            Slic3r::GUI::wxGetApp().plater()->PopupMenu(&menu);
+            Slic3r::GUI::wxGetApp().platter()->PopupMenu(&menu);
         }
         else
             add_code(Slic3r::ColorChangeCode);
@@ -3446,7 +3446,7 @@ void DoubleSlider::OnRightUp(wxMouseEvent& event)
         append_menu_item(&menu, wxID_ANY, _(L("Add custom G-code")), "",
             [this](wxCommandEvent&) { add_code(""); }, "edit_gcode", &menu);
     
-        Slic3r::GUI::wxGetApp().plater()->PopupMenu(&menu);
+        Slic3r::GUI::wxGetApp().platter()->PopupMenu(&menu);
 
         m_show_context_menu = false;
     }
@@ -3466,7 +3466,7 @@ void DoubleSlider::OnRightUp(wxMouseEvent& event)
                                           _(L("Delete custom G-code")), "",
             [this](wxCommandEvent&) { action_tick(taDel); }, "colorchange_del_f", &menu);
 
-        Slic3r::GUI::wxGetApp().plater()->PopupMenu(&menu);
+        Slic3r::GUI::wxGetApp().platter()->PopupMenu(&menu);
 
         m_show_edit_menu = false;
     }
@@ -3531,7 +3531,7 @@ void DoubleSlider::add_code(std::string code, int selected_extruder/* = -1*/)
         std::string color = "";
         if (code == Slic3r::ColorChangeCode)
         {
-            std::vector<std::string> colors = Slic3r::GUI::wxGetApp().plater()->get_extruder_colors_from_plater_config();
+            std::vector<std::string> colors = Slic3r::GUI::wxGetApp().platter()->get_extruder_colors_from_platter_config();
 
             if (m_state == msSingleExtruder && !m_ticks_.empty()) {
                 auto before_tick_it = std::lower_bound(m_ticks_.begin(), m_ticks_.end(), tick);
@@ -3622,7 +3622,7 @@ void DoubleSlider::change_extruder(int extruder)
 {
     const int tick = m_selection == ssLower ? m_lower_value : m_higher_value;
 
-    std::vector<std::string> colors = Slic3r::GUI::wxGetApp().plater()->get_extruder_colors_from_plater_config();
+    std::vector<std::string> colors = Slic3r::GUI::wxGetApp().platter()->get_extruder_colors_from_platter_config();
 
     // if on this Y doesn't exist tick
     if (m_ticks_.find(tick) == m_ticks_.end())
@@ -3660,7 +3660,7 @@ void DoubleSlider::edit_extruder_sequence()
     int extruder = 0;
     const int extr_cnt = m_extruders_sequence.extruders.size();
 
-    std::vector<std::string> colors = Slic3r::GUI::wxGetApp().plater()->get_extruder_colors_from_plater_config();
+    std::vector<std::string> colors = Slic3r::GUI::wxGetApp().platter()->get_extruder_colors_from_platter_config();
 
     while (tick <= m_max_value)
     {

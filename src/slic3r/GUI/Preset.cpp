@@ -38,7 +38,7 @@
 #include "libslic3r/libslic3r.h"
 #include "libslic3r/Utils.hpp"
 #include "libslic3r/PlaceholderParser.hpp"
-#include "Plater.hpp"
+#include "Platter.hpp"
 
 using boost::property_tree::ptree;
 

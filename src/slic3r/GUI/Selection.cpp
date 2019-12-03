@@ -143,7 +143,7 @@ void Selection::add(unsigned int volume_idx, bool as_single_selection, bool chec
 
     if (!already_contained || needs_reset)
     {
-        wxGetApp().plater()->take_snapshot(_(L("Selection-Add")));
+        wxGetApp().platter()->take_snapshot(_(L("Selection-Add")));
 
         if (needs_reset)
             clear();
@@ -166,7 +166,7 @@ void Selection::add(unsigned int volume_idx, bool as_single_selection, bool chec
     }
     case Instance:
     {
-        Plater::SuppressSnapshots suppress(wxGetApp().plater());
+        Platter::SuppressSnapshots suppress(wxGetApp().platter());
         add_instance(volume->object_idx(), volume->instance_idx(), as_single_selection);
         break;
     }
@@ -184,7 +184,7 @@ void Selection::remove(unsigned int volume_idx)
     if (!contains_volume(volume_idx))
         return;
 
-    wxGetApp().plater()->take_snapshot(_(L("Selection-Remove")));
+    wxGetApp().platter()->take_snapshot(_(L("Selection-Remove")));
 
     GLVolume* volume = (*m_volumes)[volume_idx];
 
@@ -216,7 +216,7 @@ void Selection::add_object(unsigned int object_idx, bool as_single_selection)
         (as_single_selection && matches(volume_idxs)))
         return;
 
-    wxGetApp().plater()->take_snapshot(_(L("Selection-Add Object")));
+    wxGetApp().platter()->take_snapshot(_(L("Selection-Add Object")));
 
     // resets the current list if needed
     if (as_single_selection)
@@ -235,7 +235,7 @@ void Selection::remove_object(unsigned int object_idx)
     if (!m_valid)
         return;
 
-    wxGetApp().plater()->take_snapshot(_(L("Selection-Remove Object")));
+    wxGetApp().platter()->take_snapshot(_(L("Selection-Remove Object")));
 
     do_remove_object(object_idx);
 
@@ -253,7 +253,7 @@ void Selection::add_instance(unsigned int object_idx, unsigned int instance_idx,
         (as_single_selection && matches(volume_idxs)))
         return;
 
-    wxGetApp().plater()->take_snapshot(_(L("Selection-Add Instance")));
+    wxGetApp().platter()->take_snapshot(_(L("Selection-Add Instance")));
 
     // resets the current list if needed
     if (as_single_selection)
@@ -272,7 +272,7 @@ void Selection::remove_instance(unsigned int object_idx, unsigned int instance_i
     if (!m_valid)
         return;
 
-    wxGetApp().plater()->take_snapshot(_(L("Selection-Remove Instance")));
+    wxGetApp().platter()->take_snapshot(_(L("Selection-Remove Instance")));
 
     do_remove_instance(object_idx, instance_idx);
 
@@ -373,7 +373,7 @@ void Selection::add_all()
     if ((unsigned int)m_list.size() == count)
         return;
     
-    wxGetApp().plater()->take_snapshot(_(L("Selection-Add All")));
+    wxGetApp().platter()->take_snapshot(_(L("Selection-Add All")));
 
     m_mode = Instance;
     clear();
@@ -398,8 +398,8 @@ void Selection::remove_all()
   
 // Not taking the snapshot with non-empty Redo stack will likely be more confusing than losing the Redo stack.
 // Let's wait for user feedback.
-//    if (!wxGetApp().plater()->can_redo())
-        wxGetApp().plater()->take_snapshot(_(L("Selection-Remove All")));
+//    if (!wxGetApp().platter()->can_redo())
+        wxGetApp().platter()->take_snapshot(_(L("Selection-Remove All")));
 
     m_mode = Instance;
     clear();
@@ -443,7 +443,7 @@ void Selection::clear()
     wxGetApp().obj_manipul()->reset_cache();
 
     // #et_FIXME fake KillFocus from sidebar
-    wxGetApp().plater()->canvas3D()->handle_sidebar_focus_event("", false);
+    wxGetApp().platter()->canvas3D()->handle_sidebar_focus_event("", false);
 }
 
 // Update the selection based on the new instance IDs.
@@ -936,7 +936,7 @@ void Selection::scale_to_fit_print_volume(const DynamicPrintConfig& config)
             double s = std::min(sx, std::min(sy, sz));
             if (s != 1.0)
             {
-                wxGetApp().plater()->take_snapshot(_(L("Scale To Fit")));
+                wxGetApp().platter()->take_snapshot(_(L("Scale To Fit")));
 
                 TransformationType type;
                 type.set_world();
@@ -946,12 +946,12 @@ void Selection::scale_to_fit_print_volume(const DynamicPrintConfig& config)
                 // apply scale
                 start_dragging();
                 scale(s * Vec3d::Ones(), type);
-                wxGetApp().plater()->canvas3D()->do_scale(""); // avoid storing another snapshot
+                wxGetApp().platter()->canvas3D()->do_scale(""); // avoid storing another snapshot
 
                 // center selection on print bed
                 start_dragging();
                 translate(print_volume.center() - get_bounding_box().center());
-                wxGetApp().plater()->canvas3D()->do_move(""); // avoid storing another snapshot
+                wxGetApp().platter()->canvas3D()->do_move(""); // avoid storing another snapshot
 
                 wxGetApp().obj_manipul()->set_dirty();
             }
@@ -1472,7 +1472,7 @@ void Selection::toggle_instance_printable_state()
             wxString snapshot_text = model_object->instances.size() == 1 ? wxString::Format("%s %s",
                                      printable ? _(L("Set Printable")) : _(L("Set Unprintable")), model_object->name) :
                                      printable ? _(L("Set Printable Instance")) : _(L("Set Unprintable Instance"));
-            wxGetApp().plater()->take_snapshot(snapshot_text);
+            wxGetApp().platter()->take_snapshot(snapshot_text);
 
             instance->printable = printable;
 
@@ -1483,7 +1483,7 @@ void Selection::toggle_instance_printable_state()
             }
 
             wxGetApp().obj_list()->update_printable_state(obj_idx, instance_idx);
-            wxGetApp().plater()->update();
+            wxGetApp().platter()->update();
         }
     }
 }
@@ -2004,7 +2004,7 @@ void Selection::render_sidebar_layers_hints(const std::string& sidebar_field) co
     const float max_y = box.max(1) + Margin;
 
     // view dependend order of rendering to keep correct transparency
-    bool camera_on_top = wxGetApp().plater()->get_camera().get_theta() <= 90.0f;
+    bool camera_on_top = wxGetApp().platter()->get_camera().get_theta() <= 90.0f;
     float z1 = camera_on_top ? min_z : max_z;
     float z2 = camera_on_top ? max_z : min_z;
 
@@ -2291,7 +2291,7 @@ void Selection::paste_volumes_from_clipboard()
             if (from_same_object)
             {
 //                // if the volume comes from the same object, apply the offset in world system
-//                double offset = wxGetApp().plater()->canvas3D()->get_size_proportional_to_max_bed_size(0.05);
+//                double offset = wxGetApp().platter()->canvas3D()->get_size_proportional_to_max_bed_size(0.05);
 //                dst_volume->translate(dst_matrix.inverse() * Vec3d(offset, offset, 0.0));
             }
             else
@@ -2335,7 +2335,7 @@ void Selection::paste_objects_from_clipboard()
     for (const ModelObject* src_object : src_objects)
     {
         ModelObject* dst_object = m_model->add_object(*src_object);
-        double offset = wxGetApp().plater()->canvas3D()->get_size_proportional_to_max_bed_size(0.05);
+        double offset = wxGetApp().platter()->canvas3D()->get_size_proportional_to_max_bed_size(0.05);
         Vec3d displacement(offset, offset, 0.0);
         for (ModelInstance* inst : dst_object->instances)
         {

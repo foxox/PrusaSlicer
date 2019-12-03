@@ -212,7 +212,7 @@ void ObjectLayers::update_layers_list()
 void ObjectLayers::update_scene_from_editor_selection() const
 {
     // needed to show the visual hints in 3D scene
-    wxGetApp().plater()->canvas3D()->handle_layers_data_focus_event(m_selectable_range, m_selection_type);
+    wxGetApp().platter()->canvas3D()->handle_layers_data_focus_event(m_selectable_range, m_selection_type);
 }
 
 void ObjectLayers::UpdateAndShow(const bool show)

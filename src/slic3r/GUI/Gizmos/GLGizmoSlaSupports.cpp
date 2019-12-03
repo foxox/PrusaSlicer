@@ -14,7 +14,7 @@
 #include "slic3r/GUI/GUI_ObjectSettings.hpp"
 #include "slic3r/GUI/GUI_ObjectList.hpp"
 #include "slic3r/GUI/MeshUtils.hpp"
-#include "slic3r/GUI/Plater.hpp"
+#include "slic3r/GUI/Platter.hpp"
 #include "slic3r/GUI/PresetBundle.hpp"
 #include "libslic3r/SLAPrint.hpp"
 
@@ -439,7 +439,7 @@ bool GLGizmoSlaSupports::gizmo_event(SLAGizmoEventType action, const Vec2d& mous
             if (m_selection_empty) {
                 std::pair<Vec3f, Vec3f> pos_and_normal;
                 if (unproject_on_mesh(mouse_position, pos_and_normal)) { // we got an intersection
-                    Plater::TakeSnapshot snapshot(wxGetApp().plater(), _(L("Add support point")));
+                    Platter::TakeSnapshot snapshot(wxGetApp().platter(), _(L("Add support point")));
                     m_editing_cache.emplace_back(sla::SupportPoint(pos_and_normal.first, m_new_point_head_diameter/2.f, false), false, pos_and_normal.second);
                     m_parent.set_as_dirty();
                     m_wait_for_up_event = true;
@@ -575,7 +575,7 @@ void GLGizmoSlaSupports::delete_selected_points(bool force)
         std::abort();
     }
 
-    Plater::TakeSnapshot snapshot(wxGetApp().plater(), _(L("Delete support point")));
+    Platter::TakeSnapshot snapshot(wxGetApp().platter(), _(L("Delete support point")));
 
     for (unsigned int idx=0; idx<m_editing_cache.size(); ++idx) {
         if (m_editing_cache[idx].selected && (!m_editing_cache[idx].support_point.is_new_island || !m_lock_unique_islands || force)) {
@@ -751,7 +751,7 @@ RENDER_AGAIN:
                     cache_entry.support_point.head_front_radius = m_old_point_head_diameter / 2.f;
             float backup = m_new_point_head_diameter;
             m_new_point_head_diameter = m_old_point_head_diameter;
-            Plater::TakeSnapshot snapshot(wxGetApp().plater(), _(L("Change point head diameter")));
+            Platter::TakeSnapshot snapshot(wxGetApp().platter(), _(L("Change point head diameter")));
             m_new_point_head_diameter = backup;
             for (auto& cache_entry : m_editing_cache)
                 if (cache_entry.selected)
@@ -817,7 +817,7 @@ RENDER_AGAIN:
         if (slider_released) {
             m_model_object->config.opt<ConfigOptionFloat>("support_points_minimal_distance", true)->value = m_minimal_point_distance_stash;
             m_model_object->config.opt<ConfigOptionInt>("support_points_density_relative", true)->value = (int)m_density_stash;
-            Plater::TakeSnapshot snapshot(wxGetApp().plater(), _(L("Support parameter change")));
+            Platter::TakeSnapshot snapshot(wxGetApp().platter(), _(L("Support parameter change")));
             m_model_object->config.opt<ConfigOptionFloat>("support_points_minimal_distance", true)->value = minimal_point_distance;
             m_model_object->config.opt<ConfigOptionInt>("support_points_density_relative", true)->value = (int)density;
             wxGetApp().obj_list()->update_and_show_object_settings_item();
@@ -947,7 +947,7 @@ void GLGizmoSlaSupports::on_set_state()
         return;
 
     if (m_state == On && m_old_state != On) { // the gizmo was just turned on
-        Plater::TakeSnapshot snapshot(wxGetApp().plater(), _(L("SLA gizmo turned on")));
+        Platter::TakeSnapshot snapshot(wxGetApp().platter(), _(L("SLA gizmo turned on")));
         if (is_mesh_update_necessary())
             update_mesh();
 
@@ -982,7 +982,7 @@ void GLGizmoSlaSupports::on_set_state()
         else {
             // we are actually shutting down
             disable_editing_mode(); // so it is not active next time the gizmo opens
-            Plater::TakeSnapshot snapshot(wxGetApp().plater(), _(L("SLA gizmo turned off")));
+            Platter::TakeSnapshot snapshot(wxGetApp().platter(), _(L("SLA gizmo turned off")));
             m_parent.toggle_model_objects_visibility(true);
             m_normal_cache.clear();
             m_clipping_plane_distance = 0.f;
@@ -1019,7 +1019,7 @@ void GLGizmoSlaSupports::on_stop_dragging()
          && backup.support_point.pos != m_point_before_drag.support_point.pos) // and it was moved, not just selected
         {
             m_editing_cache[m_hover_id] = m_point_before_drag;
-            Plater::TakeSnapshot snapshot(wxGetApp().plater(), _(L("Move support point")));
+            Platter::TakeSnapshot snapshot(wxGetApp().platter(), _(L("Move support point")));
             m_editing_cache[m_hover_id] = backup;
         }
     }
@@ -1118,7 +1118,7 @@ void GLGizmoSlaSupports::editing_mode_apply_changes()
     disable_editing_mode(); // this leaves the editing mode undo/redo stack and must be done before the snapshot is taken
 
     if (unsaved_changes()) {
-        Plater::TakeSnapshot snapshot(wxGetApp().plater(), _(L("Support points edit")));
+        Platter::TakeSnapshot snapshot(wxGetApp().platter(), _(L("Support points edit")));
 
         m_normal_cache.clear();
         for (const CacheEntry& ce : m_editing_cache)
@@ -1157,7 +1157,7 @@ bool GLGizmoSlaSupports::has_backend_supports() const
 
 void GLGizmoSlaSupports::reslice_SLA_supports(bool postpone_error_messages) const
 {
-    wxGetApp().CallAfter([this, postpone_error_messages]() { wxGetApp().plater()->reslice_SLA_supports(*m_model_object, postpone_error_messages); });
+    wxGetApp().CallAfter([this, postpone_error_messages]() { wxGetApp().platter()->reslice_SLA_supports(*m_model_object, postpone_error_messages); });
 }
 
 void GLGizmoSlaSupports::get_data_from_backend()
@@ -1186,13 +1186,13 @@ void GLGizmoSlaSupports::get_data_from_backend()
 
 void GLGizmoSlaSupports::auto_generate()
 {
-    wxMessageDialog dlg(GUI::wxGetApp().plater(), _(L(
+    wxMessageDialog dlg(GUI::wxGetApp().platter(), _(L(
                 "Autogeneration will erase all manually edited points.\n\n"
                 "Are you sure you want to do it?\n"
                 )), _(L("Warning")), wxICON_WARNING | wxYES | wxNO);
 
     if (m_model_object->sla_points_status != sla::PointsStatus::UserModified || m_normal_cache.empty() || dlg.ShowModal() == wxID_YES) {
-        Plater::TakeSnapshot snapshot(wxGetApp().plater(), _(L("Autogenerate support points")));
+        Platter::TakeSnapshot snapshot(wxGetApp().platter(), _(L("Autogenerate support points")));
         wxGetApp().CallAfter([this]() { reslice_SLA_supports(); });
         m_model_object->sla_points_status = sla::PointsStatus::Generating;
     }
@@ -1202,7 +1202,7 @@ void GLGizmoSlaSupports::auto_generate()
 
 void GLGizmoSlaSupports::switch_to_editing_mode()
 {
-    wxGetApp().plater()->enter_gizmos_stack();
+    wxGetApp().platter()->enter_gizmos_stack();
     m_editing_mode = true;
     m_editing_cache.clear();
     for (const sla::SupportPoint& sp : m_normal_cache)
@@ -1215,7 +1215,7 @@ void GLGizmoSlaSupports::disable_editing_mode()
 {
     if (m_editing_mode) {
         m_editing_mode = false;
-        wxGetApp().plater()->leave_gizmos_stack();
+        wxGetApp().platter()->leave_gizmos_stack();
     }
 }
 

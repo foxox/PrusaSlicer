@@ -44,7 +44,7 @@ msgstr "%1% - Copiar"
 msgid "%1% Preset"
 msgstr "%1% Preset"
 
-#: src/slic3r/GUI/Plater.cpp:3831
+#: src/slic3r/GUI/Platter.cpp:3831
 msgid "%1% printer was active at the time the target Undo / Redo snapshot was taken. Switching to %1% printer requires reloading of %1% presets."
 msgstr "La impresora %1% esta activa mientras la captura del objetivo de Deshacer / Rehacer fue tomada. Cambiar a la impresora %1% requiere recargar los preajustes %1%."
 
@@ -57,12 +57,12 @@ msgstr "%1%=%2% mm es demasiado bajo para ser impreso a una altura de capa de %3
 msgid "%3.2f mm³/s at filament speed %3.2f mm/s."
 msgstr "%3.2f mm³/s a una velocidad de filamento de %3.2f mm/s."
 
-#: src/slic3r/GUI/Plater.cpp:974
+#: src/slic3r/GUI/Platter.cpp:974
 #, possible-c-format
 msgid "%d (%d shells)"
 msgstr "%d (%d pieles)"
 
-#: src/slic3r/GUI/Plater.cpp:982
+#: src/slic3r/GUI/Platter.cpp:982
 #, possible-c-format
 msgid "%d degenerate facets, %d edges fixed, %d facets removed, %d facets added, %d facets reversed, %d backwards edges"
 msgstr "%d facetas problemáticas, %d aristas corregidas, %d facetas eliminadas, %d facetas añadidas, %d facetas invertidas, %d aristas  del revés"
@@ -198,7 +198,7 @@ msgid "&Paste"
 msgstr "&Pegar"
 
 #: src/slic3r/GUI/MainFrame.cpp:471
-msgid "&Plater Tab"
+msgid "&Platter Tab"
 msgstr "Pestaña &Base de impresión"
 
 #: src/slic3r/GUI/GUI_App.cpp:665
@@ -265,7 +265,7 @@ msgstr "0.2 (despegable)"
 msgid "3&D"
 msgstr "3&D"
 
-#: src/slic3r/GUI/Plater.cpp:3074
+#: src/slic3r/GUI/Platter.cpp:3074
 msgid "3D editor view"
 msgstr "Vista editor 3D"
 
@@ -273,7 +273,7 @@ msgstr "Vista editor 3D"
 msgid "3D Honeycomb"
 msgstr "Panal de abeja 3D"
 
-#: src/slic3r/GUI/Plater.cpp:3590
+#: src/slic3r/GUI/Platter.cpp:3590
 #, possible-c-format
 msgid "3MF file exported to %s"
 msgstr "Archivo 3MF exportado a %s"
@@ -379,7 +379,7 @@ msgstr "Añadir modificador"
 msgid "Add more perimeters when needed for avoiding gaps in sloping walls. Slic3r keeps adding perimeters, until more than 70% of the loop immediately above is supported."
 msgstr "Añadir más perímetros cuando se necesiten para evitar huecos en las paredes inclinadas. Slic3r sigue añadiendo perímetros hasta que más del 70% del perímetro superior sea soportado."
 
-#: src/slic3r/GUI/Plater.cpp:3516
+#: src/slic3r/GUI/Platter.cpp:3516
 msgid "Add one more instance of the selected object"
 msgstr "Añadir una instancia más del objeto seleccionado"
 
@@ -513,7 +513,7 @@ msgstr "Todo"
 msgid "All objects are outside of the print volume."
 msgstr "Todos los objetos están fuera del volumen de impresión."
 
-#: src/slic3r/GUI/Plater.cpp:3298
+#: src/slic3r/GUI/Platter.cpp:3298
 msgid "All objects will be removed, continue ?"
 msgstr "Todos los objetos serán eliminados, deseas continuar?"
 
@@ -525,15 +525,15 @@ msgstr "Todo estandar"
 msgid "allocation failed"
 msgstr "asignación fallida"
 
-#: src/slic3r/GUI/Plater.cpp:2939
+#: src/slic3r/GUI/Platter.cpp:2939
 msgid "Along X axis"
 msgstr "A lo largo del eje X"
 
-#: src/slic3r/GUI/Plater.cpp:2941
+#: src/slic3r/GUI/Platter.cpp:2941
 msgid "Along Y axis"
 msgstr "A lo largo del eje Y"
 
-#: src/slic3r/GUI/Plater.cpp:2943
+#: src/slic3r/GUI/Platter.cpp:2943
 msgid "Along Z axis"
 msgstr "A lo largo del eje Z"
 
@@ -541,7 +541,7 @@ msgstr "A lo largo del eje Z"
 msgid "Alternate nozzles:"
 msgstr "Alternar nozzles:"
 
-#: src/slic3r/GUI/Plater.cpp:3561
+#: src/slic3r/GUI/Platter.cpp:3561
 #, possible-c-format
 msgid "AMF file exported to %s"
 msgstr "Archivo AMF exportado a %s"
@@ -558,7 +558,7 @@ msgstr "Se ha detectado una pieza fuera del área de impresión"
 msgid "and it has the following unsaved changes:"
 msgstr "y tiene los siguientes cambios sin guardar:"
 
-#: src/slic3r/GUI/Plater.cpp:2461
+#: src/slic3r/GUI/Platter.cpp:2461
 msgid "Another export job is currently running."
 msgstr "Otro trabajo de exportación está aún en marcha."
 
@@ -604,7 +604,7 @@ msgstr "¿Estas seguro de cancelar el flaseo del firmware?\n¡Esto podría dejar
 msgid "Area fill"
 msgstr "Área de relleno"
 
-#: src/slic3r/GUI/Plater.cpp:609
+#: src/slic3r/GUI/Platter.cpp:609
 msgid "Around object"
 msgstr "Alrededor de objeto"
 
@@ -620,15 +620,15 @@ msgstr "Ordenar selección"
 msgid "Arrange the supplied models in a plate and merge them in a single model in order to perform actions once."
 msgstr "Organizar los modelos suministrados en una base y combínarlos en un solo modelo para realizar acciones una vez."
 
-#: src/slic3r/GUI/Plater.cpp:2106
+#: src/slic3r/GUI/Platter.cpp:2106
 msgid "Arranging"
 msgstr "Organizando"
 
-#: src/slic3r/GUI/Plater.cpp:2718
+#: src/slic3r/GUI/Platter.cpp:2718
 msgid "Arranging canceled."
 msgstr "Ordenamiento cancelado."
 
-#: src/slic3r/GUI/Plater.cpp:2144
+#: src/slic3r/GUI/Platter.cpp:2144
 msgid "Arranging done."
 msgstr "Organización terminada."
 
@@ -672,7 +672,7 @@ msgstr "Piezas auto-centradas"
 msgid "Auto-generate points"
 msgstr "Auto-generar puntos"
 
-#: src/slic3r/GUI/Plater.cpp:979
+#: src/slic3r/GUI/Platter.cpp:979
 #, possible-c-format
 msgid "Auto-repaired (%d errors)"
 msgstr "Reparados automáticamente (%d errores)"
@@ -782,7 +782,7 @@ msgstr "Código G para antes del cambio de capa"
 msgid "Before roll back"
 msgstr "Antes de volver atrás"
 
-#: src/slic3r/GUI/Plater.cpp:608
+#: src/slic3r/GUI/Platter.cpp:608
 msgid "Below object"
 msgstr "Por debajo del objeto"
 
@@ -853,7 +853,7 @@ msgstr "Anulación de ángulo de puente. Si se deja en cero, el ángulo de puent
 msgid "Bridging volumetric"
 msgstr "Puente volumétrico"
 
-#: src/slic3r/GUI/Plater.cpp:446 src/slic3r/GUI/Tab.cpp:1056
+#: src/slic3r/GUI/Platter.cpp:446 src/slic3r/GUI/Tab.cpp:1056
 msgid "Brim"
 msgstr "Balsa"
 
@@ -891,11 +891,11 @@ msgstr "Cancelar"
 msgid "Cancel selected"
 msgstr "Cancelar selección"
 
-#: src/slic3r/GUI/Plater.cpp:2727 src/slic3r/GUI/PrintHostDialogs.cpp:232
+#: src/slic3r/GUI/Platter.cpp:2727 src/slic3r/GUI/PrintHostDialogs.cpp:232
 msgid "Cancelled"
 msgstr "Cancelado"
 
-#: src/slic3r/GUI/Plater.cpp:2444 src/slic3r/GUI/PrintHostDialogs.cpp:231
+#: src/slic3r/GUI/Platter.cpp:2444 src/slic3r/GUI/PrintHostDialogs.cpp:231
 msgid "Cancelling"
 msgstr "Cancelando"
 
@@ -960,7 +960,7 @@ msgstr "Cambiar Tipo de Pieza"
 msgid "Change point head diameter"
 msgstr "Cambiar diámetro de la cabeza de punta"
 
-#: src/slic3r/GUI/Plater.cpp:3520
+#: src/slic3r/GUI/Platter.cpp:3520
 msgid "Change the number of instances of the selected object"
 msgstr "Cambiar número de instancias al objeto seleccionado"
 
@@ -1024,7 +1024,7 @@ msgstr "Click en el icono para cambiar las propiedades del objeto imprimible"
 msgid "Click the icon to change the object settings"
 msgstr "Click en el icono para cambiar los ajustes del objeto"
 
-#: src/slic3r/GUI/Plater.cpp:292
+#: src/slic3r/GUI/Platter.cpp:292
 msgid "Click to edit preset"
 msgstr "Clic para cambiar el ajuste inicial"
 
@@ -1231,12 +1231,12 @@ msgstr "Corrección para la expansión"
 msgid "Corrections"
 msgstr "Correcciones"
 
-#: src/slic3r/GUI/Plater.cpp:216 src/slic3r/GUI/Plater.cpp:1056
+#: src/slic3r/GUI/Platter.cpp:216 src/slic3r/GUI/Platter.cpp:1056
 #: src/libslic3r/PrintConfig.cpp:717
 msgid "Cost"
 msgstr "Coste"
 
-#: src/slic3r/GUI/Plater.cpp:2140
+#: src/slic3r/GUI/Platter.cpp:2140
 msgid "Could not arrange model objects! Some geometries may be invalid."
 msgstr "¡No se pudieron organizar los objetos modelo! Algunas geometrías pueden ser inválidas."
 
@@ -1335,7 +1335,7 @@ msgstr "Nombre impresora customizada:"
 msgid "Cut"
 msgstr "Cortar"
 
-#: src/slic3r/GUI/Plater.cpp:4193
+#: src/slic3r/GUI/Platter.cpp:4193
 msgid "Cut by Plane"
 msgstr "Cortar por el Plano"
 
@@ -1359,7 +1359,7 @@ msgstr "Directorio de datos"
 msgid "decompression failed or archive is corrupted"
 msgstr "descompresión fallida o archivo está dañado"
 
-#: src/slic3r/GUI/Plater.cpp:4127
+#: src/slic3r/GUI/Platter.cpp:4127
 msgid "Decrease Instances"
 msgstr "Reducir Instancias"
 
@@ -1450,8 +1450,8 @@ msgstr "Retardo tras la descarga"
 msgid "delete"
 msgstr "borra"
 
-#: src/slic3r/GUI/GUI_ObjectList.cpp:1257 src/slic3r/GUI/Plater.cpp:2891
-#: src/slic3r/GUI/Plater.cpp:2909 src/slic3r/GUI/Tab.cpp:2937
+#: src/slic3r/GUI/GUI_ObjectList.cpp:1257 src/slic3r/GUI/Platter.cpp:2891
+#: src/slic3r/GUI/Platter.cpp:2909 src/slic3r/GUI/Tab.cpp:2937
 msgid "Delete"
 msgstr "Borra"
 
@@ -1463,7 +1463,7 @@ msgstr "Borrar &todo"
 msgid "Delete All"
 msgstr "Borrar todo"
 
-#: src/slic3r/GUI/Plater.cpp:3298
+#: src/slic3r/GUI/Platter.cpp:3298
 msgid "Delete all"
 msgstr "Eliminar todo"
 
@@ -1483,7 +1483,7 @@ msgstr "Eliminar Rango de Alturas"
 msgid "Delete Instance"
 msgstr "Eliminar Instancia"
 
-#: src/slic3r/GUI/Plater.cpp:2592
+#: src/slic3r/GUI/Platter.cpp:2592
 msgid "Delete Object"
 msgstr "Eliminar Objeto"
 
@@ -1504,7 +1504,7 @@ msgstr "Eliminar Selección"
 msgid "Delete Selected Item"
 msgstr "Eliminar Objeto Seleccionado"
 
-#: src/slic3r/GUI/Plater.cpp:4083
+#: src/slic3r/GUI/Platter.cpp:4083
 msgid "Delete Selected Objects"
 msgstr "Eliminar Objetos Seleccionados"
 
@@ -1574,7 +1574,7 @@ msgstr "Detecta paredes delgadas"
 msgid "Detect unconnected parts in the given model(s) and split them into separate objects."
 msgstr "Detectadas piezas desconectadas en el(los) modelo(s) dado(s) y divídido(s) en objetos separados."
 
-#: src/slic3r/GUI/Plater.cpp:1713
+#: src/slic3r/GUI/Platter.cpp:1713
 msgid "Detected advanced data"
 msgstr "Datos avanzados detectados"
 
@@ -1684,7 +1684,7 @@ msgid "Distance of the extruder tip from the position where the filament is park
 msgstr "Distancia de la punta del extrusor desde la posición donde el filamento es colocado cuando se descarga. Esto debería coincidir con el valor en el firmware de la impresora."
 
 #: src/libslic3r/PrintConfig.cpp:342
-msgid "Distance used for the auto-arrange feature of the plater."
+msgid "Distance used for the auto-arrange feature of the platter."
 msgstr "Distancia utilizada para la función de organización automática de la base."
 
 #: src/libslic3r/PrintConfig.cpp:3097
@@ -1879,12 +1879,12 @@ msgstr "Error"
 msgid "Error accessing port at %s: %s"
 msgstr "Error al acceder al puerto en %s: %s"
 
-#: src/slic3r/GUI/Plater.cpp:3593
+#: src/slic3r/GUI/Platter.cpp:3593
 #, possible-c-format
 msgid "Error exporting 3MF file %s"
 msgstr "Error al exportar archivo 3MF %s"
 
-#: src/slic3r/GUI/Plater.cpp:3564
+#: src/slic3r/GUI/Platter.cpp:3564
 #, possible-c-format
 msgid "Error exporting AMF file %s"
 msgstr "Error exportando archivo AMF %s"
@@ -1914,16 +1914,16 @@ msgstr "Error! Modelo inválido"
 msgid "Error: %s"
 msgstr "Error: %s"
 
-#: src/slic3r/GUI/Plater.cpp:1503
+#: src/slic3r/GUI/Platter.cpp:1503
 msgid "ERROR: not enough resources to execute a new job."
 msgstr "ERROR: no hay suficientes recursos para ejecutar el trabajo."
 
-#: src/slic3r/GUI/Plater.cpp:217 src/slic3r/GUI/Plater.cpp:1028
-#: src/slic3r/GUI/Plater.cpp:1070
+#: src/slic3r/GUI/Platter.cpp:217 src/slic3r/GUI/Platter.cpp:1028
+#: src/slic3r/GUI/Platter.cpp:1070
 msgid "Estimated printing time"
 msgstr "Tiempo estimado de impresión"
 
-#: src/slic3r/GUI/Plater.cpp:424
+#: src/slic3r/GUI/Platter.cpp:424
 msgid "Everywhere"
 msgstr "En todos los sitios"
 
@@ -1960,7 +1960,7 @@ msgstr "Experto"
 msgid "Expert View Mode"
 msgstr "Modo de visualización experto"
 
-#: src/slic3r/GUI/MainFrame.cpp:602 src/slic3r/GUI/Plater.cpp:3821
+#: src/slic3r/GUI/MainFrame.cpp:602 src/slic3r/GUI/Platter.cpp:3821
 msgid "Export"
 msgstr "Exportar"
 
@@ -1988,11 +1988,11 @@ msgstr "Exportar todos los preajustes al archivo"
 msgid "Export AMF"
 msgstr "Exportar AMF"
 
-#: src/slic3r/GUI/Plater.cpp:1932
+#: src/slic3r/GUI/Platter.cpp:1932
 msgid "Export AMF file:"
 msgstr "Exportar archivo AMF:"
 
-#: src/slic3r/GUI/GUI_ObjectList.cpp:1219 src/slic3r/GUI/Plater.cpp:2927
+#: src/slic3r/GUI/GUI_ObjectList.cpp:1219 src/slic3r/GUI/Platter.cpp:2927
 msgid "Export as STL"
 msgstr "Exportar como STL"
 
@@ -2020,12 +2020,12 @@ msgstr "Exportar plataforma actual como STL"
 msgid "Export current plate as STL including supports"
 msgstr "Exportar la plataforma actual como STL incluyendo soportes"
 
-#: src/slic3r/GUI/Plater.cpp:2722
+#: src/slic3r/GUI/Platter.cpp:2722
 msgid "Export failed"
 msgstr "Error al exportar"
 
-#: src/slic3r/GUI/KBShortcutsDialog.cpp:108 src/slic3r/GUI/Plater.cpp:733
-#: src/slic3r/GUI/Plater.cpp:3821 src/libslic3r/PrintConfig.cpp:2964
+#: src/slic3r/GUI/KBShortcutsDialog.cpp:108 src/slic3r/GUI/Platter.cpp:733
+#: src/slic3r/GUI/Platter.cpp:3821 src/libslic3r/PrintConfig.cpp:2964
 msgid "Export G-code"
 msgstr "Exportar código G"
 
@@ -2033,7 +2033,7 @@ msgstr "Exportar código G"
 msgid "Export OBJ"
 msgstr "Exportar OBJ"
 
-#: src/slic3r/GUI/Plater.cpp:2531
+#: src/slic3r/GUI/Platter.cpp:2531
 msgid "Export OBJ file:"
 msgstr "Exportar archivo OBJ:"
 
@@ -2061,7 +2061,7 @@ msgstr "Exportar SLA"
 msgid "Export STL"
 msgstr "Exportar STL"
 
-#: src/slic3r/GUI/Plater.cpp:1925
+#: src/slic3r/GUI/Platter.cpp:1925
 msgid "Export STL file:"
 msgstr "Exportar archivo STL:"
 
@@ -2081,7 +2081,7 @@ msgstr "Exportar el(los) objeto(s) como OBJ."
 msgid "Export the model(s) as STL."
 msgstr "Exportar el(los) objeto(s) como STL."
 
-#: src/slic3r/GUI/Plater.cpp:2927
+#: src/slic3r/GUI/Platter.cpp:2927
 msgid "Export the selected object as STL file"
 msgstr "Exportar el objeto seleccionado como archivo STL"
 
@@ -2214,7 +2214,7 @@ msgstr "Ancho de extrusión"
 msgid "Extrusion Width"
 msgstr "Ancho de Extrusión"
 
-#: src/slic3r/GUI/Plater.cpp:139
+#: src/slic3r/GUI/Platter.cpp:139
 msgid "Facets"
 msgstr "Facetas"
 
@@ -2279,7 +2279,7 @@ msgstr "Tipo de función"
 msgid "Feature types"
 msgstr "Tipos de funciones"
 
-#: src/slic3r/GUI/Plater.cpp:682 src/slic3r/GUI/Tab.cpp:1470
+#: src/slic3r/GUI/Platter.cpp:682 src/slic3r/GUI/Tab.cpp:1470
 #: src/slic3r/GUI/Tab.cpp:1471
 msgid "Filament"
 msgstr "Filamento"
@@ -2453,7 +2453,7 @@ msgstr "Primera capa volumétrica"
 msgid "Fix through the Netfabb"
 msgstr "Reparar mediante Netfabb"
 
-#: src/slic3r/GUI/Plater.cpp:3072
+#: src/slic3r/GUI/Platter.cpp:3072
 msgid "Fix Throught NetFabb"
 msgstr "Reparar mediante NetFabb"
 
@@ -2497,7 +2497,7 @@ msgstr "se maximiza el flujo de material"
 msgid "For more information please visit our wiki page:"
 msgstr "Para más información visite por favor la página de nuestra wiki:"
 
-#: src/slic3r/GUI/Plater.cpp:435 src/slic3r/GUI/Plater.cpp:528
+#: src/slic3r/GUI/Platter.cpp:435 src/slic3r/GUI/Platter.cpp:528
 msgid "For support enforcers only"
 msgstr "Sólo para modificadores de soportes"
 
@@ -2745,7 +2745,7 @@ msgstr "Alta intensidad en el extrusor durante el cambio de filamento"
 msgid "Hilbert Curve"
 msgstr "Curva de Hilbert"
 
-#: src/slic3r/GUI/Plater.cpp:873
+#: src/slic3r/GUI/Platter.cpp:873
 msgid "Hold Shift to Slice & Export G-code"
 msgstr "Mantén presionada la tecla Shift para laminar y exportar el código G"
 
@@ -2924,11 +2924,11 @@ msgstr "Importar &Conjunto de Ajustes"
 msgid "Import Config from &project"
 msgstr "Importar configuración desde un &proyecto"
 
-#: src/slic3r/GUI/Plater.cpp:4016
+#: src/slic3r/GUI/Platter.cpp:4016
 msgid "Import Object"
 msgstr "Importar Objeto"
 
-#: src/slic3r/GUI/Plater.cpp:4020
+#: src/slic3r/GUI/Platter.cpp:4020
 msgid "Import Objects"
 msgstr "Importar Objetos"
 
@@ -2958,7 +2958,7 @@ msgstr "Grupos incompatibles:"
 msgid "Incompatible with this %s"
 msgstr "Incompatible con este %s"
 
-#: src/slic3r/GUI/Plater.cpp:4091
+#: src/slic3r/GUI/Platter.cpp:4091
 msgid "Increase Instances"
 msgstr "Aumentar Instancias"
 
@@ -2978,7 +2978,7 @@ msgid "indicates that the settings were changed and are not equal to the last sa
 msgstr "indica que los ajustes cambiaron y no son iguales que los ajustes grabados la última vez para el grupo de opciones actual. Haz clic en el símbolo de FLECHA ATRÁS para resetear todos los ajustes del grupo de opciones actual a los grabados la vez anterior."
 
 #: src/slic3r/GUI/GUI_ObjectList.cpp:29 src/slic3r/GUI/GUI_ObjectList.cpp:69
-#: src/slic3r/GUI/GUI_ObjectList.cpp:510 src/slic3r/GUI/Plater.cpp:439
+#: src/slic3r/GUI/GUI_ObjectList.cpp:510 src/slic3r/GUI/Platter.cpp:439
 #: src/slic3r/GUI/Tab.cpp:1030 src/slic3r/GUI/Tab.cpp:1031
 #: src/slic3r/GUI/Tab.cpp:1360 src/libslic3r/PrintConfig.cpp:167
 #: src/libslic3r/PrintConfig.cpp:389 src/libslic3r/PrintConfig.cpp:729
@@ -3011,7 +3011,7 @@ msgid "Infilling layers"
 msgstr "Rellenando capas"
 
 #: src/slic3r/GUI/GUI_ObjectList.cpp:2424
-#: src/slic3r/GUI/GUI_ObjectList.cpp:2497 src/slic3r/GUI/Plater.cpp:118
+#: src/slic3r/GUI/GUI_ObjectList.cpp:2497 src/slic3r/GUI/Platter.cpp:118
 msgid "Info"
 msgstr "Info"
 
@@ -3080,7 +3080,7 @@ msgstr "error interno"
 msgid "Internal infill"
 msgstr "Relleno interno"
 
-#: src/slic3r/GUI/Plater.cpp:2397
+#: src/slic3r/GUI/Platter.cpp:2397
 msgid "Invalid data"
 msgstr "Datos inválidos"
 
@@ -3324,11 +3324,11 @@ msgstr "Cargar la configuración desde el archivo especificado. Se puede usar m�
 msgid "Load exported configuration file"
 msgstr "Cargar archivo de configuración exportado"
 
-#: src/slic3r/GUI/Plater.cpp:1271
+#: src/slic3r/GUI/Platter.cpp:1271
 msgid "Load File"
 msgstr "Cargar Archivo"
 
-#: src/slic3r/GUI/Plater.cpp:1275
+#: src/slic3r/GUI/Platter.cpp:1275
 msgid "Load Files"
 msgstr "Cargar Archivos"
 
@@ -3340,7 +3340,7 @@ msgstr "Cargar pieza"
 msgid "Load presets from a bundle"
 msgstr "Cargar preajustes de un paquete"
 
-#: src/slic3r/GUI/Plater.cpp:3992
+#: src/slic3r/GUI/Platter.cpp:3992
 msgid "Load Project"
 msgstr "Cargar Proyecto"
 
@@ -3356,11 +3356,11 @@ msgstr "Cargar..."
 msgid "loaded"
 msgstr "cargado"
 
-#: src/slic3r/GUI/Plater.cpp:1782
+#: src/slic3r/GUI/Platter.cpp:1782
 msgid "Loaded"
 msgstr "Cargado"
 
-#: src/slic3r/GUI/Plater.cpp:1590
+#: src/slic3r/GUI/Platter.cpp:1590
 msgid "Loading"
 msgstr "Carga"
 
@@ -3431,7 +3431,7 @@ msgstr "Límites de la máquina"
 msgid "Main Shortcuts"
 msgstr "Atajos principales"
 
-#: src/slic3r/GUI/Plater.cpp:143
+#: src/slic3r/GUI/Platter.cpp:143
 msgid "Manifold"
 msgstr "Manifold"
 
@@ -3455,7 +3455,7 @@ msgstr "Material"
 msgid "Material Settings"
 msgstr "Configuraciones del material"
 
-#: src/slic3r/GUI/Plater.cpp:140
+#: src/slic3r/GUI/Platter.cpp:140
 msgid "Materials"
 msgstr "Materiales"
 
@@ -3723,7 +3723,7 @@ msgstr "Avance mínimo de movimiento"
 msgid "Minimum travel feedrate (M205 T)"
 msgstr "Velocidad mínima sin extrusión (M205 T)"
 
-#: src/slic3r/GUI/Plater.cpp:2946
+#: src/slic3r/GUI/Platter.cpp:2946
 msgid "Mirror"
 msgstr "Duplicar"
 
@@ -3735,19 +3735,19 @@ msgstr "Reflejar horizontalmente"
 msgid "Mirror Object"
 msgstr "Reflejar objeto"
 
-#: src/slic3r/GUI/Plater.cpp:2946
+#: src/slic3r/GUI/Platter.cpp:2946
 msgid "Mirror the selected object"
 msgstr "Duplicar el objeto seleccionado"
 
-#: src/slic3r/GUI/Plater.cpp:2939
+#: src/slic3r/GUI/Platter.cpp:2939
 msgid "Mirror the selected object along the X axis"
 msgstr "Duplicar el objeto seleccionado a lo largo del eje X"
 
-#: src/slic3r/GUI/Plater.cpp:2941
+#: src/slic3r/GUI/Platter.cpp:2941
 msgid "Mirror the selected object along the Y axis"
 msgstr "Duplicar el objeto seleccionado a lo largo del eje Y"
 
-#: src/slic3r/GUI/Plater.cpp:2943
+#: src/slic3r/GUI/Platter.cpp:2943
 msgid "Mirror the selected object along the Z axis"
 msgstr "Duplicar el objeto seleccionado a lo largo del eje Z"
 
@@ -3936,7 +3936,7 @@ msgstr "Mover punto de soporte"
 msgid "Multi material printers may need to prime or purge extruders on tool changes. Extrude the excess material into the wipe tower."
 msgstr "Las impresoras de varios materiales pueden necesitar cebar o purgar extrusoras en los cambios de herramientas. Extruya el exceso de material en la torre de limpieza."
 
-#: src/slic3r/GUI/Plater.cpp:1661 src/slic3r/GUI/Plater.cpp:1769
+#: src/slic3r/GUI/Platter.cpp:1661 src/slic3r/GUI/Platter.cpp:1769
 msgid "Multi-part object detected"
 msgstr "Objeto de piezas múltiples detectado"
 
@@ -3949,7 +3949,7 @@ msgstr "Se encontraron múltiples dispositivos %s. Por favor, conecta solo uno a
 msgid "Multiple Extruders"
 msgstr "Múltiples Extrusores"
 
-#: src/slic3r/GUI/Plater.cpp:1766
+#: src/slic3r/GUI/Platter.cpp:1766
 msgid "Multiple objects were loaded for a multi-material printer.\nInstead of considering them as multiple objects, should I consider\nthese files to represent a single object having multiple parts?\n"
 msgstr "Se cargaron varios objetos para una impresora de varios materiales.\nEn lugar de considerarlos como objetos múltiples, ¿debería considerar\nestos archivos para formar un solo objeto que tiene varias partes?\n"
 
@@ -3989,7 +3989,7 @@ msgstr "Más cercano"
 msgid "Network lookup"
 msgstr "Búsqueda en la red"
 
-#: src/slic3r/GUI/Plater.cpp:2056
+#: src/slic3r/GUI/Platter.cpp:2056
 msgid "New Project"
 msgstr "Nuevo proyecto"
 
@@ -4026,7 +4026,7 @@ msgstr "NO EMPUJAR EN ABSOLUTO"
 msgid "No support points will be placed closer than this threshold."
 msgstr "Ningún punto de soporte se colocará más cerca de este umbral."
 
-#: src/slic3r/GUI/ConfigWizard.cpp:190 src/slic3r/GUI/Plater.cpp:422
+#: src/slic3r/GUI/ConfigWizard.cpp:190 src/slic3r/GUI/Platter.cpp:422
 #: src/libslic3r/GCode/PreviewData.cpp:162
 msgid "None"
 msgstr "Ninguno"
@@ -4035,7 +4035,7 @@ msgstr "Ninguno"
 msgid "Normal"
 msgstr "Normal"
 
-#: src/slic3r/GUI/Plater.cpp:1073
+#: src/slic3r/GUI/Platter.cpp:1073
 msgid "normal mode"
 msgstr "modo normal"
 
@@ -4119,7 +4119,7 @@ msgstr "Número de capas sólidas para generar en las superficies superiores."
 msgid "Number of the layers needed for the exposure time fade from initial exposure time to the exposure time"
 msgstr "El número de capas necesarias para el tiempo de exposición cambie desde el tiempo de exposición inicial hasta el tiempo de exposición"
 
-#: src/slic3r/GUI/Plater.cpp:218
+#: src/slic3r/GUI/Platter.cpp:218
 msgid "Number of tool changes"
 msgstr "Número de cambios de herramienta"
 
@@ -4151,7 +4151,7 @@ msgstr "Objetos reordenados"
 msgid "Object Settings to modify"
 msgstr "Configuraciones de objetos para modificar"
 
-#: src/slic3r/GUI/Plater.cpp:1875
+#: src/slic3r/GUI/Platter.cpp:1875
 msgid "Object too large?"
 msgstr "Objeto demasiado grande?"
 
@@ -4159,11 +4159,11 @@ msgstr "Objeto demasiado grande?"
 msgid "Object will be used to purge the nozzle after a toolchange to save material that would otherwise end up in the wipe tower and decrease print time. Colours of the objects will be mixed as a result."
 msgstr "El objeto se utilizará para purgar el nozzle después de un cambio de herramienta para guardar el material que de lo contrario terminaría en la torre de limpieza y disminuir el tiempo de impresión. Los colores de los objetos se mezclarán como resultado."
 
-#: src/slic3r/GUI/Plater.cpp:1018
+#: src/slic3r/GUI/Platter.cpp:1018
 msgid "object(s)"
 msgstr "objeto(s)"
 
-#: src/slic3r/GUI/Plater.cpp:1043 src/slic3r/GUI/Plater.cpp:1058
+#: src/slic3r/GUI/Platter.cpp:1043 src/slic3r/GUI/Platter.cpp:1058
 msgid "objects"
 msgstr "objetos"
 
@@ -4252,15 +4252,15 @@ msgstr "Abrir la página de descarga de los controladores Prusa3D en su navegado
 msgid "Open the software releases page in your browser"
 msgstr "Abre la página de lanzamientos de software en tu navegador"
 
-#: src/slic3r/GUI/Plater.cpp:2994
+#: src/slic3r/GUI/Platter.cpp:2994
 msgid "Optimize orientation"
 msgstr "Optimizar la orientación"
 
-#: src/slic3r/GUI/Plater.cpp:2643
+#: src/slic3r/GUI/Platter.cpp:2643
 msgid "Optimize Rotation"
 msgstr "Optimizar Rotación"
 
-#: src/slic3r/GUI/Plater.cpp:2994
+#: src/slic3r/GUI/Platter.cpp:2994
 msgid "Optimize the rotation of the object for better print results."
 msgstr "Optimizar la rotación del objeto para obtener mejores resultados de impresión."
 
@@ -4272,11 +4272,11 @@ msgstr "Optimiza los movimientos de desplazamiento para minimizar el cruce de pe
 msgid "Options for support material and raft"
 msgstr "Opciones de material de soporte y balsa"
 
-#: src/slic3r/GUI/Plater.cpp:2251
+#: src/slic3r/GUI/Platter.cpp:2251
 msgid "Orientation found."
 msgstr "Orientación encontrada."
 
-#: src/slic3r/GUI/Plater.cpp:2768
+#: src/slic3r/GUI/Platter.cpp:2768
 msgid "Orientation search canceled."
 msgstr "Búsqueda de orientación cancelada."
 
@@ -4408,7 +4408,7 @@ msgstr "Pegar portapapeles"
 msgid "Paste from clipboard"
 msgstr "Pegar desde el portapapeles"
 
-#: src/slic3r/GUI/Plater.cpp:4772
+#: src/slic3r/GUI/Platter.cpp:4772
 msgid "Paste From Clipboard"
 msgstr "Pegar Desde Portapapeles"
 
@@ -4464,11 +4464,11 @@ msgid "Place on face"
 msgstr "Colocar en la cara"
 
 #: src/slic3r/GUI/MainFrame.cpp:161
-msgid "Plater"
+msgid "Platter"
 msgstr "Plataforma"
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:156
-msgid "Plater Shortcuts"
+msgid "Platter Shortcuts"
 msgstr "Atajos para la base"
 
 #: src/slic3r/GUI/GUI.cpp:143
@@ -4607,7 +4607,7 @@ msgstr "Cola de subida al host de impresión"
 msgid "Print Settings"
 msgstr "Configuración de Impresión"
 
-#: src/slic3r/GUI/Plater.cpp:681
+#: src/slic3r/GUI/Platter.cpp:681
 msgid "Print settings"
 msgstr "Configuración de impresión"
 
@@ -4623,7 +4623,7 @@ msgstr "Configura&ción de Impresión"
 msgid "Printable"
 msgstr "Imprimible"
 
-#: src/slic3r/GUI/Plater.cpp:685
+#: src/slic3r/GUI/Platter.cpp:685
 msgid "Printer"
 msgstr "Impresora"
 
@@ -4682,7 +4682,7 @@ msgstr "Imprimir con múltiples extrusoras de diferentes diámetros de boquilla.
 msgid "Processing %s"
 msgstr "Procesando %s"
 
-#: src/slic3r/GUI/Plater.cpp:1600
+#: src/slic3r/GUI/Platter.cpp:1600
 #, possible-c-format
 msgid "Processing input file %s\n"
 msgstr "Procesando el archivo de entrada %s\n"
@@ -4730,7 +4730,7 @@ msgstr "PrusaSlicer requiere el controlador de gráficos OpenGL 2.0 para que fun
 msgid "Purging after toolchange will done inside this object's infills. This lowers the amount of waste but may result in longer print time  due to additional travel moves."
 msgstr "La purga después del cambio de herramientas se realizará dentro de los rellenos de este objeto. Esto reduce la cantidad de desperdicio, pero puede resultar en un tiempo de impresión más largo debido a movimientos de viaje adicionales."
 
-#: src/slic3r/GUI/Plater.cpp:456
+#: src/slic3r/GUI/Platter.cpp:456
 msgid "Purging volumes"
 msgstr "Volúmenes de purga"
 
@@ -4822,7 +4822,7 @@ msgstr "Reconfigurar"
 msgid "Ready"
 msgstr "Listo"
 
-#: src/slic3r/GUI/Plater.cpp:2406
+#: src/slic3r/GUI/Platter.cpp:2406
 msgid "Ready to slice"
 msgstr "Preparado para laminar"
 
@@ -4884,11 +4884,11 @@ msgstr "Rehacer Historia"
 msgid "Reducing printing time"
 msgstr "Reduciendo el tiempo de impresión"
 
-#: src/slic3r/GUI/Plater.cpp:2924
+#: src/slic3r/GUI/Platter.cpp:2924
 msgid "Reload from Disk"
 msgstr "Recargar desde el disco"
 
-#: src/slic3r/GUI/Plater.cpp:2924
+#: src/slic3r/GUI/Platter.cpp:2924
 msgid "Reload the selected file from Disk"
 msgstr "Recargar el archivo seleccionado del disco"
 
@@ -4921,7 +4921,7 @@ msgstr "Retirar instancia del objeto seleccionado"
 msgid "Remove layer range"
 msgstr "Retirar rango de capas"
 
-#: src/slic3r/GUI/Plater.cpp:3518
+#: src/slic3r/GUI/Platter.cpp:3518
 msgid "Remove one instance of the selected object"
 msgstr "Eliminar una instancia del objeto seleccionado"
 
@@ -4942,7 +4942,7 @@ msgstr "Retirar punto de selección"
 msgid "Remove selected points"
 msgstr "Eliminar puntos seleccionados"
 
-#: src/slic3r/GUI/Plater.cpp:2891 src/slic3r/GUI/Plater.cpp:2909
+#: src/slic3r/GUI/Platter.cpp:2891 src/slic3r/GUI/Platter.cpp:2909
 msgid "Remove the selected object"
 msgstr "Eliminar el objeto seleccionado"
 
@@ -5046,7 +5046,7 @@ msgstr "Restablecer plano de recorte"
 msgid "Reset direction"
 msgstr "Restablecer dirección"
 
-#: src/slic3r/GUI/Plater.cpp:2603
+#: src/slic3r/GUI/Platter.cpp:2603
 msgid "Reset Project"
 msgstr "Reiniciar Proyecto"
 
@@ -5238,11 +5238,11 @@ msgstr "Guardar el proyecto actual como"
 msgid "Save current project file as"
 msgstr "Guardar archivo de proyecto actual como"
 
-#: src/slic3r/GUI/Plater.cpp:1938
+#: src/slic3r/GUI/Platter.cpp:1938
 msgid "Save file as:"
 msgstr "Guardar archivo como:"
 
-#: src/slic3r/GUI/Plater.cpp:3433
+#: src/slic3r/GUI/Platter.cpp:3433
 msgid "Save G-code file as:"
 msgstr "Guardar archivo Código G como:"
 
@@ -5266,7 +5266,7 @@ msgstr "Guardar proyecto &como"
 msgid "Save project (3MF)"
 msgstr "Guardar proyecto (3MF)"
 
-#: src/slic3r/GUI/Plater.cpp:3433
+#: src/slic3r/GUI/Platter.cpp:3433
 msgid "Save SL1 file as:"
 msgstr "Guardar archivo SL1 como:"
 
@@ -5339,7 +5339,7 @@ msgstr "Dirección preferida de unión jitter"
 msgid "Searching for devices"
 msgstr "Buscando dispositivos"
 
-#: src/slic3r/GUI/Plater.cpp:2190
+#: src/slic3r/GUI/Platter.cpp:2190
 msgid "Searching for optimal orientation"
 msgstr "Buscando la orientación óptima"
 
@@ -5384,7 +5384,7 @@ msgid "Select new extruder for the object/part"
 msgstr "Selecciona el nuevo extrusor para el objeto/pieza"
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:114
-msgid "Select Plater Tab"
+msgid "Select Platter Tab"
 msgstr "Seleccionar pestaña de la Base de impresión"
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:116
@@ -5423,11 +5423,11 @@ msgstr "Selecciona el tamaño del icono de la barra de herramientas con respecto
 msgid "Select type of part"
 msgstr "Selecciona el tipo de pieza"
 
-#: src/slic3r/GUI/Plater.cpp:606
+#: src/slic3r/GUI/Platter.cpp:606
 msgid "Select what kind of pad do you need"
 msgstr "Selecciona que tipo de pad necesitas"
 
-#: src/slic3r/GUI/Plater.cpp:421
+#: src/slic3r/GUI/Platter.cpp:421
 msgid "Select what kind of support do you need"
 msgstr "Selecciona qué clase de soporte necesitas"
 
@@ -5483,7 +5483,7 @@ msgstr "Selección-Retirar Objeto"
 msgid "Selects all objects"
 msgstr "Seleccionar todos los objetos"
 
-#: src/slic3r/GUI/Plater.cpp:3822
+#: src/slic3r/GUI/Platter.cpp:3822
 msgid "Send G-code"
 msgstr "Enviar código G"
 
@@ -5495,7 +5495,7 @@ msgstr "Enviar el código G al host de impresión"
 msgid "Send to print current plate as G-code"
 msgstr "Enviar para imprimir la plataforma actual como código G"
 
-#: src/slic3r/GUI/Plater.cpp:731 src/slic3r/GUI/Plater.cpp:3822
+#: src/slic3r/GUI/Platter.cpp:731 src/slic3r/GUI/Platter.cpp:3822
 msgid "Send to printer"
 msgstr "Enviar a la impresora"
 
@@ -5545,11 +5545,11 @@ msgstr "Coloca el pulgar inferior en el control deslizante actual"
 msgid "Set Mirror"
 msgstr "Establecer Reflejo"
 
-#: src/slic3r/GUI/Plater.cpp:3520
+#: src/slic3r/GUI/Platter.cpp:3520
 msgid "Set number of instances"
 msgstr "Establecer número de instancias"
 
-#: src/slic3r/GUI/Plater.cpp:4163
+#: src/slic3r/GUI/Platter.cpp:4163
 #, possible-c-format
 msgid "Set numbers of copies to %d"
 msgstr "Establecer el número de copias a %d"
@@ -5615,7 +5615,7 @@ msgid "Set this to a non-zero value to set a manual extrusion width for support 
 msgstr "Ajuste este valor distinto de cero para establecer un ancho de extrusión manual para el material de soporte. Si se deja en cero, se usará el ancho de extrusión por defecto si se establece, de lo contrario se usará el diámetro de la boquilla. Si se expresa como porcentaje (por ejemplo, 90%), se calculará sobre la altura de la capa."
 
 #: src/libslic3r/PrintConfig.cpp:480
-msgid "Set this to the clearance radius around your extruder. If the extruder is not centered, choose the largest value for safety. This setting is used to check for collisions and to display the graphical preview in the plater."
+msgid "Set this to the clearance radius around your extruder. If the extruder is not centered, choose the largest value for safety. This setting is used to check for collisions and to display the graphical preview in the platter."
 msgstr "Ajuste este parámetro según el radio de espacio libre alrededor de su extrusor. Si el extrusor no está centrado, elija el valor más grande para seguridad. Esta configuración se utiliza para verificar colisiones y mostrar la vista previa gráfica en la bandeja."
 
 #: src/libslic3r/PrintConfig.cpp:65
@@ -5715,7 +5715,7 @@ msgid "Show the list of the keyboard shortcuts"
 msgstr "Mostrar la lista de los atajos de teclado"
 
 #: src/slic3r/GUI/MainFrame.cpp:471
-msgid "Show the plater"
+msgid "Show the platter"
 msgstr "Mostrar la base"
 
 #: src/slic3r/GUI/MainFrame.cpp:478
@@ -5763,7 +5763,7 @@ msgid "Single extruder multimaterial parameters"
 msgstr "Parámetros multimaterial para un sólo extrusor"
 
 #: src/slic3r/GUI/BedShapeDialog.cpp:72
-#: src/slic3r/GUI/GUI_ObjectManipulation.cpp:153 src/slic3r/GUI/Plater.cpp:137
+#: src/slic3r/GUI/GUI_ObjectManipulation.cpp:153 src/slic3r/GUI/Platter.cpp:137
 #: src/slic3r/GUI/Tab.cpp:2257
 msgid "Size"
 msgstr "Tamaño"
@@ -5805,11 +5805,11 @@ msgstr "Gizmo SLA apagado"
 msgid "SLA gizmo turned on"
 msgstr "Gizmo SLA encendido"
 
-#: src/slic3r/GUI/Plater.cpp:684 src/slic3r/GUI/Preset.cpp:1277
+#: src/slic3r/GUI/Platter.cpp:684 src/slic3r/GUI/Preset.cpp:1277
 msgid "SLA material"
 msgstr "Material SLA"
 
-#: src/slic3r/GUI/Plater.cpp:683 src/slic3r/GUI/Preset.cpp:1276
+#: src/slic3r/GUI/Platter.cpp:683 src/slic3r/GUI/Preset.cpp:1276
 msgid "SLA print"
 msgstr "Impresión SLA"
 
@@ -5817,7 +5817,7 @@ msgstr "Impresión SLA"
 msgid "SLA print material notes"
 msgstr "Notas del material de impresión de SLA"
 
-#: src/slic3r/GUI/Plater.cpp:690
+#: src/slic3r/GUI/Platter.cpp:690
 msgid "SLA print settings"
 msgstr "Ajustes de impresión SLA"
 
@@ -5869,8 +5869,8 @@ msgstr "Laminar un archivo en un código G, guárdar como"
 msgid "Slice gap closing radius"
 msgstr "Radio de cierre de los huecos al laminar"
 
-#: src/slic3r/GUI/Plater.cpp:734 src/slic3r/GUI/Plater.cpp:2412
-#: src/slic3r/GUI/Plater.cpp:3618
+#: src/slic3r/GUI/Platter.cpp:734 src/slic3r/GUI/Platter.cpp:2412
+#: src/slic3r/GUI/Platter.cpp:3618
 msgid "Slice now"
 msgstr "Laminar ahora"
 
@@ -5886,12 +5886,12 @@ msgstr "Laminar el modelo y exportar las trayectorias como código G."
 msgid "Slice the model as FFF or SLA based on the printer_technology configuration value."
 msgstr "Laminar el modelo como FFF o SLA basado en el valor de configuración de printer_technology."
 
-#: src/slic3r/GUI/Plater.cpp:193
+#: src/slic3r/GUI/Platter.cpp:193
 msgid "Sliced Info"
 msgstr "Información del laminado"
 
-#: src/slic3r/GUI/MainFrame.cpp:704 src/slic3r/GUI/Plater.cpp:2412
-#: src/slic3r/GUI/Plater.cpp:3615 src/slic3r/GUI/Tab.cpp:1159
+#: src/slic3r/GUI/MainFrame.cpp:704 src/slic3r/GUI/Platter.cpp:2412
+#: src/slic3r/GUI/Platter.cpp:3615 src/slic3r/GUI/Tab.cpp:1159
 #: src/slic3r/GUI/Tab.cpp:3436
 msgid "Slicing"
 msgstr "Rebanando"
@@ -6104,20 +6104,20 @@ msgstr "Esfera"
 msgid "Spiral vase"
 msgstr "Modo vaso"
 
-#: src/slic3r/GUI/Plater.cpp:2971 src/slic3r/GUI/Plater.cpp:2988
-#: src/slic3r/GUI/Plater.cpp:3008 src/libslic3r/PrintConfig.cpp:3082
+#: src/slic3r/GUI/Platter.cpp:2971 src/slic3r/GUI/Platter.cpp:2988
+#: src/slic3r/GUI/Platter.cpp:3008 src/libslic3r/PrintConfig.cpp:3082
 msgid "Split"
 msgstr "Dividir"
 
-#: src/slic3r/GUI/Plater.cpp:2971
+#: src/slic3r/GUI/Platter.cpp:2971
 msgid "Split the selected object"
 msgstr "Dividir el objeto seleccionado"
 
-#: src/slic3r/GUI/Plater.cpp:2966 src/slic3r/GUI/Plater.cpp:2988
+#: src/slic3r/GUI/Platter.cpp:2966 src/slic3r/GUI/Platter.cpp:2988
 msgid "Split the selected object into individual objects"
 msgstr "Dividir el objeto seleccionado en objetos individuales"
 
-#: src/slic3r/GUI/Plater.cpp:2968 src/slic3r/GUI/Plater.cpp:3008
+#: src/slic3r/GUI/Platter.cpp:2968 src/slic3r/GUI/Platter.cpp:3008
 msgid "Split the selected object into individual sub-parts"
 msgstr "Dividir el objeto seleccionado en subpartes individuales"
 
@@ -6125,7 +6125,7 @@ msgstr "Dividir el objeto seleccionado en subpartes individuales"
 msgid "Split to objects"
 msgstr "Partir en varias piezas"
 
-#: src/slic3r/GUI/Plater.cpp:2796
+#: src/slic3r/GUI/Platter.cpp:2796
 msgid "Split to Objects"
 msgstr "Partir en Varias Piezas"
 
@@ -6174,11 +6174,11 @@ msgstr "Estado:"
 msgid "Stealth"
 msgstr "Silencio"
 
-#: src/slic3r/GUI/Plater.cpp:1084
+#: src/slic3r/GUI/Platter.cpp:1084
 msgid "stealth mode"
 msgstr "modo silencioso"
 
-#: src/slic3r/GUI/Plater.cpp:3545
+#: src/slic3r/GUI/Platter.cpp:3545
 #, possible-c-format
 msgid "STL file exported to %s"
 msgstr "Archivo STL exportado a %s"
@@ -6269,7 +6269,7 @@ msgstr "Extrusor para el material de soporte o balsa"
 msgid "Support material/raft/skirt extruder"
 msgstr "Extrusor para el material de soporte/falda/balsa"
 
-#: src/slic3r/GUI/Plater.cpp:423 src/libslic3r/PrintConfig.cpp:1815
+#: src/slic3r/GUI/Platter.cpp:423 src/libslic3r/PrintConfig.cpp:1815
 #: src/libslic3r/PrintConfig.cpp:2423
 msgid "Support on build plate only"
 msgstr "Soporte en la base solamente"
@@ -6299,7 +6299,7 @@ msgid "Support points edit"
 msgstr "Edición de puntos de soporte"
 
 #: src/slic3r/GUI/GUI_ObjectList.cpp:78 src/slic3r/GUI/GUI_ObjectList.cpp:519
-#: src/slic3r/GUI/Plater.cpp:418 src/slic3r/GUI/Tab.cpp:3397
+#: src/slic3r/GUI/Platter.cpp:418 src/slic3r/GUI/Tab.cpp:3397
 #: src/slic3r/GUI/Tab.cpp:3398 src/libslic3r/PrintConfig.cpp:2363
 #: src/libslic3r/PrintConfig.cpp:2370 src/libslic3r/PrintConfig.cpp:2379
 #: src/libslic3r/PrintConfig.cpp:2388 src/libslic3r/PrintConfig.cpp:2398
@@ -6311,7 +6311,7 @@ msgstr "Edición de puntos de soporte"
 msgid "Supports"
 msgstr "Soportes"
 
-#: src/slic3r/GUI/Plater.cpp:1018
+#: src/slic3r/GUI/Platter.cpp:1018
 msgid "supports and pad"
 msgstr "soportes y pad"
 
@@ -6353,7 +6353,7 @@ msgid "Switch to the %s mode"
 msgstr "Cambiar al modo %s"
 
 #: src/slic3r/GUI/GUI_App.cpp:752
-msgid "Switching the language will trigger application restart.\nYou will lose content of the plater."
+msgid "Switching the language will trigger application restart.\nYou will lose content of the platter."
 msgstr "Cambiar el idioma necesita reiniciar la aplicación.\nPerderás todo el contenido situado en la base."
 
 #: src/slic3r/GUI/WipeTowerDialog.cpp:327
@@ -6533,11 +6533,11 @@ msgstr "El archivo seleccionado no contiene geometría."
 msgid "The selected file contains several disjoint areas. This is not supported."
 msgstr "El archivo seleccionado contiene varias áreas disjuntas. Esto no es compatible."
 
-#: src/slic3r/GUI/Plater.cpp:2271
+#: src/slic3r/GUI/Platter.cpp:2271
 msgid "The selected object can't be split because it contains more than one volume/material."
 msgstr "El objeto seleccionado no se puede dividir porque contiene más de un volumen / material."
 
-#: src/slic3r/GUI/GUI_ObjectList.cpp:1737 src/slic3r/GUI/Plater.cpp:2279
+#: src/slic3r/GUI/GUI_ObjectList.cpp:1737 src/slic3r/GUI/Platter.cpp:2279
 msgid "The selected object couldn't be split because it contains only one part."
 msgstr "El objeto seleccionado no se pudo dividir porque contiene solo una parte."
 
@@ -6708,11 +6708,11 @@ msgstr "Esta característica permite forzar una capa sólida en cada número de 
 msgid "This feature will raise Z gradually while printing a single-walled object in order to remove any visible seam. This option requires a single perimeter, no infill, no top solid layers and no support material. You can still set any number of bottom solid layers as well as skirt/brim loops. It won't work when printing more than an object."
 msgstr "Esta función aumentará Z gradualmente mientras imprime un objeto de pared simple para eliminar cualquier costura visible. Esta opción requiere un perímetro único, sin relleno, sin capas sólidas superiores y sin material de soporte. Todavía puede establecer cualquier cantidad de capas sólidas inferiores, así como bucles de falda / balsa. No funcionará al imprimir más de un objeto."
 
-#: src/slic3r/GUI/Plater.cpp:1712
+#: src/slic3r/GUI/Platter.cpp:1712
 msgid "This file cannot be loaded in a simple mode. Do you want to switch to an advanced mode?\n"
 msgstr "Este archivo no puede ser cargado en un modo sencillo. ¿Quieres cambiar al modo experto?\n"
 
-#: src/slic3r/GUI/Plater.cpp:1658
+#: src/slic3r/GUI/Platter.cpp:1658
 msgid "This file contains several objects positioned at multiple heights. Instead of considering them as multiple objects, should I consider\nthis file as a single object having multiple parts?\n"
 msgstr "Este archivo contiene varios objetos posicionados en múltiples alturas. En lugar de considerarlos como objetos múltiples, ¿debería considerar\n este archivo como un único objeto que tiene varias partes?\n"
 
@@ -6725,7 +6725,7 @@ msgstr "Este archivo hex del firmware no se corresponde con el modelo de impreso
 msgid "This flag enables the automatic cooling logic that adjusts print speed and fan speed according to layer printing time."
 msgstr "Este indicador habilita la lógica de enfriamiento automático que ajusta la velocidad de impresión y la velocidad del ventilador según el tiempo de impresión de la capa."
 
-#: src/slic3r/GUI/Plater.cpp:448
+#: src/slic3r/GUI/Platter.cpp:448
 msgid "This flag enables the brim that will be printed around each object on the first layer."
 msgstr "Esta opción activa la balsa que se imprimirá alrededor del objeto en la primera capa."
 
@@ -6911,11 +6911,11 @@ msgstr "Tiempo de espera después de que se ha descargado el filamento. Puede ay
 msgid "To do that please specify a new name for the preset."
 msgstr "Para hacerlo por favor especifique un nuevo nombre para esos ajustes."
 
-#: src/slic3r/GUI/Plater.cpp:2966
+#: src/slic3r/GUI/Platter.cpp:2966
 msgid "To objects"
 msgstr "A los objetos"
 
-#: src/slic3r/GUI/Plater.cpp:2968
+#: src/slic3r/GUI/Platter.cpp:2968
 msgid "To parts"
 msgstr "A las piezas"
 
@@ -7198,23 +7198,23 @@ msgstr "Use esta configuración para rotar el patrón de material de soporte en 
 msgid "Use volumetric E"
 msgstr "Usar E volumétrico"
 
-#: src/slic3r/GUI/Plater.cpp:214
+#: src/slic3r/GUI/Platter.cpp:214
 msgid "Used Filament (g)"
 msgstr "Filamento usado (g)"
 
-#: src/slic3r/GUI/Plater.cpp:212 src/slic3r/GUI/Plater.cpp:1041
+#: src/slic3r/GUI/Platter.cpp:212 src/slic3r/GUI/Platter.cpp:1041
 msgid "Used Filament (m)"
 msgstr "Filamento usado (m)"
 
-#: src/slic3r/GUI/Plater.cpp:213
+#: src/slic3r/GUI/Platter.cpp:213
 msgid "Used Filament (mm³)"
 msgstr "Filamento usado (mm³)"
 
-#: src/slic3r/GUI/Plater.cpp:1015
+#: src/slic3r/GUI/Platter.cpp:1015
 msgid "Used Material (ml)"
 msgstr "Material usado (ml)"
 
-#: src/slic3r/GUI/Plater.cpp:215
+#: src/slic3r/GUI/Platter.cpp:215
 msgid "Used Material (unit)"
 msgstr "Material usado (unidades)"
 
@@ -7280,7 +7280,7 @@ msgstr "Vista"
 msgid "Visualizing supports"
 msgstr "Visualizar soportes"
 
-#: src/slic3r/GUI/Plater.cpp:138
+#: src/slic3r/GUI/Platter.cpp:138
 msgid "Volume"
 msgstr "Volumen"
 
@@ -7446,7 +7446,7 @@ msgstr "Opciones de limpieza"
 msgid "Wipe tower"
 msgstr "Torre de limpieza"
 
-#: src/slic3r/GUI/Plater.cpp:1043 src/slic3r/GUI/Plater.cpp:1058
+#: src/slic3r/GUI/Platter.cpp:1043 src/slic3r/GUI/Platter.cpp:1058
 msgid "wipe tower"
 msgstr "torre de limpieza"
 
@@ -7523,7 +7523,7 @@ msgstr "Compensación de tamaño XY"
 msgid "Y coordinate of the left front corner of a wipe tower"
 msgstr "Coordenada Y de la esquina delantera izquierda de la torre de limpieza"
 
-#: src/slic3r/GUI/Plater.cpp:992
+#: src/slic3r/GUI/Platter.cpp:992
 msgid "Yes"
 msgstr "Sí"
 
@@ -7555,11 +7555,11 @@ msgstr "Puedes usar todas las opciones de configuración como las variables dent
 msgid "You can't change a type of the last solid part of the object."
 msgstr "No puede cambiar un tipo de la última parte sólida del objeto."
 
-#: src/slic3r/GUI/Plater.cpp:2243
+#: src/slic3r/GUI/Platter.cpp:2243
 msgid "You can't load SLA project if there is at least one multi-part object on the bed"
 msgstr "No puede cargar el proyecto SLA si hay al menos un objeto de varias partes en la base"
 
-#: src/slic3r/GUI/Plater.cpp:1746
+#: src/slic3r/GUI/Platter.cpp:1746
 #, possible-c-format
 msgid "You can't to add the object(s) from %s because of one or some of them is(are) multi-part"
 msgstr "No puede agregar el(los) objeto(s) desde % s porque uno o algunos de ellos son de varias piezas"
@@ -7586,7 +7586,7 @@ msgstr "Has empezado la selección con %s Items."
 msgid "Your file was repaired."
 msgstr "Tu fichero fue reparado."
 
-#: src/slic3r/GUI/Plater.cpp:1874
+#: src/slic3r/GUI/Platter.cpp:1874
 msgid "Your object appears to be too large, so it was automatically scaled down to fit your print bed."
 msgstr "Tu pieza parece demasiado grande, así que se ha escalado automáticamente para que pueda caber en la base de impresión."
 

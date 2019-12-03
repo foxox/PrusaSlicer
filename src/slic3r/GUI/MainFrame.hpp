@@ -12,7 +12,7 @@
 #include <map>
 
 #include "GUI_Utils.hpp"
-#include "Plater.hpp"
+#include "Platter.hpp"
 #include "Event.hpp"
 
 class wxNotebook;
@@ -98,7 +98,7 @@ public:
     MainFrame();
     ~MainFrame();
 
-    Plater*     plater() { return m_plater; }
+    Platter*     platter() { return m_platter; }
 
     void        update_title();
 
@@ -132,7 +132,7 @@ public:
 
     PrintHostQueueDialog* printhost_queue_dlg() { return m_printhost_queue_dlg; }
 
-    Plater*             m_plater { nullptr };
+    Platter*             m_platter { nullptr };
     wxNotebook*         m_tabpanel { nullptr };
     wxProgressDialog*   m_progress_dialog { nullptr };
     std::unique_ptr<ProgressStatusBar>  m_statusbar;

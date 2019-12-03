@@ -98,7 +98,7 @@ bool ObjectSettings::update_settings_list()
             btn->SetBitmapHover(m_bmp_delete_focus.bmp());
 
 			btn->Bind(wxEVT_BUTTON, [opt_key, config, this](wxEvent &event) {
-                wxGetApp().plater()->take_snapshot(wxString::Format(_(L("Delete Option %s")), opt_key));
+                wxGetApp().platter()->take_snapshot(wxString::Format(_(L("Delete Option %s")), opt_key));
 				config->erase(opt_key);
                 wxGetApp().obj_list()->changed_object();
                 wxTheApp->CallAfter([this]() {
@@ -149,7 +149,7 @@ bool ObjectSettings::update_settings_list()
 
                 optgroup->get_field(opt)->m_on_change = [optgroup](const std::string& opt_id, const boost::any& value) {
                     // first of all take a snapshot and then change value in configuration
-                    wxGetApp().plater()->take_snapshot(wxString::Format(_(L("Change Option %s")), opt_id));
+                    wxGetApp().platter()->take_snapshot(wxString::Format(_(L("Change Option %s")), opt_id));
                     optgroup->on_change_OG(opt_id, value);
                 };
 
@@ -177,7 +177,7 @@ bool ObjectSettings::update_settings_list()
 bool ObjectSettings::add_missed_options(DynamicPrintConfig* config_to, const DynamicPrintConfig& config_from)
 {
     bool is_added = false;
-    if (wxGetApp().plater()->printer_technology() == ptFFF)
+    if (wxGetApp().platter()->printer_technology() == ptFFF)
     {
         if (config_to->has("fill_density") && !config_to->has("fill_pattern"))
         {
@@ -195,7 +195,7 @@ void ObjectSettings::update_config_values(DynamicPrintConfig* config)
 {
     const auto objects_model        = wxGetApp().obj_list()->GetModel();
     const auto item                 = wxGetApp().obj_list()->GetSelection();
-    const auto printer_technology   = wxGetApp().plater()->printer_technology();
+    const auto printer_technology   = wxGetApp().platter()->printer_technology();
     const bool is_object_settings   = objects_model->GetItemType(objects_model->GetParent(item)) == itObject;
 
     if (!item || !objects_model->IsSettingsItem(item) || !config)

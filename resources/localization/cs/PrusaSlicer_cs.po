@@ -44,7 +44,7 @@ msgstr "%1% - Kopírovat"
 msgid "%1% Preset"
 msgstr "%1% Přednastavení"
 
-#: src/slic3r/GUI/Plater.cpp:3831
+#: src/slic3r/GUI/Platter.cpp:3831
 msgid "%1% printer was active at the time the target Undo / Redo snapshot was taken. Switching to %1% printer requires reloading of %1% presets."
 msgstr "%1% tiskárna byla aktivní v době, kdy byly pořízeny kroky Zpět / Vpřed. Přepnutí na tiskárnu %1% vyžaduje opětovné načtení předvoleb %1%."
 
@@ -57,12 +57,12 @@ msgstr "%1%=%2% mm je příliš nízké na to, aby bylo možné tisknout ve vý�
 msgid "%3.2f mm³/s at filament speed %3.2f mm/s."
 msgstr "%3.2f mm³/s při rychlosti filamentu %3.2f mm/s."
 
-#: src/slic3r/GUI/Plater.cpp:974
+#: src/slic3r/GUI/Platter.cpp:974
 #, possible-c-format
 msgid "%d (%d shells)"
 msgstr "%d (%d obalů)"
 
-#: src/slic3r/GUI/Plater.cpp:982
+#: src/slic3r/GUI/Platter.cpp:982
 #, possible-c-format
 msgid "%d degenerate facets, %d edges fixed, %d facets removed, %d facets added, %d facets reversed, %d backwards edges"
 msgstr "%d poškozených faset, %d okrajů opraveno, %d faset odstraněno, %d faset přidáno, %d faset navráceno, %d zadních okrajů"
@@ -198,7 +198,7 @@ msgid "&Paste"
 msgstr "Vložit"
 
 #: src/slic3r/GUI/MainFrame.cpp:471
-msgid "&Plater Tab"
+msgid "&Platter Tab"
 msgstr "&Panel Podložka"
 
 #: src/slic3r/GUI/GUI_App.cpp:665
@@ -265,7 +265,7 @@ msgstr "0.2 (oddělitelné)"
 msgid "3&D"
 msgstr "3&D"
 
-#: src/slic3r/GUI/Plater.cpp:3074
+#: src/slic3r/GUI/Platter.cpp:3074
 msgid "3D editor view"
 msgstr "Zobrazení 3D editoru"
 
@@ -273,7 +273,7 @@ msgstr "Zobrazení 3D editoru"
 msgid "3D Honeycomb"
 msgstr "3D Plástev"
 
-#: src/slic3r/GUI/Plater.cpp:3590
+#: src/slic3r/GUI/Platter.cpp:3590
 #, possible-c-format
 msgid "3MF file exported to %s"
 msgstr "Soubor 3MF byl exportován do %s"
@@ -379,7 +379,7 @@ msgstr "Přidat modifikátor"
 msgid "Add more perimeters when needed for avoiding gaps in sloping walls. Slic3r keeps adding perimeters, until more than 70% of the loop immediately above is supported."
 msgstr "Přidání více perimetrů, pokud je potřeba, pro vyvarování se tvorbě mezer v šikmých plochách. Slic3r pokračuje v přidávání perimetrů, dokud není podepřeno více než 70% perimetrů v následující vrstvě."
 
-#: src/slic3r/GUI/Plater.cpp:3516
+#: src/slic3r/GUI/Platter.cpp:3516
 msgid "Add one more instance of the selected object"
 msgstr "Přidejte jednu nebo více instancí vybraného objektu"
 
@@ -513,7 +513,7 @@ msgstr "Všechny"
 msgid "All objects are outside of the print volume."
 msgstr "Všechny objekty jsou mimo tiskový prostor."
 
-#: src/slic3r/GUI/Plater.cpp:3298
+#: src/slic3r/GUI/Platter.cpp:3298
 msgid "All objects will be removed, continue ?"
 msgstr "Všechny objekty budou obebrány, pokračovat?"
 
@@ -525,15 +525,15 @@ msgstr "Všechny běžné"
 msgid "allocation failed"
 msgstr "alokace selhala"
 
-#: src/slic3r/GUI/Plater.cpp:2939
+#: src/slic3r/GUI/Platter.cpp:2939
 msgid "Along X axis"
 msgstr "Podél osy X"
 
-#: src/slic3r/GUI/Plater.cpp:2941
+#: src/slic3r/GUI/Platter.cpp:2941
 msgid "Along Y axis"
 msgstr "Podél osy Y"
 
-#: src/slic3r/GUI/Plater.cpp:2943
+#: src/slic3r/GUI/Platter.cpp:2943
 msgid "Along Z axis"
 msgstr "Podél osy Z"
 
@@ -541,7 +541,7 @@ msgstr "Podél osy Z"
 msgid "Alternate nozzles:"
 msgstr "Alternativní trysky:"
 
-#: src/slic3r/GUI/Plater.cpp:3561
+#: src/slic3r/GUI/Platter.cpp:3561
 #, possible-c-format
 msgid "AMF file exported to %s"
 msgstr "Soubor AMF byl exportován do %s"
@@ -558,7 +558,7 @@ msgstr "Byl detekován objekt mimo tiskovou oblast"
 msgid "and it has the following unsaved changes:"
 msgstr "a má neuložené následující změny:"
 
-#: src/slic3r/GUI/Plater.cpp:2461
+#: src/slic3r/GUI/Platter.cpp:2461
 msgid "Another export job is currently running."
 msgstr "V současné době běží jiná úloha exportu."
 
@@ -604,7 +604,7 @@ msgstr "Opravdu chcete ukončit nahrávání firmware?\nTiskárna může zůstat
 msgid "Area fill"
 msgstr "Zaplněná plocha"
 
-#: src/slic3r/GUI/Plater.cpp:609
+#: src/slic3r/GUI/Platter.cpp:609
 msgid "Around object"
 msgstr "Okolo objektu"
 
@@ -620,15 +620,15 @@ msgstr "Uspořádat výběr"
 msgid "Arrange the supplied models in a plate and merge them in a single model in order to perform actions once."
 msgstr "Uspořádejte modely na tiskovou podložku a slučte je do jednoho modelu, abyste s nimi mohli provádět akce jednou."
 
-#: src/slic3r/GUI/Plater.cpp:2106
+#: src/slic3r/GUI/Platter.cpp:2106
 msgid "Arranging"
 msgstr "Uspořádávání"
 
-#: src/slic3r/GUI/Plater.cpp:2718
+#: src/slic3r/GUI/Platter.cpp:2718
 msgid "Arranging canceled."
 msgstr "Uspořádávání zrušeno."
 
-#: src/slic3r/GUI/Plater.cpp:2144
+#: src/slic3r/GUI/Platter.cpp:2144
 msgid "Arranging done."
 msgstr "Uspořádávání dokončeno."
 
@@ -672,7 +672,7 @@ msgstr "Auto-centrování objektů"
 msgid "Auto-generate points"
 msgstr "Automatické generování bodů"
 
-#: src/slic3r/GUI/Plater.cpp:979
+#: src/slic3r/GUI/Platter.cpp:979
 #, possible-c-format
 msgid "Auto-repaired (%d errors)"
 msgstr "Automaticky opraveno (%d chyb)"
@@ -782,7 +782,7 @@ msgstr "G-code před změnou vrstvy"
 msgid "Before roll back"
 msgstr "Před vrácením zpět"
 
-#: src/slic3r/GUI/Plater.cpp:608
+#: src/slic3r/GUI/Platter.cpp:608
 msgid "Below object"
 msgstr "Pod objektem"
 
@@ -853,7 +853,7 @@ msgstr "Přepsání úhlu vytváření mostů. Nastavením hodnoty na nulu se bu
 msgid "Bridging volumetric"
 msgstr "Volumetrická hodnota mostů"
 
-#: src/slic3r/GUI/Plater.cpp:446 src/slic3r/GUI/Tab.cpp:1056
+#: src/slic3r/GUI/Platter.cpp:446 src/slic3r/GUI/Tab.cpp:1056
 msgid "Brim"
 msgstr "Límec"
 
@@ -891,11 +891,11 @@ msgstr "Zrušit"
 msgid "Cancel selected"
 msgstr "Zrušit vybrané"
 
-#: src/slic3r/GUI/Plater.cpp:2727 src/slic3r/GUI/PrintHostDialogs.cpp:232
+#: src/slic3r/GUI/Platter.cpp:2727 src/slic3r/GUI/PrintHostDialogs.cpp:232
 msgid "Cancelled"
 msgstr "Zrušeno"
 
-#: src/slic3r/GUI/Plater.cpp:2444 src/slic3r/GUI/PrintHostDialogs.cpp:231
+#: src/slic3r/GUI/Platter.cpp:2444 src/slic3r/GUI/PrintHostDialogs.cpp:231
 msgid "Cancelling"
 msgstr "Zrušení"
 
@@ -960,7 +960,7 @@ msgstr "Změna typu části"
 msgid "Change point head diameter"
 msgstr "Změna průměru hrotu"
 
-#: src/slic3r/GUI/Plater.cpp:3520
+#: src/slic3r/GUI/Platter.cpp:3520
 msgid "Change the number of instances of the selected object"
 msgstr "Změní počet instancí vybraného objektu"
 
@@ -1024,7 +1024,7 @@ msgstr "Klepnutím na ikonu změníte příznak objektu, zda se bude tisknout č
 msgid "Click the icon to change the object settings"
 msgstr "Pro změnu nastavení objektu klikněte na ikonu"
 
-#: src/slic3r/GUI/Plater.cpp:292
+#: src/slic3r/GUI/Platter.cpp:292
 msgid "Click to edit preset"
 msgstr "Klikněte pro editaci přednastavení"
 
@@ -1231,12 +1231,12 @@ msgstr "Korekce expanze"
 msgid "Corrections"
 msgstr "Korekce"
 
-#: src/slic3r/GUI/Plater.cpp:216 src/slic3r/GUI/Plater.cpp:1056
+#: src/slic3r/GUI/Platter.cpp:216 src/slic3r/GUI/Platter.cpp:1056
 #: src/libslic3r/PrintConfig.cpp:717
 msgid "Cost"
 msgstr "Náklady"
 
-#: src/slic3r/GUI/Plater.cpp:2140
+#: src/slic3r/GUI/Platter.cpp:2140
 msgid "Could not arrange model objects! Some geometries may be invalid."
 msgstr "Objekty nelze uspořádat! Některé geometrie mohou být neplatné."
 
@@ -1335,7 +1335,7 @@ msgstr "Vlastní název profilu:"
 msgid "Cut"
 msgstr "Řezat"
 
-#: src/slic3r/GUI/Plater.cpp:4193
+#: src/slic3r/GUI/Platter.cpp:4193
 msgid "Cut by Plane"
 msgstr "Řez Rovinou"
 
@@ -1359,7 +1359,7 @@ msgstr "Složka Data"
 msgid "decompression failed or archive is corrupted"
 msgstr "dekomprese selhala nebo je archiv poškozen"
 
-#: src/slic3r/GUI/Plater.cpp:4127
+#: src/slic3r/GUI/Platter.cpp:4127
 msgid "Decrease Instances"
 msgstr "Odebrání Instancí"
 
@@ -1450,8 +1450,8 @@ msgstr "Zpoždění po vyjmutí"
 msgid "delete"
 msgstr "smazat"
 
-#: src/slic3r/GUI/GUI_ObjectList.cpp:1257 src/slic3r/GUI/Plater.cpp:2891
-#: src/slic3r/GUI/Plater.cpp:2909 src/slic3r/GUI/Tab.cpp:2937
+#: src/slic3r/GUI/GUI_ObjectList.cpp:1257 src/slic3r/GUI/Platter.cpp:2891
+#: src/slic3r/GUI/Platter.cpp:2909 src/slic3r/GUI/Tab.cpp:2937
 msgid "Delete"
 msgstr "Smazat"
 
@@ -1463,7 +1463,7 @@ msgstr "Sm&azat vše"
 msgid "Delete All"
 msgstr "Smazat vše"
 
-#: src/slic3r/GUI/Plater.cpp:3298
+#: src/slic3r/GUI/Platter.cpp:3298
 msgid "Delete all"
 msgstr "Smazat vše"
 
@@ -1483,7 +1483,7 @@ msgstr "Odstranění Rozsahu vrstev"
 msgid "Delete Instance"
 msgstr "Smazání Instance"
 
-#: src/slic3r/GUI/Plater.cpp:2592
+#: src/slic3r/GUI/Platter.cpp:2592
 msgid "Delete Object"
 msgstr "Smazat Objekt"
 
@@ -1504,7 +1504,7 @@ msgstr "Smazání vybraných"
 msgid "Delete Selected Item"
 msgstr "Smazat vybrané položky"
 
-#: src/slic3r/GUI/Plater.cpp:4083
+#: src/slic3r/GUI/Platter.cpp:4083
 msgid "Delete Selected Objects"
 msgstr "Odstranit vybrané objekty"
 
@@ -1574,7 +1574,7 @@ msgstr "Detekovat tenké zdi"
 msgid "Detect unconnected parts in the given model(s) and split them into separate objects."
 msgstr "Rozpoznat nepřipojené části daného modelu(ů) a rozdělit je do samostatných objektů."
 
-#: src/slic3r/GUI/Plater.cpp:1713
+#: src/slic3r/GUI/Platter.cpp:1713
 msgid "Detected advanced data"
 msgstr "Byla detekována data z pokročilého režimu"
 
@@ -1684,7 +1684,7 @@ msgid "Distance of the extruder tip from the position where the filament is park
 msgstr "Vzdálenost špičky extruderu od místa, kde je zaparkován filament při vytažení. Měla by se shodovat s hodnotou ve firmware tiskárny."
 
 #: src/libslic3r/PrintConfig.cpp:342
-msgid "Distance used for the auto-arrange feature of the plater."
+msgid "Distance used for the auto-arrange feature of the platter."
 msgstr "Vzdálenost, použitá pro funkci automatického rozmístění po podložce."
 
 #: src/libslic3r/PrintConfig.cpp:3097
@@ -1879,12 +1879,12 @@ msgstr "Chyba"
 msgid "Error accessing port at %s: %s"
 msgstr "Chyba při přístupu k portu na %s : %s"
 
-#: src/slic3r/GUI/Plater.cpp:3593
+#: src/slic3r/GUI/Platter.cpp:3593
 #, possible-c-format
 msgid "Error exporting 3MF file %s"
 msgstr "Chyba při exportu souboru 3MF %s"
 
-#: src/slic3r/GUI/Plater.cpp:3564
+#: src/slic3r/GUI/Platter.cpp:3564
 #, possible-c-format
 msgid "Error exporting AMF file %s"
 msgstr "Chyba při exportu souboru AMF %s"
@@ -1914,16 +1914,16 @@ msgstr "Chyba! Neplatný model"
 msgid "Error: %s"
 msgstr "Chyba: %s"
 
-#: src/slic3r/GUI/Plater.cpp:1503
+#: src/slic3r/GUI/Platter.cpp:1503
 msgid "ERROR: not enough resources to execute a new job."
 msgstr "CHYBA: nedostatek prostředků ke spuštění nové úlohy."
 
-#: src/slic3r/GUI/Plater.cpp:217 src/slic3r/GUI/Plater.cpp:1028
-#: src/slic3r/GUI/Plater.cpp:1070
+#: src/slic3r/GUI/Platter.cpp:217 src/slic3r/GUI/Platter.cpp:1028
+#: src/slic3r/GUI/Platter.cpp:1070
 msgid "Estimated printing time"
 msgstr "Odhadovaný čas tisku"
 
-#: src/slic3r/GUI/Plater.cpp:424
+#: src/slic3r/GUI/Platter.cpp:424
 msgid "Everywhere"
 msgstr "Všude"
 
@@ -1960,7 +1960,7 @@ msgstr "Expert"
 msgid "Expert View Mode"
 msgstr "Režim Expert"
 
-#: src/slic3r/GUI/MainFrame.cpp:602 src/slic3r/GUI/Plater.cpp:3821
+#: src/slic3r/GUI/MainFrame.cpp:602 src/slic3r/GUI/Platter.cpp:3821
 msgid "Export"
 msgstr "Exportovat"
 
@@ -1988,11 +1988,11 @@ msgstr "Exportovat všechna přednastavení do souboru"
 msgid "Export AMF"
 msgstr "Exportovat AMF"
 
-#: src/slic3r/GUI/Plater.cpp:1932
+#: src/slic3r/GUI/Platter.cpp:1932
 msgid "Export AMF file:"
 msgstr "Exportovat AMF soubor:"
 
-#: src/slic3r/GUI/GUI_ObjectList.cpp:1219 src/slic3r/GUI/Plater.cpp:2927
+#: src/slic3r/GUI/GUI_ObjectList.cpp:1219 src/slic3r/GUI/Platter.cpp:2927
 msgid "Export as STL"
 msgstr "Exportovat jako STL"
 
@@ -2020,12 +2020,12 @@ msgstr "Exportovat stávající plochu jako STL"
 msgid "Export current plate as STL including supports"
 msgstr "Exportovat stávající plochu včetně podpěr jako STL"
 
-#: src/slic3r/GUI/Plater.cpp:2722
+#: src/slic3r/GUI/Platter.cpp:2722
 msgid "Export failed"
 msgstr "Exportování selhalo"
 
-#: src/slic3r/GUI/KBShortcutsDialog.cpp:108 src/slic3r/GUI/Plater.cpp:733
-#: src/slic3r/GUI/Plater.cpp:3821 src/libslic3r/PrintConfig.cpp:2964
+#: src/slic3r/GUI/KBShortcutsDialog.cpp:108 src/slic3r/GUI/Platter.cpp:733
+#: src/slic3r/GUI/Platter.cpp:3821 src/libslic3r/PrintConfig.cpp:2964
 msgid "Export G-code"
 msgstr "Exportovat G-code"
 
@@ -2033,7 +2033,7 @@ msgstr "Exportovat G-code"
 msgid "Export OBJ"
 msgstr "Exportovat OBJ"
 
-#: src/slic3r/GUI/Plater.cpp:2531
+#: src/slic3r/GUI/Platter.cpp:2531
 msgid "Export OBJ file:"
 msgstr "Exportovat OBJ soubor:"
 
@@ -2061,7 +2061,7 @@ msgstr "Exportovat SLA"
 msgid "Export STL"
 msgstr "Exportovat STL"
 
-#: src/slic3r/GUI/Plater.cpp:1925
+#: src/slic3r/GUI/Platter.cpp:1925
 msgid "Export STL file:"
 msgstr "Exportovat STL soubor:"
 
@@ -2081,7 +2081,7 @@ msgstr "Exportovat model(y) jako OBJ."
 msgid "Export the model(s) as STL."
 msgstr "Exportovat model(y) jako STL."
 
-#: src/slic3r/GUI/Plater.cpp:2927
+#: src/slic3r/GUI/Platter.cpp:2927
 msgid "Export the selected object as STL file"
 msgstr "Exportovat vybrané objekty jako STL soubor"
 
@@ -2214,7 +2214,7 @@ msgstr "Šířka extruze"
 msgid "Extrusion Width"
 msgstr "Šíře extruze"
 
-#: src/slic3r/GUI/Plater.cpp:139
+#: src/slic3r/GUI/Platter.cpp:139
 msgid "Facets"
 msgstr "Facety"
 
@@ -2279,7 +2279,7 @@ msgstr "Typ"
 msgid "Feature types"
 msgstr "Typy extruzí"
 
-#: src/slic3r/GUI/Plater.cpp:682 src/slic3r/GUI/Tab.cpp:1470
+#: src/slic3r/GUI/Platter.cpp:682 src/slic3r/GUI/Tab.cpp:1470
 #: src/slic3r/GUI/Tab.cpp:1471
 msgid "Filament"
 msgstr "Filament"
@@ -2453,7 +2453,7 @@ msgstr "Volumetrická hodnota první vrstvy"
 msgid "Fix through the Netfabb"
 msgstr "Opravit pomocí služby Netfabb"
 
-#: src/slic3r/GUI/Plater.cpp:3072
+#: src/slic3r/GUI/Platter.cpp:3072
 msgid "Fix Throught NetFabb"
 msgstr "Opravit pomocí Netfabb"
 
@@ -2497,7 +2497,7 @@ msgstr "průtok je maximalizován"
 msgid "For more information please visit our wiki page:"
 msgstr "Pro více informací prosím navštivte naší wiki stránku:"
 
-#: src/slic3r/GUI/Plater.cpp:435 src/slic3r/GUI/Plater.cpp:528
+#: src/slic3r/GUI/Platter.cpp:435 src/slic3r/GUI/Platter.cpp:528
 msgid "For support enforcers only"
 msgstr "Pouze pro vynucené podpěry"
 
@@ -2745,7 +2745,7 @@ msgstr "Zvýšený proud do extruderového motoru při výměně filamentu"
 msgid "Hilbert Curve"
 msgstr "Hilbertova křivka"
 
-#: src/slic3r/GUI/Plater.cpp:873
+#: src/slic3r/GUI/Platter.cpp:873
 msgid "Hold Shift to Slice & Export G-code"
 msgstr "Stiskni Shift pro Slicování & Export G-codu"
 
@@ -2924,11 +2924,11 @@ msgstr "Importovat Konfigurační &Balík"
 msgid "Import Config from &project"
 msgstr "Načíst konfiguraci z &projektu"
 
-#: src/slic3r/GUI/Plater.cpp:4016
+#: src/slic3r/GUI/Platter.cpp:4016
 msgid "Import Object"
 msgstr "Importovat Objekt"
 
-#: src/slic3r/GUI/Plater.cpp:4020
+#: src/slic3r/GUI/Platter.cpp:4020
 msgid "Import Objects"
 msgstr "Importovat Objekty"
 
@@ -2958,7 +2958,7 @@ msgstr "Nekompatibilní balíky:"
 msgid "Incompatible with this %s"
 msgstr "Nekompatibilní s tímto %s"
 
-#: src/slic3r/GUI/Plater.cpp:4091
+#: src/slic3r/GUI/Platter.cpp:4091
 msgid "Increase Instances"
 msgstr "Přidání Instancí"
 
@@ -2978,7 +2978,7 @@ msgid "indicates that the settings were changed and are not equal to the last sa
 msgstr "indikuje, že došlo ke změně nastavení, které není shodné s naposledy uloženým přednastavením pro aktuální skupinu nastavení. Klikněte na ikonu ŠIPKY ZPĚT pro reset všech nastavení pro aktuální skupinu nastavení na naposledy uložené přednastavení."
 
 #: src/slic3r/GUI/GUI_ObjectList.cpp:29 src/slic3r/GUI/GUI_ObjectList.cpp:69
-#: src/slic3r/GUI/GUI_ObjectList.cpp:510 src/slic3r/GUI/Plater.cpp:439
+#: src/slic3r/GUI/GUI_ObjectList.cpp:510 src/slic3r/GUI/Platter.cpp:439
 #: src/slic3r/GUI/Tab.cpp:1030 src/slic3r/GUI/Tab.cpp:1031
 #: src/slic3r/GUI/Tab.cpp:1360 src/libslic3r/PrintConfig.cpp:167
 #: src/libslic3r/PrintConfig.cpp:389 src/libslic3r/PrintConfig.cpp:729
@@ -3011,7 +3011,7 @@ msgid "Infilling layers"
 msgstr "Generování výplně vrstev"
 
 #: src/slic3r/GUI/GUI_ObjectList.cpp:2424
-#: src/slic3r/GUI/GUI_ObjectList.cpp:2497 src/slic3r/GUI/Plater.cpp:118
+#: src/slic3r/GUI/GUI_ObjectList.cpp:2497 src/slic3r/GUI/Platter.cpp:118
 msgid "Info"
 msgstr "Info"
 
@@ -3080,7 +3080,7 @@ msgstr "interní chyba"
 msgid "Internal infill"
 msgstr "Vnitřní výplň"
 
-#: src/slic3r/GUI/Plater.cpp:2397
+#: src/slic3r/GUI/Platter.cpp:2397
 msgid "Invalid data"
 msgstr "Neplatná data"
 
@@ -3324,11 +3324,11 @@ msgstr "Načíst konfiguraci ze zadaného souboru. Může být použito vícekr�
 msgid "Load exported configuration file"
 msgstr "Načíst exportovaný konfigurační soubor"
 
-#: src/slic3r/GUI/Plater.cpp:1271
+#: src/slic3r/GUI/Platter.cpp:1271
 msgid "Load File"
 msgstr "Načtení souboru"
 
-#: src/slic3r/GUI/Plater.cpp:1275
+#: src/slic3r/GUI/Platter.cpp:1275
 msgid "Load Files"
 msgstr "Naštení souborů"
 
@@ -3340,7 +3340,7 @@ msgstr "Přidání části"
 msgid "Load presets from a bundle"
 msgstr "Načíst přednastavení z balíku"
 
-#: src/slic3r/GUI/Plater.cpp:3992
+#: src/slic3r/GUI/Platter.cpp:3992
 msgid "Load Project"
 msgstr "Načíst Projekt"
 
@@ -3356,11 +3356,11 @@ msgstr "Načíst..."
 msgid "loaded"
 msgstr "zaváděn"
 
-#: src/slic3r/GUI/Plater.cpp:1782
+#: src/slic3r/GUI/Platter.cpp:1782
 msgid "Loaded"
 msgstr "Načteno"
 
-#: src/slic3r/GUI/Plater.cpp:1590
+#: src/slic3r/GUI/Platter.cpp:1590
 msgid "Loading"
 msgstr "Načítání"
 
@@ -3431,7 +3431,7 @@ msgstr "Limity stroje"
 msgid "Main Shortcuts"
 msgstr "Hlavní"
 
-#: src/slic3r/GUI/Plater.cpp:143
+#: src/slic3r/GUI/Platter.cpp:143
 msgid "Manifold"
 msgstr "Model OK"
 
@@ -3455,7 +3455,7 @@ msgstr "Materiál"
 msgid "Material Settings"
 msgstr "Nastavení materiálu"
 
-#: src/slic3r/GUI/Plater.cpp:140
+#: src/slic3r/GUI/Platter.cpp:140
 msgid "Materials"
 msgstr "Materiálů"
 
@@ -3723,7 +3723,7 @@ msgstr "Minimální rychlost při přesunu"
 msgid "Minimum travel feedrate (M205 T)"
 msgstr "Minimální rychlost při přesunu (M205 T)"
 
-#: src/slic3r/GUI/Plater.cpp:2946
+#: src/slic3r/GUI/Platter.cpp:2946
 msgid "Mirror"
 msgstr "Zrcadlit"
 
@@ -3735,19 +3735,19 @@ msgstr "Zrcadlit horizontálně"
 msgid "Mirror Object"
 msgstr "Zrcadlit Objekt"
 
-#: src/slic3r/GUI/Plater.cpp:2946
+#: src/slic3r/GUI/Platter.cpp:2946
 msgid "Mirror the selected object"
 msgstr "Zrcadlit vybraný objekt"
 
-#: src/slic3r/GUI/Plater.cpp:2939
+#: src/slic3r/GUI/Platter.cpp:2939
 msgid "Mirror the selected object along the X axis"
 msgstr "Zrcadlit rozměr vybraného objektu podél osy X"
 
-#: src/slic3r/GUI/Plater.cpp:2941
+#: src/slic3r/GUI/Platter.cpp:2941
 msgid "Mirror the selected object along the Y axis"
 msgstr "Zrcadlit rozměr vybraného objektu podél osy Y"
 
-#: src/slic3r/GUI/Plater.cpp:2943
+#: src/slic3r/GUI/Platter.cpp:2943
 msgid "Mirror the selected object along the Z axis"
 msgstr "Zrcadlit rozměr vybraného objektu podél osy Z"
 
@@ -3936,7 +3936,7 @@ msgstr "Posun podpěrného bodu"
 msgid "Multi material printers may need to prime or purge extruders on tool changes. Extrude the excess material into the wipe tower."
 msgstr "Multimateriálové tiskárny mohou potřebovat, aby při výměně nástrojů vyčistili extrudery. Vytlačí přebytečný materiál do čistící věže."
 
-#: src/slic3r/GUI/Plater.cpp:1661 src/slic3r/GUI/Plater.cpp:1769
+#: src/slic3r/GUI/Platter.cpp:1661 src/slic3r/GUI/Platter.cpp:1769
 msgid "Multi-part object detected"
 msgstr "Detekován objekt obsahující více částí"
 
@@ -3949,7 +3949,7 @@ msgstr "Bylo nalezeno více zařízení %s . Během flashování mějte připoje
 msgid "Multiple Extruders"
 msgstr "Více Extruderů"
 
-#: src/slic3r/GUI/Plater.cpp:1766
+#: src/slic3r/GUI/Platter.cpp:1766
 msgid "Multiple objects were loaded for a multi-material printer.\nInstead of considering them as multiple objects, should I consider\nthese files to represent a single object having multiple parts?\n"
 msgstr "Bylo nahráno více objektů pro multi materiálovou tiskárnu.\nMají být vloženy jako jeden objekt obsahující více částí, \nnamísto vložení několika objektů?\n"
 
@@ -3989,7 +3989,7 @@ msgstr "Nejbližší"
 msgid "Network lookup"
 msgstr "Hledání v síti"
 
-#: src/slic3r/GUI/Plater.cpp:2056
+#: src/slic3r/GUI/Platter.cpp:2056
 msgid "New Project"
 msgstr "Nový Projekt"
 
@@ -4026,7 +4026,7 @@ msgstr "ŽÁDNÁ RAPIDNÍ EXTRUZE"
 msgid "No support points will be placed closer than this threshold."
 msgstr "Žádné podpůrné body nebudou umístěny blíže než je tento práh."
 
-#: src/slic3r/GUI/ConfigWizard.cpp:190 src/slic3r/GUI/Plater.cpp:422
+#: src/slic3r/GUI/ConfigWizard.cpp:190 src/slic3r/GUI/Platter.cpp:422
 #: src/libslic3r/GCode/PreviewData.cpp:162
 msgid "None"
 msgstr "Žádné"
@@ -4035,7 +4035,7 @@ msgstr "Žádné"
 msgid "Normal"
 msgstr "Normální"
 
-#: src/slic3r/GUI/Plater.cpp:1073
+#: src/slic3r/GUI/Platter.cpp:1073
 msgid "normal mode"
 msgstr "normální režim"
 
@@ -4119,7 +4119,7 @@ msgstr "Počet vrchních generovaných plných vrstev."
 msgid "Number of the layers needed for the exposure time fade from initial exposure time to the exposure time"
 msgstr "Počet vrstev potřebných pro přechod z počáteční doby osvitu na dobu osvitu"
 
-#: src/slic3r/GUI/Plater.cpp:218
+#: src/slic3r/GUI/Platter.cpp:218
 msgid "Number of tool changes"
 msgstr "Počet změn nástroje"
 
@@ -4151,7 +4151,7 @@ msgstr "Zěna pořadí objektů"
 msgid "Object Settings to modify"
 msgstr "Změna nastavení objektu"
 
-#: src/slic3r/GUI/Plater.cpp:1875
+#: src/slic3r/GUI/Platter.cpp:1875
 msgid "Object too large?"
 msgstr "Objekt moc velký?"
 
@@ -4159,11 +4159,11 @@ msgstr "Objekt moc velký?"
 msgid "Object will be used to purge the nozzle after a toolchange to save material that would otherwise end up in the wipe tower and decrease print time. Colours of the objects will be mixed as a result."
 msgstr "Objekty budou použity k vyčištění barvy filamentu v trysce po změně extruderu, aby se ušetřil materiál, který by jinak skončil v čistící věži. Výsledkem budou objekty s náhodně mixovanými barvami."
 
-#: src/slic3r/GUI/Plater.cpp:1018
+#: src/slic3r/GUI/Platter.cpp:1018
 msgid "object(s)"
 msgstr "objekt(y)"
 
-#: src/slic3r/GUI/Plater.cpp:1043 src/slic3r/GUI/Plater.cpp:1058
+#: src/slic3r/GUI/Platter.cpp:1043 src/slic3r/GUI/Platter.cpp:1058
 msgid "objects"
 msgstr "objekty"
 
@@ -4252,15 +4252,15 @@ msgstr "Otevřít stránku pro stahování Prusa 3D ovladačů ve vašem prohlí
 msgid "Open the software releases page in your browser"
 msgstr "Otevřít stránku s verzemi tohoto softwaru ve vašem prohlížeči"
 
-#: src/slic3r/GUI/Plater.cpp:2994
+#: src/slic3r/GUI/Platter.cpp:2994
 msgid "Optimize orientation"
 msgstr "Optimalizovat orientaci"
 
-#: src/slic3r/GUI/Plater.cpp:2643
+#: src/slic3r/GUI/Platter.cpp:2643
 msgid "Optimize Rotation"
 msgstr "Optimalizovat Orientaci"
 
-#: src/slic3r/GUI/Plater.cpp:2994
+#: src/slic3r/GUI/Platter.cpp:2994
 msgid "Optimize the rotation of the object for better print results."
 msgstr "Optimalizujte rotaci objektu pro lepší výsledky tisku."
 
@@ -4272,11 +4272,11 @@ msgstr "Optimalizovat rychloposuny do pořadí aby se minimalizovalo přejížd�
 msgid "Options for support material and raft"
 msgstr "Volby pro podpěry a raft"
 
-#: src/slic3r/GUI/Plater.cpp:2251
+#: src/slic3r/GUI/Platter.cpp:2251
 msgid "Orientation found."
 msgstr "Orientace nalezena."
 
-#: src/slic3r/GUI/Plater.cpp:2768
+#: src/slic3r/GUI/Platter.cpp:2768
 msgid "Orientation search canceled."
 msgstr "Hledání optimální orientace zrušeno."
 
@@ -4408,7 +4408,7 @@ msgstr "Vložit ze schránky"
 msgid "Paste from clipboard"
 msgstr "Vložit ze schránky"
 
-#: src/slic3r/GUI/Plater.cpp:4772
+#: src/slic3r/GUI/Platter.cpp:4772
 msgid "Paste From Clipboard"
 msgstr "Vložení ze schránky"
 
@@ -4464,11 +4464,11 @@ msgid "Place on face"
 msgstr "Umístit plochou na podložku"
 
 #: src/slic3r/GUI/MainFrame.cpp:161
-msgid "Plater"
+msgid "Platter"
 msgstr "Podložka"
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:156
-msgid "Plater Shortcuts"
+msgid "Platter Shortcuts"
 msgstr "Podložka"
 
 #: src/slic3r/GUI/GUI.cpp:143
@@ -4607,7 +4607,7 @@ msgstr "Fronta nahrávaní do tiskového serveru"
 msgid "Print Settings"
 msgstr "Nastavení tisku"
 
-#: src/slic3r/GUI/Plater.cpp:681
+#: src/slic3r/GUI/Platter.cpp:681
 msgid "Print settings"
 msgstr "Nastavení tisku"
 
@@ -4623,7 +4623,7 @@ msgstr "Panel nastavení tiskárny"
 msgid "Printable"
 msgstr "Tisknout objekt"
 
-#: src/slic3r/GUI/Plater.cpp:685
+#: src/slic3r/GUI/Platter.cpp:685
 msgid "Printer"
 msgstr "Tiskárna"
 
@@ -4682,7 +4682,7 @@ msgstr "Tisk s více extrudery různých průměrů trysek. Má-li být podpěra
 msgid "Processing %s"
 msgstr "Zpracovávám %s"
 
-#: src/slic3r/GUI/Plater.cpp:1600
+#: src/slic3r/GUI/Platter.cpp:1600
 #, possible-c-format
 msgid "Processing input file %s\n"
 msgstr "Zpracovávám vstupní soubor %s\n"
@@ -4730,7 +4730,7 @@ msgstr "PrusaSlicer vyžaduje grafický ovladač s funkčním OpenGL 2.0. Zatím
 msgid "Purging after toolchange will done inside this object's infills. This lowers the amount of waste but may result in longer print time  due to additional travel moves."
 msgstr "Vyčištění trysky po výměně filamentu se provede uvnitř výplní tohoto objektu. Tím se snižuje množství odpadu, ale může to mít za následek delší dobu tisku v důsledku dodatečných pohybů."
 
-#: src/slic3r/GUI/Plater.cpp:456
+#: src/slic3r/GUI/Platter.cpp:456
 msgid "Purging volumes"
 msgstr "Objemy čištění"
 
@@ -4822,7 +4822,7 @@ msgstr "Přenastavit"
 msgid "Ready"
 msgstr "Připraveno"
 
-#: src/slic3r/GUI/Plater.cpp:2406
+#: src/slic3r/GUI/Platter.cpp:2406
 msgid "Ready to slice"
 msgstr "Připraven ke slicování"
 
@@ -4885,11 +4885,11 @@ msgstr "Historie operací Vpřed"
 msgid "Reducing printing time"
 msgstr "Zkracování tiskového času"
 
-#: src/slic3r/GUI/Plater.cpp:2924
+#: src/slic3r/GUI/Platter.cpp:2924
 msgid "Reload from Disk"
 msgstr "Znovu načíst z Disku"
 
-#: src/slic3r/GUI/Plater.cpp:2924
+#: src/slic3r/GUI/Platter.cpp:2924
 msgid "Reload the selected file from Disk"
 msgstr "Znovu načíst vybraný objekt z Disku"
 
@@ -4922,7 +4922,7 @@ msgstr "Odebrat instanci vybraného objektu"
 msgid "Remove layer range"
 msgstr "Odstranit rozsah vrstev"
 
-#: src/slic3r/GUI/Plater.cpp:3518
+#: src/slic3r/GUI/Platter.cpp:3518
 msgid "Remove one instance of the selected object"
 msgstr "Odebere jednu instanci vybraného objektu"
 
@@ -4943,7 +4943,7 @@ msgstr "Odebrat bod z výběru"
 msgid "Remove selected points"
 msgstr "Odebrat označené body"
 
-#: src/slic3r/GUI/Plater.cpp:2891 src/slic3r/GUI/Plater.cpp:2909
+#: src/slic3r/GUI/Platter.cpp:2891 src/slic3r/GUI/Platter.cpp:2909
 msgid "Remove the selected object"
 msgstr "Odstranit vybraný objekt"
 
@@ -5047,7 +5047,7 @@ msgstr "Obnovit řezovou rovinu"
 msgid "Reset direction"
 msgstr "Resetovat směr"
 
-#: src/slic3r/GUI/Plater.cpp:2603
+#: src/slic3r/GUI/Platter.cpp:2603
 msgid "Reset Project"
 msgstr "Resetovat Projekt"
 
@@ -5239,11 +5239,11 @@ msgstr "Uložit stávající projekt"
 msgid "Save current project file as"
 msgstr "Uložit stávající projekt jako"
 
-#: src/slic3r/GUI/Plater.cpp:1938
+#: src/slic3r/GUI/Platter.cpp:1938
 msgid "Save file as:"
 msgstr "Uložit soubor jako:"
 
-#: src/slic3r/GUI/Plater.cpp:3433
+#: src/slic3r/GUI/Platter.cpp:3433
 msgid "Save G-code file as:"
 msgstr "Uložit G-code jako:"
 
@@ -5267,7 +5267,7 @@ msgstr "Uložit Projekt j&ako"
 msgid "Save project (3MF)"
 msgstr "Uložit projekt (3MF)"
 
-#: src/slic3r/GUI/Plater.cpp:3433
+#: src/slic3r/GUI/Platter.cpp:3433
 msgid "Save SL1 file as:"
 msgstr "Uložit SL1 soubor jako:"
 
@@ -5340,7 +5340,7 @@ msgstr "Seam preferred direction jitter"
 msgid "Searching for devices"
 msgstr "Hledám zařízení"
 
-#: src/slic3r/GUI/Plater.cpp:2190
+#: src/slic3r/GUI/Platter.cpp:2190
 msgid "Searching for optimal orientation"
 msgstr "Hledání optimální orientace"
 
@@ -5385,7 +5385,7 @@ msgid "Select new extruder for the object/part"
 msgstr "Vyberte nový extruder pro objekt/část"
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:114
-msgid "Select Plater Tab"
+msgid "Select Platter Tab"
 msgstr "Zobrazit panel Podložka"
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:116
@@ -5424,11 +5424,11 @@ msgstr "Vyberte velikost ikon na panelu nástrojů vzhledem k výchozí velikost
 msgid "Select type of part"
 msgstr "Vyberte typ součásti"
 
-#: src/slic3r/GUI/Plater.cpp:606
+#: src/slic3r/GUI/Platter.cpp:606
 msgid "Select what kind of pad do you need"
 msgstr "Vyberte, jaký typ podložky potřebujete"
 
-#: src/slic3r/GUI/Plater.cpp:421
+#: src/slic3r/GUI/Platter.cpp:421
 msgid "Select what kind of support do you need"
 msgstr "Vyberte typ podpěr, které potřebujete"
 
@@ -5484,7 +5484,7 @@ msgstr "Výběr - Odebrání Objektu"
 msgid "Selects all objects"
 msgstr "Vybrat všechny objekty"
 
-#: src/slic3r/GUI/Plater.cpp:3822
+#: src/slic3r/GUI/Platter.cpp:3822
 msgid "Send G-code"
 msgstr "Odeslat G-code"
 
@@ -5496,7 +5496,7 @@ msgstr "Odeslat G-Code do tiskového serveru"
 msgid "Send to print current plate as G-code"
 msgstr "Odeslat k tisku stávající plochu jako G-code"
 
-#: src/slic3r/GUI/Plater.cpp:731 src/slic3r/GUI/Plater.cpp:3822
+#: src/slic3r/GUI/Platter.cpp:731 src/slic3r/GUI/Platter.cpp:3822
 msgid "Send to printer"
 msgstr "Odeslat do tiskárny"
 
@@ -5546,11 +5546,11 @@ msgstr "Aktivovat spodní ukazatel aktivního posuvníku"
 msgid "Set Mirror"
 msgstr "Zrcadlení"
 
-#: src/slic3r/GUI/Plater.cpp:3520
+#: src/slic3r/GUI/Platter.cpp:3520
 msgid "Set number of instances"
 msgstr "Zadat počet instancí"
 
-#: src/slic3r/GUI/Plater.cpp:4163
+#: src/slic3r/GUI/Platter.cpp:4163
 #, possible-c-format
 msgid "Set numbers of copies to %d"
 msgstr "Nastavení počtu kopií na %d"
@@ -5616,7 +5616,7 @@ msgid "Set this to a non-zero value to set a manual extrusion width for support 
 msgstr "Zadejte kladnou hodnotu, chcete-li nastavit manuálně šířku extruze pro podpěry. Pokud je ponechána nula, použije se výchozí šířka extruze, pokud je nastavena, jinak se použije průměr trysky. Pokud je vyjádřena procenty (například 90%), bude vypočtena z výšky vrstvy."
 
 #: src/libslic3r/PrintConfig.cpp:480
-msgid "Set this to the clearance radius around your extruder. If the extruder is not centered, choose the largest value for safety. This setting is used to check for collisions and to display the graphical preview in the plater."
+msgid "Set this to the clearance radius around your extruder. If the extruder is not centered, choose the largest value for safety. This setting is used to check for collisions and to display the graphical preview in the platter."
 msgstr "Zadejte horizontální rádius kolizního prostoru okolo extruderu. Pokud tryska není v centru tohoto rádiusu, zvolte nejdelší vzdálenost. Toto nastavení slouží ke kontrole kolizí a zobrazení grafického náhledu na podložce."
 
 #: src/libslic3r/PrintConfig.cpp:65
@@ -5716,7 +5716,7 @@ msgid "Show the list of the keyboard shortcuts"
 msgstr "Zobrazit seznam klávesových zkratek"
 
 #: src/slic3r/GUI/MainFrame.cpp:471
-msgid "Show the plater"
+msgid "Show the platter"
 msgstr "Zobrazit podložku"
 
 #: src/slic3r/GUI/MainFrame.cpp:478
@@ -5764,7 +5764,7 @@ msgid "Single extruder multimaterial parameters"
 msgstr "Parametry jednoho multi materiálového extruderu"
 
 #: src/slic3r/GUI/BedShapeDialog.cpp:72
-#: src/slic3r/GUI/GUI_ObjectManipulation.cpp:153 src/slic3r/GUI/Plater.cpp:137
+#: src/slic3r/GUI/GUI_ObjectManipulation.cpp:153 src/slic3r/GUI/Platter.cpp:137
 #: src/slic3r/GUI/Tab.cpp:2257
 msgid "Size"
 msgstr "Rozměr"
@@ -5806,11 +5806,11 @@ msgstr "Ukončení režimu SLA gizmo"
 msgid "SLA gizmo turned on"
 msgstr "Vstup do režimu SLA gizmo"
 
-#: src/slic3r/GUI/Plater.cpp:684 src/slic3r/GUI/Preset.cpp:1277
+#: src/slic3r/GUI/Platter.cpp:684 src/slic3r/GUI/Preset.cpp:1277
 msgid "SLA material"
 msgstr "SLA materiál"
 
-#: src/slic3r/GUI/Plater.cpp:683 src/slic3r/GUI/Preset.cpp:1276
+#: src/slic3r/GUI/Platter.cpp:683 src/slic3r/GUI/Preset.cpp:1276
 msgid "SLA print"
 msgstr "SLA tisk"
 
@@ -5818,7 +5818,7 @@ msgstr "SLA tisk"
 msgid "SLA print material notes"
 msgstr "Poznámky pro SLA materiál"
 
-#: src/slic3r/GUI/Plater.cpp:690
+#: src/slic3r/GUI/Platter.cpp:690
 msgid "SLA print settings"
 msgstr "Nastavení SLA tisku"
 
@@ -5870,8 +5870,8 @@ msgstr "Slicovat soubor do G-code, uložit jako"
 msgid "Slice gap closing radius"
 msgstr "Poloměr uzavření mezery v tiskové vrstvě"
 
-#: src/slic3r/GUI/Plater.cpp:734 src/slic3r/GUI/Plater.cpp:2412
-#: src/slic3r/GUI/Plater.cpp:3618
+#: src/slic3r/GUI/Platter.cpp:734 src/slic3r/GUI/Platter.cpp:2412
+#: src/slic3r/GUI/Platter.cpp:3618
 msgid "Slice now"
 msgstr "Slicovat"
 
@@ -5887,12 +5887,12 @@ msgstr "Naslicujte model a exportujte trasy jako G-code."
 msgid "Slice the model as FFF or SLA based on the printer_technology configuration value."
 msgstr "Slicovat model jako FFF nebo SLA tisk na základě konfigurační hodnoty printer_technology."
 
-#: src/slic3r/GUI/Plater.cpp:193
+#: src/slic3r/GUI/Platter.cpp:193
 msgid "Sliced Info"
 msgstr "Informace o slicování"
 
-#: src/slic3r/GUI/MainFrame.cpp:704 src/slic3r/GUI/Plater.cpp:2412
-#: src/slic3r/GUI/Plater.cpp:3615 src/slic3r/GUI/Tab.cpp:1159
+#: src/slic3r/GUI/MainFrame.cpp:704 src/slic3r/GUI/Platter.cpp:2412
+#: src/slic3r/GUI/Platter.cpp:3615 src/slic3r/GUI/Tab.cpp:1159
 #: src/slic3r/GUI/Tab.cpp:3436
 msgid "Slicing"
 msgstr "Slicování"
@@ -6105,20 +6105,20 @@ msgstr "Koule"
 msgid "Spiral vase"
 msgstr "Spirálová váza"
 
-#: src/slic3r/GUI/Plater.cpp:2971 src/slic3r/GUI/Plater.cpp:2988
-#: src/slic3r/GUI/Plater.cpp:3008 src/libslic3r/PrintConfig.cpp:3082
+#: src/slic3r/GUI/Platter.cpp:2971 src/slic3r/GUI/Platter.cpp:2988
+#: src/slic3r/GUI/Platter.cpp:3008 src/libslic3r/PrintConfig.cpp:3082
 msgid "Split"
 msgstr "Rozdělit"
 
-#: src/slic3r/GUI/Plater.cpp:2971
+#: src/slic3r/GUI/Platter.cpp:2971
 msgid "Split the selected object"
 msgstr "Rozdělit vybraný objekt"
 
-#: src/slic3r/GUI/Plater.cpp:2966 src/slic3r/GUI/Plater.cpp:2988
+#: src/slic3r/GUI/Platter.cpp:2966 src/slic3r/GUI/Platter.cpp:2988
 msgid "Split the selected object into individual objects"
 msgstr "Rozdělit vybraný objekt na jednotlivé objekty"
 
-#: src/slic3r/GUI/Plater.cpp:2968 src/slic3r/GUI/Plater.cpp:3008
+#: src/slic3r/GUI/Platter.cpp:2968 src/slic3r/GUI/Platter.cpp:3008
 msgid "Split the selected object into individual sub-parts"
 msgstr "Rozdělit vybraný objekt na jednotlivé dílčí části"
 
@@ -6126,7 +6126,7 @@ msgstr "Rozdělit vybraný objekt na jednotlivé dílčí části"
 msgid "Split to objects"
 msgstr "Rozdělit na objekty"
 
-#: src/slic3r/GUI/Plater.cpp:2796
+#: src/slic3r/GUI/Platter.cpp:2796
 msgid "Split to Objects"
 msgstr "Rozdělit na Objekty"
 
@@ -6175,11 +6175,11 @@ msgstr "Stav:"
 msgid "Stealth"
 msgstr "Tichý"
 
-#: src/slic3r/GUI/Plater.cpp:1084
+#: src/slic3r/GUI/Platter.cpp:1084
 msgid "stealth mode"
 msgstr "tichý režim"
 
-#: src/slic3r/GUI/Plater.cpp:3545
+#: src/slic3r/GUI/Platter.cpp:3545
 #, possible-c-format
 msgid "STL file exported to %s"
 msgstr "Soubor STL exportován do %s"
@@ -6270,7 +6270,7 @@ msgstr "Extruder pro kontaktní podpěry/raft"
 msgid "Support material/raft/skirt extruder"
 msgstr "Extruder pro podpěry/raft/obrys"
 
-#: src/slic3r/GUI/Plater.cpp:423 src/libslic3r/PrintConfig.cpp:1815
+#: src/slic3r/GUI/Platter.cpp:423 src/libslic3r/PrintConfig.cpp:1815
 #: src/libslic3r/PrintConfig.cpp:2423
 msgid "Support on build plate only"
 msgstr "Pouze na tiskové podložce"
@@ -6300,7 +6300,7 @@ msgid "Support points edit"
 msgstr "Úprava podpěrných bodů"
 
 #: src/slic3r/GUI/GUI_ObjectList.cpp:78 src/slic3r/GUI/GUI_ObjectList.cpp:519
-#: src/slic3r/GUI/Plater.cpp:418 src/slic3r/GUI/Tab.cpp:3397
+#: src/slic3r/GUI/Platter.cpp:418 src/slic3r/GUI/Tab.cpp:3397
 #: src/slic3r/GUI/Tab.cpp:3398 src/libslic3r/PrintConfig.cpp:2363
 #: src/libslic3r/PrintConfig.cpp:2370 src/libslic3r/PrintConfig.cpp:2379
 #: src/libslic3r/PrintConfig.cpp:2388 src/libslic3r/PrintConfig.cpp:2398
@@ -6312,7 +6312,7 @@ msgstr "Úprava podpěrných bodů"
 msgid "Supports"
 msgstr "Podpěry"
 
-#: src/slic3r/GUI/Plater.cpp:1018
+#: src/slic3r/GUI/Platter.cpp:1018
 msgid "supports and pad"
 msgstr "podpěry a podložka"
 
@@ -6354,7 +6354,7 @@ msgid "Switch to the %s mode"
 msgstr "Přepnout do režimu %s"
 
 #: src/slic3r/GUI/GUI_App.cpp:752
-msgid "Switching the language will trigger application restart.\nYou will lose content of the plater."
+msgid "Switching the language will trigger application restart.\nYou will lose content of the platter."
 msgstr "Přepnutím jazyka se aplikace restartuje.\nZtratíte obsah scény."
 
 #: src/slic3r/GUI/WipeTowerDialog.cpp:327
@@ -6534,11 +6534,11 @@ msgstr "Vybraný soubor neobsahuje geometrii."
 msgid "The selected file contains several disjoint areas. This is not supported."
 msgstr "Vybraný soubor obsahuje několik nespojených ploch. Tato možnost není podporována."
 
-#: src/slic3r/GUI/Plater.cpp:2271
+#: src/slic3r/GUI/Platter.cpp:2271
 msgid "The selected object can't be split because it contains more than one volume/material."
 msgstr "Vybraný objekt nemůže být rozdělen, protože obsahuje více než jeden objem/materiál."
 
-#: src/slic3r/GUI/GUI_ObjectList.cpp:1737 src/slic3r/GUI/Plater.cpp:2279
+#: src/slic3r/GUI/GUI_ObjectList.cpp:1737 src/slic3r/GUI/Platter.cpp:2279
 msgid "The selected object couldn't be split because it contains only one part."
 msgstr "Vybraný objekt nemůže být rozdělen, protože obsahuje pouze jednu část."
 
@@ -6709,11 +6709,11 @@ msgstr "Tato funkce umožňuje vynucení plné vrstvy za každý daný počet vr
 msgid "This feature will raise Z gradually while printing a single-walled object in order to remove any visible seam. This option requires a single perimeter, no infill, no top solid layers and no support material. You can still set any number of bottom solid layers as well as skirt/brim loops. It won't work when printing more than an object."
 msgstr "Tato funkce zvýší postupně Z při tisku jednovrstvého objektu, aby se odstranil jakýkoli viditelný šev. Tato volba vyžaduje jediný obvod, žádnou výplň, žádné vrchní plné vrstvy a žádný podpůrný materiál. Můžete stále nastavit libovolný počet spodních plných vrstev, stejně jako obrysové smyčky / límec. Při tisku více než jednoho objektu nebude toto nastavení fungovat."
 
-#: src/slic3r/GUI/Plater.cpp:1712
+#: src/slic3r/GUI/Platter.cpp:1712
 msgid "This file cannot be loaded in a simple mode. Do you want to switch to an advanced mode?\n"
 msgstr "Tento soubor nelze načíst v jednoduchém režimu. Chcete přepnout do pokročilého režimu?\n"
 
-#: src/slic3r/GUI/Plater.cpp:1658
+#: src/slic3r/GUI/Platter.cpp:1658
 msgid "This file contains several objects positioned at multiple heights. Instead of considering them as multiple objects, should I consider\nthis file as a single object having multiple parts?\n"
 msgstr "Tento soubor obsahuje několik objektů umístěných v různých výškách. Mají být vloženy jako jeden objekt obsahující více částí,\nnamísto vložení několika objektů?\n"
 
@@ -6726,7 +6726,7 @@ msgstr "Tento hex soubor s firmware neodpovídá modelu tiskárny.\nSoubor hex j
 msgid "This flag enables the automatic cooling logic that adjusts print speed and fan speed according to layer printing time."
 msgstr "Zapne výpočet automatického chlazení, který upravuje rychlost tisku a ventilátoru v závislosti na délce tisku jedné vrstvy."
 
-#: src/slic3r/GUI/Plater.cpp:448
+#: src/slic3r/GUI/Platter.cpp:448
 msgid "This flag enables the brim that will be printed around each object on the first layer."
 msgstr "Tato vlajka zapíná límec, který bude vytištěn kolem každého objektu při první vrstvě."
 
@@ -6912,11 +6912,11 @@ msgstr "Doba čekání po vysunutí filamentu. Může pomoci ke spolehlivé změ
 msgid "To do that please specify a new name for the preset."
 msgstr "Chcete-li akci provést, prosím nejdříve zadejte nový název přednastavení."
 
-#: src/slic3r/GUI/Plater.cpp:2966
+#: src/slic3r/GUI/Platter.cpp:2966
 msgid "To objects"
 msgstr "Objektům"
 
-#: src/slic3r/GUI/Plater.cpp:2968
+#: src/slic3r/GUI/Platter.cpp:2968
 msgid "To parts"
 msgstr "Na části"
 
@@ -7200,23 +7200,23 @@ msgstr "Toto nastavení použijte pro horizontální otočení vzoru."
 msgid "Use volumetric E"
 msgstr "Použít volumetrickou hodnotu E"
 
-#: src/slic3r/GUI/Plater.cpp:214
+#: src/slic3r/GUI/Platter.cpp:214
 msgid "Used Filament (g)"
 msgstr "Použito Filamentu (g)"
 
-#: src/slic3r/GUI/Plater.cpp:212 src/slic3r/GUI/Plater.cpp:1041
+#: src/slic3r/GUI/Platter.cpp:212 src/slic3r/GUI/Platter.cpp:1041
 msgid "Used Filament (m)"
 msgstr "Použito Filamentu (m)"
 
-#: src/slic3r/GUI/Plater.cpp:213
+#: src/slic3r/GUI/Platter.cpp:213
 msgid "Used Filament (mm³)"
 msgstr "Použito Filamentu (mm³)"
 
-#: src/slic3r/GUI/Plater.cpp:1015
+#: src/slic3r/GUI/Platter.cpp:1015
 msgid "Used Material (ml)"
 msgstr "Použitý materiál (ml)"
 
-#: src/slic3r/GUI/Plater.cpp:215
+#: src/slic3r/GUI/Platter.cpp:215
 msgid "Used Material (unit)"
 msgstr "Použito materiálu (jednotka)"
 
@@ -7282,7 +7282,7 @@ msgstr "Zobrazení"
 msgid "Visualizing supports"
 msgstr "Vizualizace podpěr"
 
-#: src/slic3r/GUI/Plater.cpp:138
+#: src/slic3r/GUI/Platter.cpp:138
 msgid "Volume"
 msgstr "Obsah"
 
@@ -7448,7 +7448,7 @@ msgstr "Možnosti čištění"
 msgid "Wipe tower"
 msgstr "Čistící věž"
 
-#: src/slic3r/GUI/Plater.cpp:1043 src/slic3r/GUI/Plater.cpp:1058
+#: src/slic3r/GUI/Platter.cpp:1043 src/slic3r/GUI/Platter.cpp:1058
 msgid "wipe tower"
 msgstr "čistící věž"
 
@@ -7525,7 +7525,7 @@ msgstr "Kompenzace XY rozměrů"
 msgid "Y coordinate of the left front corner of a wipe tower"
 msgstr "Y souřadnice levého předního rohu čistící věže"
 
-#: src/slic3r/GUI/Plater.cpp:992
+#: src/slic3r/GUI/Platter.cpp:992
 msgid "Yes"
 msgstr "Ano"
 
@@ -7557,11 +7557,11 @@ msgstr "V této šabloně můžete použít všechny možnosti konfigurace jako 
 msgid "You can't change a type of the last solid part of the object."
 msgstr "Nelze změnit typ poslední plné části objektu."
 
-#: src/slic3r/GUI/Plater.cpp:2243
+#: src/slic3r/GUI/Platter.cpp:2243
 msgid "You can't load SLA project if there is at least one multi-part object on the bed"
 msgstr "Nemůžete načíst SLA projekt, pokud je na tiskové ploše vícedílný objekt"
 
-#: src/slic3r/GUI/Plater.cpp:1746
+#: src/slic3r/GUI/Platter.cpp:1746
 #, possible-c-format
 msgid "You can't to add the object(s) from %s because of one or some of them is(are) multi-part"
 msgstr "Nemůžete přidat objekt(y) z %s, protože jeden nebo některé z nich je(jsou) vícedílné"
@@ -7588,7 +7588,7 @@ msgstr "Začali jste výběr s položkou %s."
 msgid "Your file was repaired."
 msgstr "Váš soubor byl opraven."
 
-#: src/slic3r/GUI/Plater.cpp:1874
+#: src/slic3r/GUI/Platter.cpp:1874
 msgid "Your object appears to be too large, so it was automatically scaled down to fit your print bed."
 msgstr "Váš objekt se zdá být příliš velký, takže byl automaticky zmenšen, aby se vešel na tiskovou podložku."
 

@@ -93,7 +93,7 @@ msgid "Rectangular"
 msgstr "Dikdörtgen"
 
 #: src/slic3r/GUI/BedShapeDialog.cpp:72
-#: src/slic3r/GUI/GUI_ObjectManipulation.cpp:232 src/slic3r/GUI/Plater.cpp:136
+#: src/slic3r/GUI/GUI_ObjectManipulation.cpp:232 src/slic3r/GUI/Platter.cpp:136
 #: src/slic3r/GUI/Tab.cpp:2294
 msgid "Size"
 msgstr "Boyut"
@@ -320,7 +320,7 @@ msgstr "Tüm standartlar"
 msgid "All"
 msgstr "Tümü"
 
-#: src/slic3r/GUI/ConfigWizard.cpp:190 src/slic3r/GUI/Plater.cpp:432
+#: src/slic3r/GUI/ConfigWizard.cpp:190 src/slic3r/GUI/Platter.cpp:432
 #: src/libslic3r/GCode/PreviewData.cpp:162
 msgid "None"
 msgstr "Hiçbiri"
@@ -752,12 +752,12 @@ msgid "Add..."
 msgstr "Ekle..."
 
 #: src/slic3r/GUI/GLCanvas3D.cpp:3444 src/slic3r/GUI/GUI_ObjectList.cpp:1277
-#: src/slic3r/GUI/Plater.cpp:2994 src/slic3r/GUI/Plater.cpp:3013
+#: src/slic3r/GUI/Platter.cpp:2994 src/slic3r/GUI/Platter.cpp:3013
 #: src/slic3r/GUI/Tab.cpp:2988
 msgid "Delete"
 msgstr "Sil"
 
-#: src/slic3r/GUI/GLCanvas3D.cpp:3455 src/slic3r/GUI/Plater.cpp:3375
+#: src/slic3r/GUI/GLCanvas3D.cpp:3455 src/slic3r/GUI/Platter.cpp:3375
 msgid "Delete all"
 msgstr "Tümünü sil"
 
@@ -1148,7 +1148,7 @@ msgstr "Anlık görüntü adı"
 #: src/slic3r/GUI/GUI_App.cpp:795
 msgid ""
 "Switching the language will trigger application restart.\n"
-"You will lose content of the plater."
+"You will lose content of the platter."
 msgstr ""
 "Dilin değiştirilmesi uygulamanın yeniden başlatılmasını tetikler.\n"
 "Tabla içeriğini kaybedeceksiniz."
@@ -1189,7 +1189,7 @@ msgid "Layers and Perimeters"
 msgstr "Katmanlar ve Duvarlar"
 
 #: src/slic3r/GUI/GUI_ObjectList.cpp:29 src/slic3r/GUI/GUI_ObjectList.cpp:78
-#: src/slic3r/GUI/GUI_ObjectList.cpp:534 src/slic3r/GUI/Plater.cpp:446
+#: src/slic3r/GUI/GUI_ObjectList.cpp:534 src/slic3r/GUI/Platter.cpp:446
 #: src/slic3r/GUI/Tab.cpp:1036 src/slic3r/GUI/Tab.cpp:1037
 #: src/slic3r/GUI/Tab.cpp:1395 src/libslic3r/PrintConfig.cpp:168
 #: src/libslic3r/PrintConfig.cpp:390 src/libslic3r/PrintConfig.cpp:740
@@ -1267,7 +1267,7 @@ msgid "Extrusion Width"
 msgstr "Ekstrüzyon genişliği"
 
 #: src/slic3r/GUI/GUI_ObjectList.cpp:87 src/slic3r/GUI/GUI_ObjectList.cpp:543
-#: src/slic3r/GUI/Plater.cpp:428 src/slic3r/GUI/Tab.cpp:3454
+#: src/slic3r/GUI/Platter.cpp:428 src/slic3r/GUI/Tab.cpp:3454
 #: src/slic3r/GUI/Tab.cpp:3455 src/libslic3r/PrintConfig.cpp:2398
 #: src/libslic3r/PrintConfig.cpp:2405 src/libslic3r/PrintConfig.cpp:2414
 #: src/libslic3r/PrintConfig.cpp:2423 src/libslic3r/PrintConfig.cpp:2433
@@ -1395,7 +1395,7 @@ msgstr "Adını değiştirmek"
 msgid "Fix through the Netfabb"
 msgstr "Netfabb ile düzelt"
 
-#: src/slic3r/GUI/GUI_ObjectList.cpp:1239 src/slic3r/GUI/Plater.cpp:3023
+#: src/slic3r/GUI/GUI_ObjectList.cpp:1239 src/slic3r/GUI/Platter.cpp:3023
 msgid "Export as STL"
 msgstr "STL Olarak Dışa Aktar"
 
@@ -1427,7 +1427,7 @@ msgstr "Son katı kısmı nesneden silemezsiniz."
 msgid "You can't delete the last intance from object."
 msgstr "Son eylemi nesneden silemezsiniz."
 
-#: src/slic3r/GUI/GUI_ObjectList.cpp:1741 src/slic3r/GUI/Plater.cpp:2343
+#: src/slic3r/GUI/GUI_ObjectList.cpp:1741 src/slic3r/GUI/Platter.cpp:2343
 msgid "The selected object couldn't be split because it contains only one part."
 msgstr "Seçilen nesne bölünemedi çünkü yalnızca bir parça içeriyordu."
 
@@ -1483,7 +1483,7 @@ msgid "of a current Object"
 msgstr "geçerli bir Nesnenin"
 
 #: src/slic3r/GUI/GUI_ObjectList.cpp:2428
-#: src/slic3r/GUI/GUI_ObjectList.cpp:2501 src/slic3r/GUI/Plater.cpp:117
+#: src/slic3r/GUI/GUI_ObjectList.cpp:2501 src/slic3r/GUI/Platter.cpp:117
 msgid "Info"
 msgstr "Bilgi"
 
@@ -1733,8 +1733,8 @@ msgstr "Yapılandırma olmadan STL/OBJ/AMF/3MF içe aktar (tabla korunur)"
 msgid "Load Config from .ini/amf/3mf/gcode"
 msgstr "Yapılandırmayı .ini/amf/3mf/gcode dosyasında yükler"
 
-#: src/slic3r/GUI/KBShortcutsDialog.cpp:107 src/slic3r/GUI/Plater.cpp:740
-#: src/slic3r/GUI/Plater.cpp:3907 src/libslic3r/PrintConfig.cpp:3000
+#: src/slic3r/GUI/KBShortcutsDialog.cpp:107 src/slic3r/GUI/Platter.cpp:740
+#: src/slic3r/GUI/Platter.cpp:3907 src/libslic3r/PrintConfig.cpp:3000
 msgid "Export G-code"
 msgstr "G-code Dışa Aktar"
 
@@ -1751,7 +1751,7 @@ msgid "(Re)slice"
 msgstr "(Tekrar) dilimle"
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:113
-msgid "Select Plater Tab"
+msgid "Select Platter Tab"
 msgstr "Tabla Sekmesini Seç"
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:115
@@ -1907,7 +1907,7 @@ msgid "Unselect gizmo / Clear selection"
 msgstr "Seçimi kaldır / Seçimi sil"
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:156
-msgid "Plater Shortcuts"
+msgid "Platter Shortcuts"
 msgstr "Tabla Kısayolları"
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:171
@@ -1979,7 +1979,7 @@ msgid "based on Slic3r"
 msgstr "slic3r uygulamasına dayalı"
 
 #: src/slic3r/GUI/MainFrame.cpp:180
-msgid "Plater"
+msgid "Platter"
 msgstr "Tabla"
 
 #: src/slic3r/GUI/MainFrame.cpp:374
@@ -2200,11 +2200,11 @@ msgid "Paste clipboard"
 msgstr "Panodan yapıştır"
 
 #: src/slic3r/GUI/MainFrame.cpp:517
-msgid "&Plater Tab"
+msgid "&Platter Tab"
 msgstr "&Tabla Sekmesi"
 
 #: src/slic3r/GUI/MainFrame.cpp:517
-msgid "Show the plater"
+msgid "Show the platter"
 msgstr "Tablayı göster"
 
 #: src/slic3r/GUI/MainFrame.cpp:524
@@ -2409,7 +2409,7 @@ msgstr "&Görünüm"
 msgid "&Help"
 msgstr "&Yardım"
 
-#: src/slic3r/GUI/MainFrame.cpp:646 src/slic3r/GUI/Plater.cpp:3907
+#: src/slic3r/GUI/MainFrame.cpp:646 src/slic3r/GUI/Platter.cpp:3907
 msgid "Export"
 msgstr "Dışa Aktar"
 
@@ -2458,8 +2458,8 @@ msgstr "G-kod"
 msgid "Save zip file as:"
 msgstr "Zip dosyasını farklı kaydet:"
 
-#: src/slic3r/GUI/MainFrame.cpp:750 src/slic3r/GUI/Plater.cpp:2476
-#: src/slic3r/GUI/Plater.cpp:3695 src/slic3r/GUI/Tab.cpp:1165
+#: src/slic3r/GUI/MainFrame.cpp:750 src/slic3r/GUI/Platter.cpp:2476
+#: src/slic3r/GUI/Platter.cpp:3695 src/slic3r/GUI/Tab.cpp:1165
 #: src/slic3r/GUI/Tab.cpp:3493
 msgid "Slicing"
 msgstr "Dilimleme"
@@ -2521,180 +2521,180 @@ msgstr "%s hata"
 msgid "%s has encountered an error"
 msgstr "%s bir hatayla karşılaştı"
 
-#: src/slic3r/GUI/Plater.cpp:137
+#: src/slic3r/GUI/Platter.cpp:137
 msgid "Volume"
 msgstr "Hacim"
 
-#: src/slic3r/GUI/Plater.cpp:138
+#: src/slic3r/GUI/Platter.cpp:138
 msgid "Facets"
 msgstr "Yüzey Sayısı"
 
-#: src/slic3r/GUI/Plater.cpp:139
+#: src/slic3r/GUI/Platter.cpp:139
 msgid "Materials"
 msgstr "Malzeme sayısı"
 
-#: src/slic3r/GUI/Plater.cpp:142
+#: src/slic3r/GUI/Platter.cpp:142
 msgid "Manifold"
 msgstr "Çoklu"
 
-#: src/slic3r/GUI/Plater.cpp:192
+#: src/slic3r/GUI/Platter.cpp:192
 msgid "Sliced Info"
 msgstr "Dilimlenmiş Bilgi"
 
-#: src/slic3r/GUI/Plater.cpp:211 src/slic3r/GUI/Plater.cpp:1049
+#: src/slic3r/GUI/Platter.cpp:211 src/slic3r/GUI/Platter.cpp:1049
 msgid "Used Filament (m)"
 msgstr "Kullanılan Filament (m)"
 
-#: src/slic3r/GUI/Plater.cpp:212
+#: src/slic3r/GUI/Platter.cpp:212
 msgid "Used Filament (mm³)"
 msgstr "Kullanılan Filament (mm³)"
 
-#: src/slic3r/GUI/Plater.cpp:213
+#: src/slic3r/GUI/Platter.cpp:213
 msgid "Used Filament (g)"
 msgstr "Kullanılan Filament (g)"
 
-#: src/slic3r/GUI/Plater.cpp:214
+#: src/slic3r/GUI/Platter.cpp:214
 msgid "Used Material (unit)"
 msgstr "Kullanılan Malzeme (birim)"
 
-#: src/slic3r/GUI/Plater.cpp:215 src/slic3r/GUI/Plater.cpp:1064
+#: src/slic3r/GUI/Platter.cpp:215 src/slic3r/GUI/Platter.cpp:1064
 #: src/libslic3r/PrintConfig.cpp:728
 msgid "Cost"
 msgstr "Maliyet"
 
-#: src/slic3r/GUI/Plater.cpp:216 src/slic3r/GUI/Plater.cpp:1036
-#: src/slic3r/GUI/Plater.cpp:1078
+#: src/slic3r/GUI/Platter.cpp:216 src/slic3r/GUI/Platter.cpp:1036
+#: src/slic3r/GUI/Platter.cpp:1078
 msgid "Estimated printing time"
 msgstr "Tahmini baskı süresi"
 
-#: src/slic3r/GUI/Plater.cpp:217
+#: src/slic3r/GUI/Platter.cpp:217
 msgid "Number of tool changes"
 msgstr "Takım değişikliği sayısı"
 
-#: src/slic3r/GUI/Plater.cpp:291
+#: src/slic3r/GUI/Platter.cpp:291
 msgid "Click to edit preset"
 msgstr "Hazır ayarı düzenlemek için tıklayın"
 
-#: src/slic3r/GUI/Plater.cpp:431
+#: src/slic3r/GUI/Platter.cpp:431
 msgid "Select what kind of support do you need"
 msgstr "Ne tür bir desteğe ihtiyacınız olduğunu seçin"
 
-#: src/slic3r/GUI/Plater.cpp:433 src/libslic3r/PrintConfig.cpp:1850
+#: src/slic3r/GUI/Platter.cpp:433 src/libslic3r/PrintConfig.cpp:1850
 #: src/libslic3r/PrintConfig.cpp:2458
 msgid "Support on build plate only"
 msgstr "Yalnızca tablada destek"
 
-#: src/slic3r/GUI/Plater.cpp:434 src/slic3r/GUI/Plater.cpp:527
+#: src/slic3r/GUI/Platter.cpp:434 src/slic3r/GUI/Platter.cpp:527
 msgid "For support enforcers only"
 msgstr "Yalnızca destek uygulayıcıları için"
 
-#: src/slic3r/GUI/Plater.cpp:435
+#: src/slic3r/GUI/Platter.cpp:435
 msgid "Everywhere"
 msgstr "Her yerde"
 
-#: src/slic3r/GUI/Plater.cpp:453 src/slic3r/GUI/Tab.cpp:1062
+#: src/slic3r/GUI/Platter.cpp:453 src/slic3r/GUI/Tab.cpp:1062
 msgid "Brim"
 msgstr "Kenar (Brim)"
 
-#: src/slic3r/GUI/Plater.cpp:455
+#: src/slic3r/GUI/Platter.cpp:455
 msgid "This flag enables the brim that will be printed around each object on the first layer."
 msgstr "Bu bayrak, ilk katmandaki her nesnenin etrafına basılacak kenarı (brim) etkinleştirir."
 
-#: src/slic3r/GUI/Plater.cpp:463
+#: src/slic3r/GUI/Platter.cpp:463
 msgid "Purging volumes"
 msgstr "Boşaltma hacimleri"
 
-#: src/slic3r/GUI/Plater.cpp:688
+#: src/slic3r/GUI/Platter.cpp:688
 msgid "Print settings"
 msgstr "Baskı ayarları"
 
-#: src/slic3r/GUI/Plater.cpp:689 src/slic3r/GUI/Tab.cpp:1506
+#: src/slic3r/GUI/Platter.cpp:689 src/slic3r/GUI/Tab.cpp:1506
 #: src/slic3r/GUI/Tab.cpp:1507
 msgid "Filament"
 msgstr "Filament"
 
-#: src/slic3r/GUI/Plater.cpp:690
+#: src/slic3r/GUI/Platter.cpp:690
 msgid "SLA print settings"
 msgstr "SLA yazdırma ayarları"
 
-#: src/slic3r/GUI/Plater.cpp:691 src/slic3r/GUI/Preset.cpp:1285
+#: src/slic3r/GUI/Platter.cpp:691 src/slic3r/GUI/Preset.cpp:1285
 msgid "SLA material"
 msgstr "SLA malzemesi"
 
-#: src/slic3r/GUI/Plater.cpp:692
+#: src/slic3r/GUI/Platter.cpp:692
 msgid "Printer"
 msgstr "Yazıcı"
 
-#: src/slic3r/GUI/Plater.cpp:738 src/slic3r/GUI/Plater.cpp:3908
+#: src/slic3r/GUI/Platter.cpp:738 src/slic3r/GUI/Platter.cpp:3908
 msgid "Send to printer"
 msgstr "Yazıcıya gönder"
 
-#: src/slic3r/GUI/Plater.cpp:741 src/slic3r/GUI/Plater.cpp:2476
-#: src/slic3r/GUI/Plater.cpp:3698
+#: src/slic3r/GUI/Platter.cpp:741 src/slic3r/GUI/Platter.cpp:2476
+#: src/slic3r/GUI/Platter.cpp:3698
 msgid "Slice now"
 msgstr "Şimdi dilimle"
 
-#: src/slic3r/GUI/Plater.cpp:881
+#: src/slic3r/GUI/Platter.cpp:881
 msgid "Hold Shift to Slice & Export G-code"
 msgstr "Dilimlemek ve G-code olarak Dışa Aktarmak için Üst Karakter(Shift) tuşunu basılı tutun"
 
-#: src/slic3r/GUI/Plater.cpp:982
+#: src/slic3r/GUI/Platter.cpp:982
 #, c-format
 msgid "%d (%d shells)"
 msgstr "%d (%d kabuk)"
 
-#: src/slic3r/GUI/Plater.cpp:987
+#: src/slic3r/GUI/Platter.cpp:987
 #, c-format
 msgid "Auto-repaired (%d errors)"
 msgstr "Otomatik onarma (%d hata)"
 
-#: src/slic3r/GUI/Plater.cpp:990
+#: src/slic3r/GUI/Platter.cpp:990
 #, c-format
 msgid "%d degenerate facets, %d edges fixed, %d facets removed, %d facets added, %d facets reversed, %d backwards edges"
 msgstr "%d yüzey bozulması düzeltildi , %d kenar düzeltildi, %d yüzey kaldırıldı, %d yüzey eklendi, %d yüzey ters çevrildi, %d kenar geriye çevrildi"
 
-#: src/slic3r/GUI/Plater.cpp:1000
+#: src/slic3r/GUI/Platter.cpp:1000
 msgid "Yes"
 msgstr "Evet"
 
-#: src/slic3r/GUI/Plater.cpp:1023
+#: src/slic3r/GUI/Platter.cpp:1023
 msgid "Used Material (ml)"
 msgstr "Kullanılan Malzeme (ml)"
 
-#: src/slic3r/GUI/Plater.cpp:1026
+#: src/slic3r/GUI/Platter.cpp:1026
 msgid "object(s)"
 msgstr "nesne (ler)"
 
-#: src/slic3r/GUI/Plater.cpp:1026
+#: src/slic3r/GUI/Platter.cpp:1026
 msgid "supports and pad"
 msgstr "destekler ve ped"
 
-#: src/slic3r/GUI/Plater.cpp:1051 src/slic3r/GUI/Plater.cpp:1066
+#: src/slic3r/GUI/Platter.cpp:1051 src/slic3r/GUI/Platter.cpp:1066
 msgid "objects"
 msgstr "nesneleri"
 
-#: src/slic3r/GUI/Plater.cpp:1051 src/slic3r/GUI/Plater.cpp:1066
+#: src/slic3r/GUI/Platter.cpp:1051 src/slic3r/GUI/Platter.cpp:1066
 msgid "wipe tower"
 msgstr "temizleme kulesi"
 
-#: src/slic3r/GUI/Plater.cpp:1081
+#: src/slic3r/GUI/Platter.cpp:1081
 msgid "normal mode"
 msgstr "normal mod"
 
-#: src/slic3r/GUI/Plater.cpp:1085
+#: src/slic3r/GUI/Platter.cpp:1085
 msgid "stealth mode"
 msgstr "gizli mod"
 
-#: src/slic3r/GUI/Plater.cpp:1631
+#: src/slic3r/GUI/Platter.cpp:1631
 msgid "Loading"
 msgstr "Yükleniyor"
 
-#: src/slic3r/GUI/Plater.cpp:1641
+#: src/slic3r/GUI/Platter.cpp:1641
 #, c-format
 msgid "Processing input file %s\n"
 msgstr "%s dosyası işleniyor\n"
 
-#: src/slic3r/GUI/Plater.cpp:1699
+#: src/slic3r/GUI/Platter.cpp:1699
 msgid ""
 "This file contains several objects positioned at multiple heights. Instead of considering them as multiple objects, should I consider\n"
 "this file as a single object having multiple parts?\n"
@@ -2702,24 +2702,24 @@ msgstr ""
 "Bu dosya birden fazla yüksekliğe yerleştirilmiş birkaç nesne içeriyor. Bunları birden fazla nesne olarak düşünmek yerine\n"
 "birden fazla parçalı tek bir nesne olarak mı düşünmeliyim?\n"
 
-#: src/slic3r/GUI/Plater.cpp:1702 src/slic3r/GUI/Plater.cpp:1810
+#: src/slic3r/GUI/Platter.cpp:1702 src/slic3r/GUI/Platter.cpp:1810
 msgid "Multi-part object detected"
 msgstr "Çok parçalı nesne algılandı"
 
-#: src/slic3r/GUI/Plater.cpp:1753
+#: src/slic3r/GUI/Platter.cpp:1753
 msgid "This file cannot be loaded in a simple mode. Do you want to switch to an advanced mode?\n"
 msgstr "Bu dosya basit modda yüklenemez. Gelişmiş moda geçmek ister misiniz?\n"
 
-#: src/slic3r/GUI/Plater.cpp:1754
+#: src/slic3r/GUI/Platter.cpp:1754
 msgid "Detected advanced data"
 msgstr "Gelişmiş veriler tespit edildi"
 
-#: src/slic3r/GUI/Plater.cpp:1787
+#: src/slic3r/GUI/Platter.cpp:1787
 #, c-format
 msgid "You can't to add the object(s) from %s because of one or some of them is(are) multi-part"
 msgstr "%s öğesinden nesne ekleyemezsiniz çünkü bir yada bir kaçı çoklu parçadan oluşuyor"
 
-#: src/slic3r/GUI/Plater.cpp:1807
+#: src/slic3r/GUI/Platter.cpp:1807
 msgid ""
 "Multiple objects were loaded for a multi-material printer.\n"
 "Instead of considering them as multiple objects, should I consider\n"
@@ -2729,238 +2729,238 @@ msgstr ""
 "Bu dosyaları çoklu nesne olarak düşünmek yerine\n"
 "çoklu parçaya sahip tek bir nesne olarak dikkate almalı mıyım?\n"
 
-#: src/slic3r/GUI/Plater.cpp:1823
+#: src/slic3r/GUI/Platter.cpp:1823
 msgid "Loaded"
 msgstr "Yüklendi"
 
-#: src/slic3r/GUI/Plater.cpp:1921
+#: src/slic3r/GUI/Platter.cpp:1921
 msgid "Your object appears to be too large, so it was automatically scaled down to fit your print bed."
 msgstr "Nesneniz çok büyük görünüyor, bu nedenle baskı tablanıza uyacak şekilde otomatik olarak küçültüldü."
 
-#: src/slic3r/GUI/Plater.cpp:1922
+#: src/slic3r/GUI/Platter.cpp:1922
 msgid "Object too large?"
 msgstr "Nesne çok mu büyük?"
 
-#: src/slic3r/GUI/Plater.cpp:1979
+#: src/slic3r/GUI/Platter.cpp:1979
 msgid "Export STL file:"
 msgstr "Dışa aktarılacak STL dosya:"
 
-#: src/slic3r/GUI/Plater.cpp:1986
+#: src/slic3r/GUI/Platter.cpp:1986
 msgid "Export AMF file:"
 msgstr "AMF dosyasını dışa aktar:"
 
-#: src/slic3r/GUI/Plater.cpp:1992
+#: src/slic3r/GUI/Platter.cpp:1992
 msgid "Save file as:"
 msgstr "Farklı kaydet:"
 
-#: src/slic3r/GUI/Plater.cpp:2160
+#: src/slic3r/GUI/Platter.cpp:2160
 msgid "Arranging canceled"
 msgstr "Düzenleme iptal edildi"
 
-#: src/slic3r/GUI/Plater.cpp:2163
+#: src/slic3r/GUI/Platter.cpp:2163
 msgid "Arranging"
 msgstr "Düzenleme"
 
-#: src/slic3r/GUI/Plater.cpp:2200
+#: src/slic3r/GUI/Platter.cpp:2200
 msgid "Could not arrange model objects! Some geometries may be invalid."
 msgstr "Model nesneleri düzenlenemedi! Bazı geometriler geçersiz olabilir."
 
-#: src/slic3r/GUI/Plater.cpp:2207
+#: src/slic3r/GUI/Platter.cpp:2207
 msgid "Arranging done."
 msgstr "Düzenleme yapıldı."
 
-#: src/slic3r/GUI/Plater.cpp:2248
+#: src/slic3r/GUI/Platter.cpp:2248
 msgid "Orientation search canceled"
 msgstr "Oryantasyon araması iptal edildi"
 
-#: src/slic3r/GUI/Plater.cpp:2253
+#: src/slic3r/GUI/Platter.cpp:2253
 msgid "Searching for optimal orientation"
 msgstr "Optimum yönlendirme aranıyor"
 
-#: src/slic3r/GUI/Plater.cpp:2315
+#: src/slic3r/GUI/Platter.cpp:2315
 msgid "Orientation found."
 msgstr "Oryantasyon bulundu."
 
-#: src/slic3r/GUI/Plater.cpp:2335
+#: src/slic3r/GUI/Platter.cpp:2335
 msgid "The selected object can't be split because it contains more than one volume/material."
 msgstr "Seçilen nesne bölünemez çünkü birden fazla birim / malzeme içeriyor."
 
-#: src/slic3r/GUI/Plater.cpp:2461
+#: src/slic3r/GUI/Platter.cpp:2461
 msgid "Invalid data"
 msgstr "Geçersiz veri"
 
-#: src/slic3r/GUI/Plater.cpp:2470
+#: src/slic3r/GUI/Platter.cpp:2470
 msgid "Ready to slice"
 msgstr "Dilime hazır"
 
-#: src/slic3r/GUI/Plater.cpp:2508 src/slic3r/GUI/PrintHostDialogs.cpp:232
+#: src/slic3r/GUI/Platter.cpp:2508 src/slic3r/GUI/PrintHostDialogs.cpp:232
 msgid "Cancelling"
 msgstr "İptal ediliyor"
 
-#: src/slic3r/GUI/Plater.cpp:2525
+#: src/slic3r/GUI/Platter.cpp:2525
 msgid "Another export job is currently running."
 msgstr "Şu anda başka bir dışa aktarma işlemi çalışıyor."
 
-#: src/slic3r/GUI/Plater.cpp:2786
+#: src/slic3r/GUI/Platter.cpp:2786
 msgid "Export failed"
 msgstr "Dışa aktarma başarısız oldu"
 
-#: src/slic3r/GUI/Plater.cpp:2791 src/slic3r/GUI/PrintHostDialogs.cpp:233
+#: src/slic3r/GUI/Platter.cpp:2791 src/slic3r/GUI/PrintHostDialogs.cpp:233
 msgid "Cancelled"
 msgstr "İptal edildi"
 
-#: src/slic3r/GUI/Plater.cpp:2877 src/slic3r/GUI/Plater.cpp:2889
-#: src/slic3r/GUI/Plater.cpp:3000
+#: src/slic3r/GUI/Platter.cpp:2877 src/slic3r/GUI/Platter.cpp:2889
+#: src/slic3r/GUI/Platter.cpp:3000
 msgid "Increase copies"
 msgstr "Kopyaları arttır"
 
-#: src/slic3r/GUI/Plater.cpp:2994 src/slic3r/GUI/Plater.cpp:3013
+#: src/slic3r/GUI/Platter.cpp:2994 src/slic3r/GUI/Platter.cpp:3013
 msgid "Remove the selected object"
 msgstr "Seçilen nesneyi kaldır"
 
-#: src/slic3r/GUI/Plater.cpp:3000
+#: src/slic3r/GUI/Platter.cpp:3000
 msgid "Place one more copy of the selected object"
 msgstr "Seçilen nesnenin bir kopyasını daha yerleştir"
 
-#: src/slic3r/GUI/Plater.cpp:3002
+#: src/slic3r/GUI/Platter.cpp:3002
 msgid "Decrease copies"
 msgstr "Kopyaları azalt"
 
-#: src/slic3r/GUI/Plater.cpp:3002
+#: src/slic3r/GUI/Platter.cpp:3002
 msgid "Remove one copy of the selected object"
 msgstr "Seçili nesnenin bir kopyasını kaldır"
 
-#: src/slic3r/GUI/Plater.cpp:3004
+#: src/slic3r/GUI/Platter.cpp:3004
 msgid "Set number of copies"
 msgstr "Kopya sayısını ayarla"
 
-#: src/slic3r/GUI/Plater.cpp:3004
+#: src/slic3r/GUI/Platter.cpp:3004
 msgid "Change the number of copies of the selected object"
 msgstr "Seçilen nesnenin kopya sayısını değiştir"
 
-#: src/slic3r/GUI/Plater.cpp:3020
+#: src/slic3r/GUI/Platter.cpp:3020
 msgid "Reload from Disk"
 msgstr "Diskten Yeniden Yükle"
 
-#: src/slic3r/GUI/Plater.cpp:3020
+#: src/slic3r/GUI/Platter.cpp:3020
 msgid "Reload the selected file from Disk"
 msgstr "Seçilen dosyayı Diskten yeniden yükle"
 
-#: src/slic3r/GUI/Plater.cpp:3023
+#: src/slic3r/GUI/Platter.cpp:3023
 msgid "Export the selected object as STL file"
 msgstr "Seçilen nesneyi STL dosyası olarak dışa aktar"
 
-#: src/slic3r/GUI/Plater.cpp:3035
+#: src/slic3r/GUI/Platter.cpp:3035
 msgid "Along X axis"
 msgstr "X ekseni boyunca"
 
-#: src/slic3r/GUI/Plater.cpp:3035
+#: src/slic3r/GUI/Platter.cpp:3035
 msgid "Mirror the selected object along the X axis"
 msgstr "Seçilen nesneyi X ekseni boyunca yansıt"
 
-#: src/slic3r/GUI/Plater.cpp:3037
+#: src/slic3r/GUI/Platter.cpp:3037
 msgid "Along Y axis"
 msgstr "Y ekseni boyunca"
 
-#: src/slic3r/GUI/Plater.cpp:3037
+#: src/slic3r/GUI/Platter.cpp:3037
 msgid "Mirror the selected object along the Y axis"
 msgstr "Seçilen nesneyi Y ekseni boyunca aynala"
 
-#: src/slic3r/GUI/Plater.cpp:3039
+#: src/slic3r/GUI/Platter.cpp:3039
 msgid "Along Z axis"
 msgstr "Z ekseni boyunca"
 
-#: src/slic3r/GUI/Plater.cpp:3039
+#: src/slic3r/GUI/Platter.cpp:3039
 msgid "Mirror the selected object along the Z axis"
 msgstr "Seçilen nesneyi Z ekseni boyunca aynalayın"
 
-#: src/slic3r/GUI/Plater.cpp:3042
+#: src/slic3r/GUI/Platter.cpp:3042
 msgid "Mirror"
 msgstr "Ayna"
 
-#: src/slic3r/GUI/Plater.cpp:3042
+#: src/slic3r/GUI/Platter.cpp:3042
 msgid "Mirror the selected object"
 msgstr "Seçilen nesneyi yansıtma"
 
-#: src/slic3r/GUI/Plater.cpp:3054
+#: src/slic3r/GUI/Platter.cpp:3054
 msgid "To objects"
 msgstr "Nesnelere"
 
-#: src/slic3r/GUI/Plater.cpp:3054 src/slic3r/GUI/Plater.cpp:3070
+#: src/slic3r/GUI/Platter.cpp:3054 src/slic3r/GUI/Platter.cpp:3070
 msgid "Split the selected object into individual objects"
 msgstr "Seçilen nesneyi ayrı nesnelere bölme"
 
-#: src/slic3r/GUI/Plater.cpp:3056
+#: src/slic3r/GUI/Platter.cpp:3056
 msgid "To parts"
 msgstr "Parçalara"
 
-#: src/slic3r/GUI/Plater.cpp:3056 src/slic3r/GUI/Plater.cpp:3084
+#: src/slic3r/GUI/Platter.cpp:3056 src/slic3r/GUI/Platter.cpp:3084
 msgid "Split the selected object into individual sub-parts"
 msgstr "Seçilen nesneyi ayrı alt bölümlere ayırma"
 
-#: src/slic3r/GUI/Plater.cpp:3059 src/slic3r/GUI/Plater.cpp:3070
-#: src/slic3r/GUI/Plater.cpp:3084 src/libslic3r/PrintConfig.cpp:3118
+#: src/slic3r/GUI/Platter.cpp:3059 src/slic3r/GUI/Platter.cpp:3070
+#: src/slic3r/GUI/Platter.cpp:3084 src/libslic3r/PrintConfig.cpp:3118
 msgid "Split"
 msgstr "Bölünmüş"
 
-#: src/slic3r/GUI/Plater.cpp:3059
+#: src/slic3r/GUI/Platter.cpp:3059
 msgid "Split the selected object"
 msgstr "Seçili nesneyi böl"
 
-#: src/slic3r/GUI/Plater.cpp:3076
+#: src/slic3r/GUI/Platter.cpp:3076
 msgid "Optimize orientation"
 msgstr "Yönlendirmeyi optimize et"
 
-#: src/slic3r/GUI/Plater.cpp:3076
+#: src/slic3r/GUI/Platter.cpp:3076
 msgid "Optimize the rotation of the object for better print results."
 msgstr "Daha iyi baskı sonuçları için nesnenin dönüşünü optimize eder."
 
-#: src/slic3r/GUI/Plater.cpp:3127
+#: src/slic3r/GUI/Platter.cpp:3127
 msgid "3D editor view"
 msgstr "3B düzenleme görünümü"
 
-#: src/slic3r/GUI/Plater.cpp:3138 src/slic3r/GUI/Tab.cpp:2325
+#: src/slic3r/GUI/Platter.cpp:3138 src/slic3r/GUI/Tab.cpp:2325
 msgid "Preview"
 msgstr "Ön izleme"
 
-#: src/slic3r/GUI/Plater.cpp:3375
+#: src/slic3r/GUI/Platter.cpp:3375
 msgid "All objects will be removed, continue ?"
 msgstr "Tüm nesneler kaldırılacak, devam edilsin mi?"
 
-#: src/slic3r/GUI/Plater.cpp:3511
+#: src/slic3r/GUI/Platter.cpp:3511
 msgid "Save G-code file as:"
 msgstr "G kodu dosyasını farklı kaydet:"
 
-#: src/slic3r/GUI/Plater.cpp:3511
+#: src/slic3r/GUI/Platter.cpp:3511
 msgid "Save SL1 file as:"
 msgstr "SL1 dosyasını farklı kaydet:"
 
-#: src/slic3r/GUI/Plater.cpp:3623
+#: src/slic3r/GUI/Platter.cpp:3623
 #, c-format
 msgid "STL file exported to %s"
 msgstr "%s dosyasına aktarılan STL dosyası"
 
-#: src/slic3r/GUI/Plater.cpp:3639
+#: src/slic3r/GUI/Platter.cpp:3639
 #, c-format
 msgid "AMF file exported to %s"
 msgstr "AMF dosyası %s dosyasına aktarıldı"
 
-#: src/slic3r/GUI/Plater.cpp:3642
+#: src/slic3r/GUI/Platter.cpp:3642
 #, c-format
 msgid "Error exporting AMF file %s"
 msgstr "%s AMF dosyasını dışa aktarma hatası"
 
-#: src/slic3r/GUI/Plater.cpp:3668
+#: src/slic3r/GUI/Platter.cpp:3668
 #, c-format
 msgid "3MF file exported to %s"
 msgstr "3MF dosyası %s dosyasına aktarıldı"
 
-#: src/slic3r/GUI/Plater.cpp:3673
+#: src/slic3r/GUI/Platter.cpp:3673
 #, c-format
 msgid "Error exporting 3MF file %s"
 msgstr "%s 3MF dosyasını dışa aktarma hatası"
 
-#: src/slic3r/GUI/Plater.cpp:3908
+#: src/slic3r/GUI/Platter.cpp:3908
 msgid "Send G-code"
 msgstr "G kodunu gönder"
 
@@ -5032,7 +5032,7 @@ msgid "Distance between copies"
 msgstr "Kopyalar arasındaki mesafe"
 
 #: src/libslic3r/PrintConfig.cpp:343
-msgid "Distance used for the auto-arrange feature of the plater."
+msgid "Distance used for the auto-arrange feature of the platter."
 msgstr "Tablanın otomatik düzenleme özelliği için kullanılan mesafesi."
 
 #: src/libslic3r/PrintConfig.cpp:350
@@ -5153,7 +5153,7 @@ msgid "Radius"
 msgstr "Yarıçap"
 
 #: src/libslic3r/PrintConfig.cpp:481
-msgid "Set this to the clearance radius around your extruder. If the extruder is not centered, choose the largest value for safety. This setting is used to check for collisions and to display the graphical preview in the plater."
+msgid "Set this to the clearance radius around your extruder. If the extruder is not centered, choose the largest value for safety. This setting is used to check for collisions and to display the graphical preview in the platter."
 msgstr "Bunu, ekstrüderinizin etrafındaki boşluk yarıçapına ayarlayın. Ekstrüder ortalanmamışsa, güvenlik için en büyük değeri seçin. Bu ayar, çarpışmaları kontrol etmek ve grafiksel ön izlemeyi tablada görüntülemek için kullanılır."
 
 #: src/libslic3r/PrintConfig.cpp:491

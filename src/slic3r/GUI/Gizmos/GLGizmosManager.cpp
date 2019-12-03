@@ -709,7 +709,7 @@ bool GLGizmosManager::on_char(wxKeyEvent& evt)
             if (m_current == Scale)
             {
                 if (!is_dragging())
-                    wxGetApp().plater()->scale_selection_to_fit_print_volume();
+                    wxGetApp().platter()->scale_selection_to_fit_print_volume();
 
                 processed = true;
             }

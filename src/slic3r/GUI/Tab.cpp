@@ -848,7 +848,7 @@ static wxString pad_combo_value_for_config(const DynamicPrintConfig &config)
 
 void Tab::on_value_change(const std::string& opt_key, const boost::any& value)
 {
-    if (wxGetApp().plater() == nullptr) {
+    if (wxGetApp().platter() == nullptr) {
         return;
     }
 
@@ -885,7 +885,7 @@ void Tab::on_value_change(const std::string& opt_key, const boost::any& value)
         update_wiping_button_visibility();
 
     if (opt_key == "extruders_count")
-        wxGetApp().plater()->on_extruders_change(boost::any_cast<size_t>(value));
+        wxGetApp().platter()->on_extruders_change(boost::any_cast<size_t>(value));
 
     update();
 }
@@ -912,12 +912,12 @@ void Tab::update_wiping_button_visibility() {
 // to update number of "filament" selection boxes when the number of extruders change.
 void Tab::on_presets_changed()
 {
-    if (wxGetApp().plater() == nullptr) {
+    if (wxGetApp().platter() == nullptr) {
         return;
     }
 
     // Instead of PostEvent (EVT_TAB_PRESETS_CHANGED) just call update_presets
-    wxGetApp().plater()->sidebar().update_presets(m_type);
+    wxGetApp().platter()->sidebar().update_presets(m_type);
     update_preset_description_line();
 
     // Printer selected at the Printer tab, update "compatible" marks at the print and filament selectors.
@@ -2823,7 +2823,7 @@ void Tab::select_preset(std::string preset_name, bool delete_current)
 
     if (canceled) {
         update_tab_ui();
-        // Trigger the on_presets_changed event so that we also restore the previous value in the plater selector,
+        // Trigger the on_presets_changed event so that we also restore the previous value in the platter selector,
         // if this action was initiated from the platter.
         on_presets_changed();
     } else {
@@ -3058,7 +3058,7 @@ void Tab::save_preset(std::string name /*= ""*/)
      * there are cases when filament comboboxs are updated for old (non-modified) colors, 
      * but in full_config a filament_colors option aren't.*/
     if (m_type == Preset::TYPE_FILAMENT && wxGetApp().extruders_edited_cnt() > 1)
-        wxGetApp().plater()->force_filament_colors_update();
+        wxGetApp().platter()->force_filament_colors_update();
 }
 
 // Called for a currently selected preset.

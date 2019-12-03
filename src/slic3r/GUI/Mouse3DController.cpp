@@ -322,7 +322,7 @@ void Mouse3DController::render_settings_dialog(unsigned int canvas_width, unsign
     ImGui::PushStyleColor(ImGuiCol_Text, color);
     imgui.text("Camera:");
     ImGui::PopStyleColor();
-    Vec3f target = wxGetApp().plater()->get_camera().get_target().cast<float>();
+    Vec3f target = wxGetApp().platter()->get_camera().get_target().cast<float>();
     ImGui::InputFloat3("Target", target.data(), "%.3f", ImGuiInputTextFlags_ReadOnly);
 #endif // ENABLE_3DCONNEXION_DEVICES_DEBUG_OUTPUT
 

@@ -31,7 +31,7 @@ msgid "Rectangular"
 msgstr "Прямокутний"
 
 #: src/slic3r/GUI/BedShapeDialog.cpp:55
-#: src/slic3r/GUI/GUI_ObjectManipulation.cpp:118 src/slic3r/GUI/Plater.cpp:136
+#: src/slic3r/GUI/GUI_ObjectManipulation.cpp:118 src/slic3r/GUI/Platter.cpp:136
 #: src/slic3r/GUI/Tab.cpp:2185
 msgid "Size"
 msgstr "Розмір"
@@ -266,7 +266,7 @@ msgstr ""
 msgid "All"
 msgstr "Всі"
 
-#: src/slic3r/GUI/ConfigWizard.cpp:183 src/slic3r/GUI/Plater.cpp:414
+#: src/slic3r/GUI/ConfigWizard.cpp:183 src/slic3r/GUI/Platter.cpp:414
 #: src/libslic3r/GCode/PreviewData.cpp:162
 msgid "None"
 msgstr "Жодне"
@@ -996,7 +996,7 @@ msgid "Layers and Perimeters"
 msgstr "Шари та периметри"
 
 #: src/slic3r/GUI/GUI_ObjectList.cpp:29 src/slic3r/GUI/GUI_ObjectList.cpp:66
-#: src/slic3r/GUI/Plater.cpp:431 src/slic3r/GUI/Tab.cpp:981
+#: src/slic3r/GUI/Platter.cpp:431 src/slic3r/GUI/Tab.cpp:981
 #: src/slic3r/GUI/Tab.cpp:982 src/slic3r/GUI/Tab.cpp:1311
 #: src/libslic3r/PrintConfig.cpp:166 src/libslic3r/PrintConfig.cpp:388
 #: src/libslic3r/PrintConfig.cpp:728 src/libslic3r/PrintConfig.cpp:742
@@ -1054,7 +1054,7 @@ msgstr "Швидкість"
 msgid "Extrusion Width"
 msgstr "Ширина екструзії"
 
-#: src/slic3r/GUI/GUI_ObjectList.cpp:75 src/slic3r/GUI/Plater.cpp:410
+#: src/slic3r/GUI/GUI_ObjectList.cpp:75 src/slic3r/GUI/Platter.cpp:410
 #: src/slic3r/GUI/Tab.cpp:3309 src/slic3r/GUI/Tab.cpp:3310
 #: src/libslic3r/PrintConfig.cpp:2359 src/libslic3r/PrintConfig.cpp:2366
 #: src/libslic3r/PrintConfig.cpp:2375 src/libslic3r/PrintConfig.cpp:2384
@@ -1194,7 +1194,7 @@ msgstr ""
 msgid "Fix through the Netfabb"
 msgstr ""
 
-#: src/slic3r/GUI/GUI_ObjectList.cpp:1041 src/slic3r/GUI/Plater.cpp:2861
+#: src/slic3r/GUI/GUI_ObjectList.cpp:1041 src/slic3r/GUI/Platter.cpp:2861
 msgid "Export as STL"
 msgstr ""
 
@@ -1206,8 +1206,8 @@ msgstr ""
 msgid "Select new extruder for the object/part"
 msgstr ""
 
-#: src/slic3r/GUI/GUI_ObjectList.cpp:1079 src/slic3r/GUI/Plater.cpp:2825
-#: src/slic3r/GUI/Plater.cpp:2843 src/slic3r/GUI/Tab.cpp:2860
+#: src/slic3r/GUI/GUI_ObjectList.cpp:1079 src/slic3r/GUI/Platter.cpp:2825
+#: src/slic3r/GUI/Platter.cpp:2843 src/slic3r/GUI/Tab.cpp:2860
 msgid "Delete"
 msgstr "Видалити"
 
@@ -1227,7 +1227,7 @@ msgstr ""
 msgid "You can't delete the last intance from object."
 msgstr ""
 
-#: src/slic3r/GUI/GUI_ObjectList.cpp:1560 src/slic3r/GUI/Plater.cpp:2219
+#: src/slic3r/GUI/GUI_ObjectList.cpp:1560 src/slic3r/GUI/Platter.cpp:2219
 msgid ""
 "The selected object couldn't be split because it contains only one part."
 msgstr ""
@@ -1284,7 +1284,7 @@ msgid "of a current Object"
 msgstr ""
 
 #: src/slic3r/GUI/GUI_ObjectList.cpp:2252
-#: src/slic3r/GUI/GUI_ObjectList.cpp:2325 src/slic3r/GUI/Plater.cpp:117
+#: src/slic3r/GUI/GUI_ObjectList.cpp:2325 src/slic3r/GUI/Platter.cpp:117
 msgid "Info"
 msgstr "Інфо"
 
@@ -1496,8 +1496,8 @@ msgstr ""
 msgid "Load Config from .ini/amf/3mf/gcode"
 msgstr ""
 
-#: src/slic3r/GUI/KBShortcutsDialog.cpp:103 src/slic3r/GUI/Plater.cpp:725
-#: src/slic3r/GUI/Plater.cpp:3673 src/libslic3r/PrintConfig.cpp:2957
+#: src/slic3r/GUI/KBShortcutsDialog.cpp:103 src/slic3r/GUI/Platter.cpp:725
+#: src/slic3r/GUI/Platter.cpp:3673 src/libslic3r/PrintConfig.cpp:2957
 msgid "Export G-code"
 msgstr ""
 
@@ -1522,8 +1522,8 @@ msgid "Repeat last quick slice"
 msgstr "Повторити останнє швидке нарізання"
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:109
-msgid "Select Plater Tab"
-msgstr "Вибрати вкладку Plater"
+msgid "Select Platter Tab"
+msgstr "Вибрати вкладку Platter"
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:110
 msgid "Quick slice and Save as"
@@ -1660,7 +1660,7 @@ msgid "Unselect gizmo, keep object selection"
 msgstr ""
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:149
-msgid "Plater Shortcuts"
+msgid "Platter Shortcuts"
 msgstr ""
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:164
@@ -1729,7 +1729,7 @@ msgid ""
 msgstr " - Пам'ятайте оновлювати з http://github.com/prusa3d/slic3r/releases"
 
 #: src/slic3r/GUI/MainFrame.cpp:160
-msgid "Plater"
+msgid "Platter"
 msgstr "Платер"
 
 #: src/slic3r/GUI/MainFrame.cpp:273
@@ -1905,12 +1905,12 @@ msgid "Deletes all objects"
 msgstr ""
 
 #: src/slic3r/GUI/MainFrame.cpp:392
-msgid "&Plater Tab"
+msgid "&Platter Tab"
 msgstr ""
 
 #: src/slic3r/GUI/MainFrame.cpp:392
-msgid "Show the plater"
-msgstr "Показати plater"
+msgid "Show the platter"
+msgstr "Показати platter"
 
 #: src/slic3r/GUI/MainFrame.cpp:399
 msgid "P&rint Settings Tab"
@@ -2162,8 +2162,8 @@ msgstr " файл як:"
 msgid "Save zip file as:"
 msgstr ""
 
-#: src/slic3r/GUI/MainFrame.cpp:607 src/slic3r/GUI/Plater.cpp:2352
-#: src/slic3r/GUI/Plater.cpp:3467 src/slic3r/GUI/Tab.cpp:1110
+#: src/slic3r/GUI/MainFrame.cpp:607 src/slic3r/GUI/Platter.cpp:2352
+#: src/slic3r/GUI/Platter.cpp:3467 src/slic3r/GUI/Tab.cpp:1110
 #: src/slic3r/GUI/Tab.cpp:3348
 msgid "Slicing"
 msgstr ""
@@ -2221,132 +2221,132 @@ msgstr ""
 msgid "Slic3r has encountered an error"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:137
+#: src/slic3r/GUI/Platter.cpp:137
 msgid "Volume"
 msgstr "Обсяг"
 
-#: src/slic3r/GUI/Plater.cpp:138
+#: src/slic3r/GUI/Platter.cpp:138
 msgid "Facets"
 msgstr "Грані"
 
-#: src/slic3r/GUI/Plater.cpp:139
+#: src/slic3r/GUI/Platter.cpp:139
 msgid "Materials"
 msgstr "Матеріали"
 
-#: src/slic3r/GUI/Plater.cpp:142
+#: src/slic3r/GUI/Platter.cpp:142
 msgid "Manifold"
 msgstr "Різноманіття"
 
-#: src/slic3r/GUI/Plater.cpp:188
+#: src/slic3r/GUI/Platter.cpp:188
 msgid "Sliced Info"
 msgstr "Інформація з нарізання"
 
-#: src/slic3r/GUI/Plater.cpp:207 src/slic3r/GUI/Plater.cpp:998
+#: src/slic3r/GUI/Platter.cpp:207 src/slic3r/GUI/Platter.cpp:998
 msgid "Used Filament (m)"
 msgstr "Використано філаметну (м)"
 
-#: src/slic3r/GUI/Plater.cpp:208
+#: src/slic3r/GUI/Platter.cpp:208
 msgid "Used Filament (mm³)"
 msgstr "Використано філаметну (мм³)"
 
-#: src/slic3r/GUI/Plater.cpp:209
+#: src/slic3r/GUI/Platter.cpp:209
 msgid "Used Filament (g)"
 msgstr "Використано філаметну (г)"
 
-#: src/slic3r/GUI/Plater.cpp:210
+#: src/slic3r/GUI/Platter.cpp:210
 msgid "Used Material (unit)"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:211 src/slic3r/GUI/Plater.cpp:1013
+#: src/slic3r/GUI/Platter.cpp:211 src/slic3r/GUI/Platter.cpp:1013
 #: src/libslic3r/PrintConfig.cpp:716
 msgid "Cost"
 msgstr "Вартість"
 
-#: src/slic3r/GUI/Plater.cpp:212 src/slic3r/GUI/Plater.cpp:985
-#: src/slic3r/GUI/Plater.cpp:1027
+#: src/slic3r/GUI/Platter.cpp:212 src/slic3r/GUI/Platter.cpp:985
+#: src/slic3r/GUI/Platter.cpp:1027
 msgid "Estimated printing time"
 msgstr "Приблизний час друку"
 
-#: src/slic3r/GUI/Plater.cpp:213
+#: src/slic3r/GUI/Platter.cpp:213
 msgid "Number of tool changes"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:290
+#: src/slic3r/GUI/Platter.cpp:290
 msgid "Click to edit preset"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:413
+#: src/slic3r/GUI/Platter.cpp:413
 msgid "Select what kind of support do you need"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:415 src/libslic3r/PrintConfig.cpp:1814
+#: src/slic3r/GUI/Platter.cpp:415 src/libslic3r/PrintConfig.cpp:1814
 #: src/libslic3r/PrintConfig.cpp:2419
 msgid "Support on build plate only"
 msgstr "Підтримка тільки на збірній пластині"
 
-#: src/slic3r/GUI/Plater.cpp:416
+#: src/slic3r/GUI/Platter.cpp:416
 msgid "Everywhere"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:438 src/slic3r/GUI/Tab.cpp:1007
+#: src/slic3r/GUI/Platter.cpp:438 src/slic3r/GUI/Tab.cpp:1007
 msgid "Brim"
 msgstr "Край"
 
-#: src/slic3r/GUI/Plater.cpp:440
+#: src/slic3r/GUI/Platter.cpp:440
 msgid ""
 "This flag enables the brim that will be printed around each object on the "
 "first layer."
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:448
+#: src/slic3r/GUI/Platter.cpp:448
 msgid "Purging volumes"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:673
+#: src/slic3r/GUI/Platter.cpp:673
 msgid "Print settings"
 msgstr "Параметри друку"
 
-#: src/slic3r/GUI/Plater.cpp:674 src/slic3r/GUI/Tab.cpp:1421
+#: src/slic3r/GUI/Platter.cpp:674 src/slic3r/GUI/Tab.cpp:1421
 #: src/slic3r/GUI/Tab.cpp:1422
 msgid "Filament"
 msgstr "Філамент"
 
-#: src/slic3r/GUI/Plater.cpp:675 src/slic3r/GUI/Preset.cpp:1252
+#: src/slic3r/GUI/Platter.cpp:675 src/slic3r/GUI/Preset.cpp:1252
 msgid "SLA print"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:676 src/slic3r/GUI/Preset.cpp:1253
+#: src/slic3r/GUI/Platter.cpp:676 src/slic3r/GUI/Preset.cpp:1253
 msgid "SLA material"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:677
+#: src/slic3r/GUI/Platter.cpp:677
 msgid "Printer"
 msgstr "Принтер"
 
-#: src/slic3r/GUI/Plater.cpp:707 src/slic3r/GUI/Plater.cpp:3674
+#: src/slic3r/GUI/Platter.cpp:707 src/slic3r/GUI/Platter.cpp:3674
 msgid "Send to printer"
 msgstr "Надіслати на принтер"
 
-#: src/slic3r/GUI/Plater.cpp:727 src/slic3r/GUI/Plater.cpp:2352
-#: src/slic3r/GUI/Plater.cpp:3470
+#: src/slic3r/GUI/Platter.cpp:727 src/slic3r/GUI/Platter.cpp:2352
+#: src/slic3r/GUI/Platter.cpp:3470
 msgid "Slice now"
 msgstr "Нарізати зараз"
 
-#: src/slic3r/GUI/Plater.cpp:860
+#: src/slic3r/GUI/Platter.cpp:860
 msgid "Hold Shift to Slice & Export G-code"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:931
+#: src/slic3r/GUI/Platter.cpp:931
 #, c-format
 msgid "%d (%d shells)"
 msgstr "%d (%d оболонок)"
 
-#: src/slic3r/GUI/Plater.cpp:936
+#: src/slic3r/GUI/Platter.cpp:936
 #, c-format
 msgid "Auto-repaired (%d errors)"
 msgstr "Автоматичне відновлення (%d помилок)"
 
-#: src/slic3r/GUI/Plater.cpp:939
+#: src/slic3r/GUI/Platter.cpp:939
 #, c-format
 msgid ""
 "%d degenerate facets, %d edges fixed, %d facets removed, %d facets added, %d "
@@ -2355,48 +2355,48 @@ msgstr ""
 "вироджено %d грані, виправлено %d країв, вилучено %d грані, додано %d грані, "
 "змінено %d грані, повернуто %d країв"
 
-#: src/slic3r/GUI/Plater.cpp:949
+#: src/slic3r/GUI/Platter.cpp:949
 msgid "Yes"
 msgstr "Так"
 
-#: src/slic3r/GUI/Plater.cpp:972
+#: src/slic3r/GUI/Platter.cpp:972
 msgid "Used Material (ml)"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:975
+#: src/slic3r/GUI/Platter.cpp:975
 msgid "object(s)"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:975
+#: src/slic3r/GUI/Platter.cpp:975
 msgid "supports and pad"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:1000 src/slic3r/GUI/Plater.cpp:1015
+#: src/slic3r/GUI/Platter.cpp:1000 src/slic3r/GUI/Platter.cpp:1015
 msgid "objects"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:1000 src/slic3r/GUI/Plater.cpp:1015
+#: src/slic3r/GUI/Platter.cpp:1000 src/slic3r/GUI/Platter.cpp:1015
 msgid "wipe tower"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:1030
+#: src/slic3r/GUI/Platter.cpp:1030
 msgid "normal mode"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:1034
+#: src/slic3r/GUI/Platter.cpp:1034
 msgid "silent mode"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:1544
+#: src/slic3r/GUI/Platter.cpp:1544
 msgid "Loading"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:1554
+#: src/slic3r/GUI/Platter.cpp:1554
 #, c-format
 msgid "Processing input file %s\n"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:1612
+#: src/slic3r/GUI/Platter.cpp:1612
 msgid ""
 "This file contains several objects positioned at multiple heights. Instead "
 "of considering them as multiple objects, should I consider\n"
@@ -2406,28 +2406,28 @@ msgstr ""
 "того, щоб розглядати їх як кілька об'єктів, чи потрібно розглянути\n"
 "цей файл як єдиний об'єкт, що має декілька частин?\n"
 
-#: src/slic3r/GUI/Plater.cpp:1615 src/slic3r/GUI/Plater.cpp:1707
+#: src/slic3r/GUI/Platter.cpp:1615 src/slic3r/GUI/Platter.cpp:1707
 msgid "Multi-part object detected"
 msgstr "Виявлено об'єкт, що складається з кількох частин"
 
-#: src/slic3r/GUI/Plater.cpp:1650
+#: src/slic3r/GUI/Platter.cpp:1650
 msgid ""
 "This file cannot be loaded in simple mode. Do you want to switch to expert "
 "mode?\n"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:1651
+#: src/slic3r/GUI/Platter.cpp:1651
 msgid "Detected advanced data"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:1684
+#: src/slic3r/GUI/Platter.cpp:1684
 #, c-format
 msgid ""
 "You can't to add the object(s) from %s because of one or some of them "
 "is(are) multi-part"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:1704
+#: src/slic3r/GUI/Platter.cpp:1704
 msgid ""
 "Multiple objects were loaded for a multi-material printer.\n"
 "Instead of considering them as multiple objects, should I consider\n"
@@ -2437,11 +2437,11 @@ msgstr ""
 "Замість того, щоб розглядати їх як кілька об'єктів, чи потрібно розглянути\n"
 "ці файл як єдиний об'єкт, що має декілька частин?\n"
 
-#: src/slic3r/GUI/Plater.cpp:1720
+#: src/slic3r/GUI/Platter.cpp:1720
 msgid "Loaded"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:1812
+#: src/slic3r/GUI/Platter.cpp:1812
 msgid ""
 "Your object appears to be too large, so it was automatically scaled down to "
 "fit your print bed."
@@ -2449,51 +2449,51 @@ msgstr ""
 "Ваш об'єкт видався занадто великим, тому він автоматично зменшився "
 "відповідно до вашої полотна друку."
 
-#: src/slic3r/GUI/Plater.cpp:1813
+#: src/slic3r/GUI/Platter.cpp:1813
 msgid "Object too large?"
 msgstr "Об'єкт занадто великий?"
 
-#: src/slic3r/GUI/Plater.cpp:1863
+#: src/slic3r/GUI/Platter.cpp:1863
 msgid "Export STL file:"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:1870
+#: src/slic3r/GUI/Platter.cpp:1870
 msgid "Export AMF file:"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:1876
+#: src/slic3r/GUI/Platter.cpp:1876
 msgid "Save file as:"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2042
+#: src/slic3r/GUI/Platter.cpp:2042
 msgid "Arranging canceled"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2045
+#: src/slic3r/GUI/Platter.cpp:2045
 msgid "Arranging"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2079
+#: src/slic3r/GUI/Platter.cpp:2079
 msgid "Could not arrange model objects! Some geometries may be invalid."
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2083
+#: src/slic3r/GUI/Platter.cpp:2083
 msgid "Arranging done."
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2124
+#: src/slic3r/GUI/Platter.cpp:2124
 msgid "Orientation search canceled"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2129
+#: src/slic3r/GUI/Platter.cpp:2129
 msgid "Searching for optimal orientation"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2190
+#: src/slic3r/GUI/Platter.cpp:2190
 msgid "Orientation found."
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2211
+#: src/slic3r/GUI/Platter.cpp:2211
 msgid ""
 "The selected object can't be split because it contains more than one volume/"
 "material."
@@ -2501,174 +2501,174 @@ msgstr ""
 "Вибраний об'єкт не можна розділити, оскільки містить більше одного об'єму/"
 "матеріалу."
 
-#: src/slic3r/GUI/Plater.cpp:2337
+#: src/slic3r/GUI/Platter.cpp:2337
 msgid "Invalid data"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2346
+#: src/slic3r/GUI/Platter.cpp:2346
 msgid "Ready to slice"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2379 src/slic3r/GUI/PrintHostDialogs.cpp:220
+#: src/slic3r/GUI/Platter.cpp:2379 src/slic3r/GUI/PrintHostDialogs.cpp:220
 msgid "Cancelling"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2396
+#: src/slic3r/GUI/Platter.cpp:2396
 msgid "Another export job is currently running."
 msgstr "На даний час виконується інший експорт."
 
-#: src/slic3r/GUI/Plater.cpp:2656
+#: src/slic3r/GUI/Platter.cpp:2656
 msgid "Export failed"
 msgstr "Експортувати не вдалося"
 
-#: src/slic3r/GUI/Plater.cpp:2661 src/slic3r/GUI/PrintHostDialogs.cpp:221
+#: src/slic3r/GUI/Platter.cpp:2661 src/slic3r/GUI/PrintHostDialogs.cpp:221
 msgid "Cancelled"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2747 src/slic3r/GUI/Plater.cpp:2759
-#: src/slic3r/GUI/Plater.cpp:2831
+#: src/slic3r/GUI/Platter.cpp:2747 src/slic3r/GUI/Platter.cpp:2759
+#: src/slic3r/GUI/Platter.cpp:2831
 msgid "Increase copies"
 msgstr "Збільшити копії"
 
-#: src/slic3r/GUI/Plater.cpp:2825 src/slic3r/GUI/Plater.cpp:2843
+#: src/slic3r/GUI/Platter.cpp:2825 src/slic3r/GUI/Platter.cpp:2843
 msgid "Remove the selected object"
 msgstr "Видалити вибраний об'єкт"
 
-#: src/slic3r/GUI/Plater.cpp:2831
+#: src/slic3r/GUI/Platter.cpp:2831
 msgid "Place one more copy of the selected object"
 msgstr "Розташувати ще одну копію обраного об'єкта"
 
-#: src/slic3r/GUI/Plater.cpp:2833
+#: src/slic3r/GUI/Platter.cpp:2833
 msgid "Decrease copies"
 msgstr "Зменшити копії"
 
-#: src/slic3r/GUI/Plater.cpp:2833
+#: src/slic3r/GUI/Platter.cpp:2833
 msgid "Remove one copy of the selected object"
 msgstr "Вилучіть одну копію обраного об'єкта"
 
-#: src/slic3r/GUI/Plater.cpp:2835
+#: src/slic3r/GUI/Platter.cpp:2835
 msgid "Set number of copies"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2835
+#: src/slic3r/GUI/Platter.cpp:2835
 msgid "Change the number of copies of the selected object"
 msgstr "Змінити кількість копій обраного об'єкта"
 
-#: src/slic3r/GUI/Plater.cpp:2858
+#: src/slic3r/GUI/Platter.cpp:2858
 msgid "Reload from Disk"
 msgstr "Перезавантажити з диска"
 
-#: src/slic3r/GUI/Plater.cpp:2858
+#: src/slic3r/GUI/Platter.cpp:2858
 msgid "Reload the selected file from Disk"
 msgstr "Перезавантажити вибраний файл із диска"
 
-#: src/slic3r/GUI/Plater.cpp:2861
+#: src/slic3r/GUI/Platter.cpp:2861
 msgid "Export the selected object as STL file"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2873
+#: src/slic3r/GUI/Platter.cpp:2873
 msgid "Along X axis"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2873
+#: src/slic3r/GUI/Platter.cpp:2873
 msgid "Mirror the selected object along the X axis"
 msgstr "Віддзеркалити виділений об'єкт уздовж осі Х"
 
-#: src/slic3r/GUI/Plater.cpp:2875
+#: src/slic3r/GUI/Platter.cpp:2875
 msgid "Along Y axis"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2875
+#: src/slic3r/GUI/Platter.cpp:2875
 msgid "Mirror the selected object along the Y axis"
 msgstr "Віддзеркалити виділений об'єкт уздовж осі Y"
 
-#: src/slic3r/GUI/Plater.cpp:2877
+#: src/slic3r/GUI/Platter.cpp:2877
 msgid "Along Z axis"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2877
+#: src/slic3r/GUI/Platter.cpp:2877
 msgid "Mirror the selected object along the Z axis"
 msgstr "Віддзеркалити виділений об'єкт уздовж осі Z"
 
-#: src/slic3r/GUI/Plater.cpp:2880
+#: src/slic3r/GUI/Platter.cpp:2880
 msgid "Mirror"
 msgstr "Віддзеркалити"
 
-#: src/slic3r/GUI/Plater.cpp:2880
+#: src/slic3r/GUI/Platter.cpp:2880
 msgid "Mirror the selected object"
 msgstr "Віддзеркалити виділений об'єкт"
 
-#: src/slic3r/GUI/Plater.cpp:2898
+#: src/slic3r/GUI/Platter.cpp:2898
 msgid "To objects"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2898 src/slic3r/GUI/Plater.cpp:2920
+#: src/slic3r/GUI/Platter.cpp:2898 src/slic3r/GUI/Platter.cpp:2920
 msgid "Split the selected object into individual objects"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2900
+#: src/slic3r/GUI/Platter.cpp:2900
 msgid "To parts"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2900 src/slic3r/GUI/Plater.cpp:2940
+#: src/slic3r/GUI/Platter.cpp:2900 src/slic3r/GUI/Platter.cpp:2940
 msgid "Split the selected object into individual sub-parts"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2903 src/slic3r/GUI/Plater.cpp:2920
-#: src/slic3r/GUI/Plater.cpp:2940 src/libslic3r/PrintConfig.cpp:3075
+#: src/slic3r/GUI/Platter.cpp:2903 src/slic3r/GUI/Platter.cpp:2920
+#: src/slic3r/GUI/Platter.cpp:2940 src/libslic3r/PrintConfig.cpp:3075
 msgid "Split"
 msgstr "Розділити"
 
-#: src/slic3r/GUI/Plater.cpp:2903
+#: src/slic3r/GUI/Platter.cpp:2903
 msgid "Split the selected object"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2926
+#: src/slic3r/GUI/Platter.cpp:2926
 msgid "Optimize orientation"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:2926
+#: src/slic3r/GUI/Platter.cpp:2926
 msgid "Optimize the rotation of the object for better print results."
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:3342
+#: src/slic3r/GUI/Platter.cpp:3342
 msgid "Save G-code file as:"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:3342
+#: src/slic3r/GUI/Platter.cpp:3342
 msgid "Save SL1 file as:"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:3397
+#: src/slic3r/GUI/Platter.cpp:3397
 #, c-format
 msgid "STL file exported to %s"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:3413
+#: src/slic3r/GUI/Platter.cpp:3413
 #, c-format
 msgid "AMF file exported to %s"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:3416
+#: src/slic3r/GUI/Platter.cpp:3416
 #, c-format
 msgid "Error exporting AMF file %s"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:3442
+#: src/slic3r/GUI/Platter.cpp:3442
 #, c-format
 msgid "3MF file exported to %s"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:3445
+#: src/slic3r/GUI/Platter.cpp:3445
 #, c-format
 msgid "Error exporting 3MF file %s"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:3673
+#: src/slic3r/GUI/Platter.cpp:3673
 msgid "Export"
 msgstr ""
 
-#: src/slic3r/GUI/Plater.cpp:3674
+#: src/slic3r/GUI/Platter.cpp:3674
 msgid "Send G-code"
 msgstr ""
 
@@ -4855,7 +4855,7 @@ msgid "Distance between copies"
 msgstr "Відстань між копіями"
 
 #: src/libslic3r/PrintConfig.cpp:341
-msgid "Distance used for the auto-arrange feature of the plater."
+msgid "Distance used for the auto-arrange feature of the platter."
 msgstr "Відстань використовується для автоматичного розташування платеру."
 
 #: src/libslic3r/PrintConfig.cpp:348
@@ -5041,7 +5041,7 @@ msgstr "Радіус"
 msgid ""
 "Set this to the clearance radius around your extruder. If the extruder is "
 "not centered, choose the largest value for safety. This setting is used to "
-"check for collisions and to display the graphical preview in the plater."
+"check for collisions and to display the graphical preview in the platter."
 msgstr ""
 "Установіть значення як радіус зазорів навколо вашої екструдера. Якщо "
 "екструдер не центрований, для безпеки виберіть найбільше значення . Цей "

@@ -898,7 +898,7 @@ void SLAPrint::process()
             BOOST_LOG_TRIVIAL(debug) << "Automatic support points: "
                                      << po.m_supportdata->pts.size();
 
-            // Using RELOAD_SLA_SUPPORT_POINTS to tell the Plater to pass
+            // Using RELOAD_SLA_SUPPORT_POINTS to tell the Platter to pass
             // the update status to GLGizmoSlaSupports
             m_report_status(*this,
                             -1,
@@ -1057,7 +1057,7 @@ void SLAPrint::process()
             po.m_slice_index[i].set_support_slice_idx(po, i);
         }
 
-        // Using RELOAD_SLA_PREVIEW to tell the Plater to pass the update
+        // Using RELOAD_SLA_PREVIEW to tell the Platter to pass the update
         // status to the 3D preview to load the SLA slices.
         m_report_status(*this, -2, "", SlicingStatus::RELOAD_SLA_PREVIEW);
     };

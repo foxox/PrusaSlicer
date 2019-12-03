@@ -166,14 +166,14 @@ public:
     ObjectSettings*     obj_settings();
     ObjectList*         obj_list();
     ObjectLayers*       obj_layers();
-    Plater*             plater();
+    Platter*             platter();
     Model&      		model();
 
     AppConfig*      app_config{ nullptr };
     PresetBundle*   preset_bundle{ nullptr };
     PresetUpdater*  preset_updater{ nullptr };
     MainFrame*      mainframe{ nullptr };
-    Plater*         plater_{ nullptr };
+    Platter*         platter_{ nullptr };
 
     wxNotebook*     tab_panel() const ;
     int             extruders_cnt() const;

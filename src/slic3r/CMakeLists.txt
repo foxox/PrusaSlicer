@@ -73,8 +73,8 @@ set(SLIC3R_GUI_SOURCES
     GUI/I18N.hpp
     GUI/MainFrame.cpp
     GUI/MainFrame.hpp
-    GUI/Plater.cpp
-    GUI/Plater.hpp
+    GUI/Platter.cpp
+    GUI/Platter.hpp
     GUI/GUI_ObjectList.cpp
     GUI/GUI_ObjectList.hpp
     GUI/GUI_ObjectManipulation.cpp

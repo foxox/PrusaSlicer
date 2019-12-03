@@ -274,7 +274,7 @@ ObjectManipulation::ObjectManipulation(wxWindow* parent) :
             if (m_mirror_buttons[axis_idx].second == mbHidden)
                 return;
 
-            GLCanvas3D* canvas = wxGetApp().plater()->canvas3D();
+            GLCanvas3D* canvas = wxGetApp().platter()->canvas3D();
             Selection& selection = canvas->get_selection();
 
             if (selection.is_single_volume() || selection.is_single_modifier()) {
@@ -337,7 +337,7 @@ ObjectManipulation::ObjectManipulation(wxWindow* parent) :
     m_drop_to_bed_button->SetToolTip(_(L("Drop to bed")));
     m_drop_to_bed_button->Bind(wxEVT_BUTTON, [=](wxCommandEvent& e) {
         // ???
-        GLCanvas3D* canvas = wxGetApp().plater()->canvas3D();
+        GLCanvas3D* canvas = wxGetApp().platter()->canvas3D();
         Selection& selection = canvas->get_selection();
 
         if (selection.is_single_volume() || selection.is_single_modifier()) {
@@ -346,7 +346,7 @@ ObjectManipulation::ObjectManipulation(wxWindow* parent) :
             const Geometry::Transformation& instance_trafo = volume->get_instance_transformation();
             Vec3d diff = m_cache.position - instance_trafo.get_matrix(true).inverse() * Vec3d(0., 0., get_volume_min_z(volume));
 
-            Plater::TakeSnapshot snapshot(wxGetApp().plater(), _(L("Drop to bed")));
+            Platter::TakeSnapshot snapshot(wxGetApp().platter(), _(L("Drop to bed")));
             change_position_value(0, diff.x());
             change_position_value(1, diff.y());
             change_position_value(2, diff.z());
@@ -362,7 +362,7 @@ ObjectManipulation::ObjectManipulation(wxWindow* parent) :
     m_reset_rotation_button = new ScalableButton(parent, wxID_ANY, ScalableBitmap(parent, "undo"));
     m_reset_rotation_button->SetToolTip(_(L("Reset rotation")));
     m_reset_rotation_button->Bind(wxEVT_BUTTON, [this](wxCommandEvent& e) {
-        GLCanvas3D* canvas = wxGetApp().plater()->canvas3D();
+        GLCanvas3D* canvas = wxGetApp().platter()->canvas3D();
         Selection& selection = canvas->get_selection();
 
         if (selection.is_single_volume() || selection.is_single_modifier()) {
@@ -396,7 +396,7 @@ ObjectManipulation::ObjectManipulation(wxWindow* parent) :
     m_reset_scale_button = new ScalableButton(parent, wxID_ANY, ScalableBitmap(parent, "undo"));
     m_reset_scale_button->SetToolTip(_(L("Reset scale")));
     m_reset_scale_button->Bind(wxEVT_BUTTON, [this](wxCommandEvent& e) {
-        Plater::TakeSnapshot snapshot(wxGetApp().plater(), _(L("Reset scale")));
+        Platter::TakeSnapshot snapshot(wxGetApp().platter(), _(L("Reset scale")));
         change_scale_value(0, 100.);
         change_scale_value(1, 100.);
         change_scale_value(2, 100.);
@@ -431,7 +431,7 @@ void ObjectManipulation::Show(const bool show)
 
 	if (show) {
 		// Show the "World Coordinates" / "Local Coordintes" Combo in Advanced / Expert mode only.
-		bool show_world_local_combo = wxGetApp().plater()->canvas3D()->get_selection().is_single_full_instance() && wxGetApp().get_mode() != comSimple;
+		bool show_world_local_combo = wxGetApp().platter()->canvas3D()->get_selection().is_single_full_instance() && wxGetApp().get_mode() != comSimple;
 		m_word_local_combo->Show(show_world_local_combo);
         m_empty_str->Show(!show_world_local_combo);
 	}
@@ -531,7 +531,7 @@ void ObjectManipulation::update_if_dirty()
     if (! m_dirty)
         return;
 
-    const Selection &selection = wxGetApp().plater()->canvas3D()->get_selection();
+    const Selection &selection = wxGetApp().platter()->canvas3D()->get_selection();
     this->update_settings_value(selection);
 
     auto update_label = [](wxString &label_cache, const std::string &new_label, wxStaticText *widget) {
@@ -605,7 +605,7 @@ void ObjectManipulation::update_if_dirty()
 
 void ObjectManipulation::update_reset_buttons_visibility()
 {
-    GLCanvas3D* canvas = wxGetApp().plater()->canvas3D();
+    GLCanvas3D* canvas = wxGetApp().platter()->canvas3D();
     if (!canvas)
         return;
     const Selection& selection = canvas->get_selection();
@@ -657,7 +657,7 @@ void ObjectManipulation::update_reset_buttons_visibility()
 
 void ObjectManipulation::update_mirror_buttons_visibility()
 {
-    GLCanvas3D* canvas = wxGetApp().plater()->canvas3D();
+    GLCanvas3D* canvas = wxGetApp().platter()->canvas3D();
     Selection& selection = canvas->get_selection();
     std::array<MirrorButtonState, 3> new_states = {mbHidden, mbHidden, mbHidden};
 
@@ -743,7 +743,7 @@ void ObjectManipulation::change_position_value(int axis, double value)
     Vec3d position = m_cache.position;
     position(axis) = value;
 
-    auto canvas = wxGetApp().plater()->canvas3D();
+    auto canvas = wxGetApp().platter()->canvas3D();
     Selection& selection = canvas->get_selection();
     selection.start_dragging();
     selection.translate(position - m_cache.position, selection.requires_local_axes());
@@ -762,7 +762,7 @@ void ObjectManipulation::change_rotation_value(int axis, double value)
     Vec3d rotation = m_cache.rotation;
     rotation(axis) = value;
 
-    GLCanvas3D* canvas = wxGetApp().plater()->canvas3D();
+    GLCanvas3D* canvas = wxGetApp().platter()->canvas3D();
     Selection& selection = canvas->get_selection();
 
     TransformationType transformation_type(TransformationType::World_Relative_Joint);
@@ -809,7 +809,7 @@ void ObjectManipulation::change_size_value(int axis, double value)
     Vec3d size = m_cache.size;
     size(axis) = value;
 
-    const Selection& selection = wxGetApp().plater()->canvas3D()->get_selection();
+    const Selection& selection = wxGetApp().platter()->canvas3D()->get_selection();
 
     Vec3d ref_size = m_cache.size;
 	if (selection.is_single_volume() || selection.is_single_modifier())
@@ -828,7 +828,7 @@ void ObjectManipulation::change_size_value(int axis, double value)
 
 void ObjectManipulation::do_scale(int axis, const Vec3d &scale) const
 {
-    Selection& selection = wxGetApp().plater()->canvas3D()->get_selection();
+    Selection& selection = wxGetApp().platter()->canvas3D()->get_selection();
     Vec3d scaling_factor = scale;
 
     TransformationType transformation_type(TransformationType::World_Relative_Joint);
@@ -843,7 +843,7 @@ void ObjectManipulation::do_scale(int axis, const Vec3d &scale) const
 
     selection.start_dragging();
     selection.scale(scaling_factor * 0.01, transformation_type);
-    wxGetApp().plater()->canvas3D()->do_scale(L("Set Scale"));
+    wxGetApp().platter()->canvas3D()->do_scale(L("Set Scale"));
 }
 
 void ObjectManipulation::on_change(const std::string& opt_key, int axis, double new_value)
@@ -863,7 +863,7 @@ void ObjectManipulation::on_change(const std::string& opt_key, int axis, double 
 
 void ObjectManipulation::set_uniform_scaling(const bool new_value)
 { 
-    const Selection &selection = wxGetApp().plater()->canvas3D()->get_selection();
+    const Selection &selection = wxGetApp().platter()->canvas3D()->get_selection();
 	if (selection.is_single_full_instance() && m_world_coordinates && !new_value) {
         // Verify whether the instance rotation is multiples of 90 degrees, so that the scaling in world coordinates is possible.
         // all volumes in the selection belongs to the same instance, any of them contains the needed instance data, so we take the first one
@@ -887,7 +887,7 @@ void ObjectManipulation::set_uniform_scaling(const bool new_value)
             // Bake the rotation into the meshes of the object.
             wxGetApp().model().objects[volume->composite_id.object_id]->bake_xy_rotation_into_meshes(volume->composite_id.instance_id);
             // Update the 3D scene, selections etc.
-            wxGetApp().plater()->update();
+            wxGetApp().platter()->update();
             // Recalculate cached values at this panel, refresh the screen.
             this->UpdateAndShow(true);
         }
@@ -973,7 +973,7 @@ ManipulationEditor::ManipulationEditor(ObjectManipulation* parent,
         parent->set_focused_editor(this);
 
         // needed to show the visual hints in 3D scene
-        wxGetApp().plater()->canvas3D()->handle_sidebar_focus_event(m_full_opt_name, true);
+        wxGetApp().platter()->canvas3D()->handle_sidebar_focus_event(m_full_opt_name, true);
         e.Skip();
     }, this->GetId());
 
@@ -1025,7 +1025,7 @@ void ManipulationEditor::kill_focus(ObjectManipulation* parent)
 
     // if the change does not come from the user pressing the ENTER key
     // we need to hide the visual hints in 3D scene
-    wxGetApp().plater()->canvas3D()->handle_sidebar_focus_event(m_full_opt_name, false);
+    wxGetApp().platter()->canvas3D()->handle_sidebar_focus_event(m_full_opt_name, false);
 }
 
 } //namespace GUI

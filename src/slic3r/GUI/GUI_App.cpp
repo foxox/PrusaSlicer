@@ -261,7 +261,7 @@ bool GUI_App::on_init_inner()
 
     Bind(wxEVT_IDLE, [this](wxIdleEvent& event)
     {
-        if (! plater_)
+        if (! platter_)
             return;
 
         if (app_config->dirty() && app_config->get("autosave") == "1")
@@ -451,7 +451,7 @@ void GUI_App::recreate_GUI()
 
     // to make sure nobody accesses data from the soon-to-be-destroyed widgets:
     tabs_list.clear();
-    plater_ = nullptr;
+    platter_ = nullptr;
 
     dlg.Update(10, _(L("Recreating")) + dots);
 
@@ -788,7 +788,7 @@ void GUI_App::update_mode()
     for (auto tab : tabs_list)
         tab->update_mode();
 
-    plater()->update_object_menu();
+    platter()->update_object_menu();
 }
 
 void GUI_App::add_config_menu(wxMenuBar *menu)
@@ -880,7 +880,7 @@ void GUI_App::add_config_menu(wxMenuBar *menu)
              */
             wxMessageDialog dialog(nullptr,
                 _(L("Switching the language will trigger application restart.\n"
-                    "You will lose content of the plater.")) + "\n\n" +
+                    "You will lose content of the platter.")) + "\n\n" +
                 _(L("Do you want to proceed?")),
                 wxString(SLIC3R_APP_NAME) + " - " + _(L("Language selection")),
                 wxICON_QUESTION | wxOK | wxCANCEL);
@@ -949,7 +949,7 @@ bool GUI_App::checked_tab(Tab* tab)
 void GUI_App::load_current_presets()
 {
     PrinterTechnology printer_technology = preset_bundle->printers.get_edited_preset().printer_technology();
-	this->plater()->set_printer_technology(printer_technology);
+	this->platter()->set_printer_technology(printer_technology);
     for (Tab *tab : tabs_list)
 		if (tab->supports_printer_technology(printer_technology)) {
 			if (tab->type() == Preset::TYPE_PRINTER)
@@ -971,19 +971,19 @@ void GUI_App::MacOpenFiles(const wxArrayString &fileNames)
     std::vector<std::string> files;
     for (size_t i = 0; i < fileNames.GetCount(); ++ i)
         files.emplace_back(fileNames[i].ToUTF8().data());
-    this->plater()->load_files(files, true, true);
+    this->platter()->load_files(files, true, true);
 }
 #endif /* __APPLE */
 
 Sidebar& GUI_App::sidebar()
 {
-    return plater_->sidebar();
+    return platter_->sidebar();
 }
 
 ObjectManipulation* GUI_App::obj_manipul()
 {
-    // If this method is called before plater_ has been initialized, return nullptr (to avoid a crash)
-    return (plater_ != nullptr) ? sidebar().obj_manipul() : nullptr;
+    // If this method is called before platter_ has been initialized, return nullptr (to avoid a crash)
+    return (platter_ != nullptr) ? sidebar().obj_manipul() : nullptr;
 }
 
 ObjectSettings* GUI_App::obj_settings()
@@ -1001,14 +1001,14 @@ ObjectLayers* GUI_App::obj_layers()
     return sidebar().obj_layers();
 }
 
-Plater* GUI_App::plater()
+Platter* GUI_App::platter()
 {
-    return plater_;
+    return platter_;
 }
 
 Model& GUI_App::model()
 {
-    return plater_->model();
+    return platter_->model();
 }
 
 wxNotebook* GUI_App::tab_panel() const

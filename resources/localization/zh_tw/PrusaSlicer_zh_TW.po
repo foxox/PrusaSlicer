@@ -37,7 +37,7 @@ msgid "Rectangular"
 msgstr "矩形"
 
 #: src/slic3r/GUI/BedShapeDialog.cpp:55
-#: src/slic3r/GUI/GUI_ObjectManipulation.cpp:118 src/slic3r/GUI/Plater.cpp:136
+#: src/slic3r/GUI/GUI_ObjectManipulation.cpp:118 src/slic3r/GUI/Platter.cpp:136
 #: src/slic3r/GUI/Tab.cpp:2185
 msgid "Size"
 msgstr "尺寸"
@@ -270,7 +270,7 @@ msgstr "所有標準"
 msgid "All"
 msgstr "所有"
 
-#: src/slic3r/GUI/ConfigWizard.cpp:183 src/slic3r/GUI/Plater.cpp:414
+#: src/slic3r/GUI/ConfigWizard.cpp:183 src/slic3r/GUI/Platter.cpp:414
 #: src/libslic3r/GCode/PreviewData.cpp:162
 msgid "None"
 msgstr "無"
@@ -1026,7 +1026,7 @@ msgid "Layers and Perimeters"
 msgstr "層和輪廓"
 
 #: src/slic3r/GUI/GUI_ObjectList.cpp:29 src/slic3r/GUI/GUI_ObjectList.cpp:66
-#: src/slic3r/GUI/Plater.cpp:431 src/slic3r/GUI/Tab.cpp:981
+#: src/slic3r/GUI/Platter.cpp:431 src/slic3r/GUI/Tab.cpp:981
 #: src/slic3r/GUI/Tab.cpp:982 src/slic3r/GUI/Tab.cpp:1311
 #: src/libslic3r/PrintConfig.cpp:166 src/libslic3r/PrintConfig.cpp:388
 #: src/libslic3r/PrintConfig.cpp:728 src/libslic3r/PrintConfig.cpp:742
@@ -1084,7 +1084,7 @@ msgstr "速度"
 msgid "Extrusion Width"
 msgstr "擠出寬度"
 
-#: src/slic3r/GUI/GUI_ObjectList.cpp:75 src/slic3r/GUI/Plater.cpp:410
+#: src/slic3r/GUI/GUI_ObjectList.cpp:75 src/slic3r/GUI/Platter.cpp:410
 #: src/slic3r/GUI/Tab.cpp:3309 src/slic3r/GUI/Tab.cpp:3310
 #: src/libslic3r/PrintConfig.cpp:2359 src/libslic3r/PrintConfig.cpp:2366
 #: src/libslic3r/PrintConfig.cpp:2375 src/libslic3r/PrintConfig.cpp:2384
@@ -1224,7 +1224,7 @@ msgstr "重命名"
 msgid "Fix through the Netfabb"
 msgstr "通過 Netfabb 修復"
 
-#: src/slic3r/GUI/GUI_ObjectList.cpp:1041 src/slic3r/GUI/Plater.cpp:2861
+#: src/slic3r/GUI/GUI_ObjectList.cpp:1041 src/slic3r/GUI/Platter.cpp:2861
 msgid "Export as STL"
 msgstr "導出爲 STL"
 
@@ -1236,8 +1236,8 @@ msgstr "更換擠出機"
 msgid "Select new extruder for the object/part"
 msgstr "爲對象部分選擇新的擠出機"
 
-#: src/slic3r/GUI/GUI_ObjectList.cpp:1079 src/slic3r/GUI/Plater.cpp:2825
-#: src/slic3r/GUI/Plater.cpp:2843 src/slic3r/GUI/Tab.cpp:2860
+#: src/slic3r/GUI/GUI_ObjectList.cpp:1079 src/slic3r/GUI/Platter.cpp:2825
+#: src/slic3r/GUI/Platter.cpp:2843 src/slic3r/GUI/Tab.cpp:2860
 msgid "Delete"
 msgstr "刪除"
 
@@ -1257,7 +1257,7 @@ msgstr "不能從對象中刪除最後一個實體部分。"
 msgid "You can't delete the last intance from object."
 msgstr "不能從對象中刪除最後的實例。"
 
-#: src/slic3r/GUI/GUI_ObjectList.cpp:1560 src/slic3r/GUI/Plater.cpp:2219
+#: src/slic3r/GUI/GUI_ObjectList.cpp:1560 src/slic3r/GUI/Platter.cpp:2219
 msgid ""
 "The selected object couldn't be split because it contains only one part."
 msgstr "無法拆分所選對象, 因爲它只包含一個部分。"
@@ -1313,7 +1313,7 @@ msgid "of a current Object"
 msgstr "當前對象的"
 
 #: src/slic3r/GUI/GUI_ObjectList.cpp:2252
-#: src/slic3r/GUI/GUI_ObjectList.cpp:2325 src/slic3r/GUI/Plater.cpp:117
+#: src/slic3r/GUI/GUI_ObjectList.cpp:2325 src/slic3r/GUI/Platter.cpp:117
 msgid "Info"
 msgstr "信息"
 
@@ -1525,8 +1525,8 @@ msgstr "載入 STL/OBJ/AMF/3MF 項目配置，保留熱牀"
 msgid "Load Config from .ini/amf/3mf/gcode"
 msgstr "從 .ini/amf/3mf/gcode 加載配置"
 
-#: src/slic3r/GUI/KBShortcutsDialog.cpp:103 src/slic3r/GUI/Plater.cpp:725
-#: src/slic3r/GUI/Plater.cpp:3673 src/libslic3r/PrintConfig.cpp:2957
+#: src/slic3r/GUI/KBShortcutsDialog.cpp:103 src/slic3r/GUI/Platter.cpp:725
+#: src/slic3r/GUI/Platter.cpp:3673 src/libslic3r/PrintConfig.cpp:2957
 msgid "Export G-code"
 msgstr "導出 G-code"
 
@@ -1551,7 +1551,7 @@ msgid "Repeat last quick slice"
 msgstr "重複上一個快速切片"
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:109
-msgid "Select Plater Tab"
+msgid "Select Platter Tab"
 msgstr "選擇 \"佈局器\" 選項卡"
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:110
@@ -1693,7 +1693,7 @@ msgid "Unselect gizmo, keep object selection"
 msgstr "取消選擇小物件, 保留對象選擇"
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:149
-msgid "Plater Shortcuts"
+msgid "Platter Shortcuts"
 msgstr "佈局器快捷方式"
 
 #: src/slic3r/GUI/KBShortcutsDialog.cpp:164
@@ -1762,7 +1762,7 @@ msgid ""
 msgstr " - 記得在 http://github.com/prusa3d/slic3r/releases 檢查更新"
 
 #: src/slic3r/GUI/MainFrame.cpp:160
-msgid "Plater"
+msgid "Platter"
 msgstr "佈局器"
 
 #: src/slic3r/GUI/MainFrame.cpp:273
@@ -1938,11 +1938,11 @@ msgid "Deletes all objects"
 msgstr "刪除所有對象"
 
 #: src/slic3r/GUI/MainFrame.cpp:392
-msgid "&Plater Tab"
+msgid "&Platter Tab"
 msgstr "&佈局器 選項卡"
 
 #: src/slic3r/GUI/MainFrame.cpp:392
-msgid "Show the plater"
+msgid "Show the platter"
 msgstr "顯示平臺佈局器"
 
 #: src/slic3r/GUI/MainFrame.cpp:399
@@ -2195,8 +2195,8 @@ msgstr " 文件爲:"
 msgid "Save zip file as:"
 msgstr "將 zip 文件另存爲:"
 
-#: src/slic3r/GUI/MainFrame.cpp:607 src/slic3r/GUI/Plater.cpp:2352
-#: src/slic3r/GUI/Plater.cpp:3467 src/slic3r/GUI/Tab.cpp:1110
+#: src/slic3r/GUI/MainFrame.cpp:607 src/slic3r/GUI/Platter.cpp:2352
+#: src/slic3r/GUI/Platter.cpp:3467 src/slic3r/GUI/Tab.cpp:1110
 #: src/slic3r/GUI/Tab.cpp:3348
 msgid "Slicing"
 msgstr "切片"
@@ -2254,180 +2254,180 @@ msgstr "Slic3r 錯誤"
 msgid "Slic3r has encountered an error"
 msgstr "Slic3r 遇到錯誤"
 
-#: src/slic3r/GUI/Plater.cpp:137
+#: src/slic3r/GUI/Platter.cpp:137
 msgid "Volume"
 msgstr "體積"
 
-#: src/slic3r/GUI/Plater.cpp:138
+#: src/slic3r/GUI/Platter.cpp:138
 msgid "Facets"
 msgstr "平面"
 
-#: src/slic3r/GUI/Plater.cpp:139
+#: src/slic3r/GUI/Platter.cpp:139
 msgid "Materials"
 msgstr "材料"
 
-#: src/slic3r/GUI/Plater.cpp:142
+#: src/slic3r/GUI/Platter.cpp:142
 msgid "Manifold"
 msgstr "流形"
 
-#: src/slic3r/GUI/Plater.cpp:188
+#: src/slic3r/GUI/Platter.cpp:188
 msgid "Sliced Info"
 msgstr "切片信息"
 
-#: src/slic3r/GUI/Plater.cpp:207 src/slic3r/GUI/Plater.cpp:998
+#: src/slic3r/GUI/Platter.cpp:207 src/slic3r/GUI/Platter.cpp:998
 msgid "Used Filament (m)"
 msgstr "消耗耗材絲 (m)"
 
-#: src/slic3r/GUI/Plater.cpp:208
+#: src/slic3r/GUI/Platter.cpp:208
 msgid "Used Filament (mm³)"
 msgstr "消耗耗材絲 (mm³)"
 
-#: src/slic3r/GUI/Plater.cpp:209
+#: src/slic3r/GUI/Platter.cpp:209
 msgid "Used Filament (g)"
 msgstr "消耗耗材絲 (g)"
 
-#: src/slic3r/GUI/Plater.cpp:210
+#: src/slic3r/GUI/Platter.cpp:210
 msgid "Used Material (unit)"
 msgstr "消耗材料 (單位)"
 
-#: src/slic3r/GUI/Plater.cpp:211 src/slic3r/GUI/Plater.cpp:1013
+#: src/slic3r/GUI/Platter.cpp:211 src/slic3r/GUI/Platter.cpp:1013
 #: src/libslic3r/PrintConfig.cpp:716
 msgid "Cost"
 msgstr "單價"
 
-#: src/slic3r/GUI/Plater.cpp:212 src/slic3r/GUI/Plater.cpp:985
-#: src/slic3r/GUI/Plater.cpp:1027
+#: src/slic3r/GUI/Platter.cpp:212 src/slic3r/GUI/Platter.cpp:985
+#: src/slic3r/GUI/Platter.cpp:1027
 msgid "Estimated printing time"
 msgstr "預計列印時間"
 
-#: src/slic3r/GUI/Plater.cpp:213
+#: src/slic3r/GUI/Platter.cpp:213
 msgid "Number of tool changes"
 msgstr "工具更換次數"
 
-#: src/slic3r/GUI/Plater.cpp:290
+#: src/slic3r/GUI/Platter.cpp:290
 msgid "Click to edit preset"
 msgstr "點擊編輯預設"
 
-#: src/slic3r/GUI/Plater.cpp:413
+#: src/slic3r/GUI/Platter.cpp:413
 msgid "Select what kind of support do you need"
 msgstr "選擇您需要的支持類型"
 
-#: src/slic3r/GUI/Plater.cpp:415 src/libslic3r/PrintConfig.cpp:1814
+#: src/slic3r/GUI/Platter.cpp:415 src/libslic3r/PrintConfig.cpp:1814
 #: src/libslic3r/PrintConfig.cpp:2419
 msgid "Support on build plate only"
 msgstr "僅在熱牀上生成支撐"
 
-#: src/slic3r/GUI/Plater.cpp:416
+#: src/slic3r/GUI/Platter.cpp:416
 msgid "Everywhere"
 msgstr "任何地方"
 
-#: src/slic3r/GUI/Plater.cpp:438 src/slic3r/GUI/Tab.cpp:1007
+#: src/slic3r/GUI/Platter.cpp:438 src/slic3r/GUI/Tab.cpp:1007
 msgid "Brim"
 msgstr "側裙"
 
-#: src/slic3r/GUI/Plater.cpp:440
+#: src/slic3r/GUI/Platter.cpp:440
 msgid ""
 "This flag enables the brim that will be printed around each object on the "
 "first layer."
 msgstr "此標誌啓用將在第一層上的每個對象周圍列印裙邊."
 
-#: src/slic3r/GUI/Plater.cpp:448
+#: src/slic3r/GUI/Platter.cpp:448
 msgid "Purging volumes"
 msgstr "清理量"
 
-#: src/slic3r/GUI/Plater.cpp:673
+#: src/slic3r/GUI/Platter.cpp:673
 msgid "Print settings"
 msgstr "列印設置"
 
-#: src/slic3r/GUI/Plater.cpp:674 src/slic3r/GUI/Tab.cpp:1421
+#: src/slic3r/GUI/Platter.cpp:674 src/slic3r/GUI/Tab.cpp:1421
 #: src/slic3r/GUI/Tab.cpp:1422
 msgid "Filament"
 msgstr "線材"
 
-#: src/slic3r/GUI/Plater.cpp:675 src/slic3r/GUI/Preset.cpp:1252
+#: src/slic3r/GUI/Platter.cpp:675 src/slic3r/GUI/Preset.cpp:1252
 msgid "SLA print"
 msgstr "SLA 列印"
 
-#: src/slic3r/GUI/Plater.cpp:676 src/slic3r/GUI/Preset.cpp:1253
+#: src/slic3r/GUI/Platter.cpp:676 src/slic3r/GUI/Preset.cpp:1253
 msgid "SLA material"
 msgstr "SLA 材料"
 
-#: src/slic3r/GUI/Plater.cpp:677
+#: src/slic3r/GUI/Platter.cpp:677
 msgid "Printer"
 msgstr "印表機"
 
-#: src/slic3r/GUI/Plater.cpp:707 src/slic3r/GUI/Plater.cpp:3674
+#: src/slic3r/GUI/Platter.cpp:707 src/slic3r/GUI/Platter.cpp:3674
 msgid "Send to printer"
 msgstr "發送到印表機"
 
-#: src/slic3r/GUI/Plater.cpp:727 src/slic3r/GUI/Plater.cpp:2352
-#: src/slic3r/GUI/Plater.cpp:3470
+#: src/slic3r/GUI/Platter.cpp:727 src/slic3r/GUI/Platter.cpp:2352
+#: src/slic3r/GUI/Platter.cpp:3470
 msgid "Slice now"
 msgstr "立即切片"
 
-#: src/slic3r/GUI/Plater.cpp:860
+#: src/slic3r/GUI/Platter.cpp:860
 msgid "Hold Shift to Slice & Export G-code"
 msgstr "按住Shift鍵來切片 並 導出G-code"
 
-#: src/slic3r/GUI/Plater.cpp:931
+#: src/slic3r/GUI/Platter.cpp:931
 #, c-format
 msgid "%d (%d shells)"
 msgstr "%d (%d 殼)"
 
-#: src/slic3r/GUI/Plater.cpp:936
+#: src/slic3r/GUI/Platter.cpp:936
 #, c-format
 msgid "Auto-repaired (%d errors)"
 msgstr "自動修復 (%d 錯誤):"
 
-#: src/slic3r/GUI/Plater.cpp:939
+#: src/slic3r/GUI/Platter.cpp:939
 #, c-format
 msgid ""
 "%d degenerate facets, %d edges fixed, %d facets removed, %d facets added, %d "
 "facets reversed, %d backwards edges"
 msgstr "%d 退化面,%d 邊緣固定,%d 面被移除,%d 面被刪除,%d 面反轉,%d 逆向邊緣"
 
-#: src/slic3r/GUI/Plater.cpp:949
+#: src/slic3r/GUI/Platter.cpp:949
 msgid "Yes"
 msgstr "是"
 
-#: src/slic3r/GUI/Plater.cpp:972
+#: src/slic3r/GUI/Platter.cpp:972
 msgid "Used Material (ml)"
 msgstr "使用的材料 (毫升)"
 
-#: src/slic3r/GUI/Plater.cpp:975
+#: src/slic3r/GUI/Platter.cpp:975
 msgid "object(s)"
 msgstr "對象 (s)"
 
-#: src/slic3r/GUI/Plater.cpp:975
+#: src/slic3r/GUI/Platter.cpp:975
 msgid "supports and pad"
 msgstr "支撐和墊"
 
-#: src/slic3r/GUI/Plater.cpp:1000 src/slic3r/GUI/Plater.cpp:1015
+#: src/slic3r/GUI/Platter.cpp:1000 src/slic3r/GUI/Platter.cpp:1015
 msgid "objects"
 msgstr "對象"
 
-#: src/slic3r/GUI/Plater.cpp:1000 src/slic3r/GUI/Plater.cpp:1015
+#: src/slic3r/GUI/Platter.cpp:1000 src/slic3r/GUI/Platter.cpp:1015
 msgid "wipe tower"
 msgstr "擦料塔"
 
-#: src/slic3r/GUI/Plater.cpp:1030
+#: src/slic3r/GUI/Platter.cpp:1030
 msgid "normal mode"
 msgstr "正常模式"
 
-#: src/slic3r/GUI/Plater.cpp:1034
+#: src/slic3r/GUI/Platter.cpp:1034
 msgid "silent mode"
 msgstr "靜音模式"
 
-#: src/slic3r/GUI/Plater.cpp:1544
+#: src/slic3r/GUI/Platter.cpp:1544
 msgid "Loading"
 msgstr "載入中"
 
-#: src/slic3r/GUI/Plater.cpp:1554
+#: src/slic3r/GUI/Platter.cpp:1554
 #, c-format
 msgid "Processing input file %s\n"
 msgstr "處理輸入文件 %s\n"
 
-#: src/slic3r/GUI/Plater.cpp:1612
+#: src/slic3r/GUI/Platter.cpp:1612
 msgid ""
 "This file contains several objects positioned at multiple heights. Instead "
 "of considering them as multiple objects, should I consider\n"
@@ -2435,28 +2435,28 @@ msgid ""
 msgstr ""
 "此文件包含位於多個高度的多個對象。是否把文件當作有多個部件的單一物體？\n"
 
-#: src/slic3r/GUI/Plater.cpp:1615 src/slic3r/GUI/Plater.cpp:1707
+#: src/slic3r/GUI/Platter.cpp:1615 src/slic3r/GUI/Platter.cpp:1707
 msgid "Multi-part object detected"
 msgstr "檢測到多部分對象"
 
-#: src/slic3r/GUI/Plater.cpp:1650
+#: src/slic3r/GUI/Platter.cpp:1650
 msgid ""
 "This file cannot be loaded in simple mode. Do you want to switch to expert "
 "mode?\n"
 msgstr "無法在簡單模式下加載此文件。是否要切換到專家模式？\n"
 
-#: src/slic3r/GUI/Plater.cpp:1651
+#: src/slic3r/GUI/Platter.cpp:1651
 msgid "Detected advanced data"
 msgstr "檢測到的高級數據"
 
-#: src/slic3r/GUI/Plater.cpp:1684
+#: src/slic3r/GUI/Platter.cpp:1684
 #, c-format
 msgid ""
 "You can't to add the object(s) from %s because of one or some of them "
 "is(are) multi-part"
 msgstr "不能從 %s 中添加對象, 因爲其中一個或一些有多個部分"
 
-#: src/slic3r/GUI/Plater.cpp:1704
+#: src/slic3r/GUI/Platter.cpp:1704
 msgid ""
 "Multiple objects were loaded for a multi-material printer.\n"
 "Instead of considering them as multiple objects, should I consider\n"
@@ -2465,234 +2465,234 @@ msgstr ""
 "爲多材料印表機加載了多個對象。\n"
 "是否將這些文件視爲具有多個部分的單個對象？\n"
 
-#: src/slic3r/GUI/Plater.cpp:1720
+#: src/slic3r/GUI/Platter.cpp:1720
 msgid "Loaded"
 msgstr "加載"
 
-#: src/slic3r/GUI/Plater.cpp:1812
+#: src/slic3r/GUI/Platter.cpp:1812
 msgid ""
 "Your object appears to be too large, so it was automatically scaled down to "
 "fit your print bed."
 msgstr "您的對象看起來太大, 因此它被自動縮小以適合您的列印牀。"
 
-#: src/slic3r/GUI/Plater.cpp:1813
+#: src/slic3r/GUI/Platter.cpp:1813
 msgid "Object too large?"
 msgstr "對象太大？"
 
-#: src/slic3r/GUI/Plater.cpp:1863
+#: src/slic3r/GUI/Platter.cpp:1863
 msgid "Export STL file:"
 msgstr "導出 STL 文件:"
 
-#: src/slic3r/GUI/Plater.cpp:1870
+#: src/slic3r/GUI/Platter.cpp:1870
 msgid "Export AMF file:"
 msgstr "導出 AMF 文件:"
 
-#: src/slic3r/GUI/Plater.cpp:1876
+#: src/slic3r/GUI/Platter.cpp:1876
 msgid "Save file as:"
 msgstr "將文件另存爲:"
 
-#: src/slic3r/GUI/Plater.cpp:2042
+#: src/slic3r/GUI/Platter.cpp:2042
 msgid "Arranging canceled"
 msgstr "佈局已取消"
 
-#: src/slic3r/GUI/Plater.cpp:2045
+#: src/slic3r/GUI/Platter.cpp:2045
 msgid "Arranging"
 msgstr "自動佈局"
 
-#: src/slic3r/GUI/Plater.cpp:2079
+#: src/slic3r/GUI/Platter.cpp:2079
 msgid "Could not arrange model objects! Some geometries may be invalid."
 msgstr "無法排列模型對象!某些幾何形狀可能無效。"
 
-#: src/slic3r/GUI/Plater.cpp:2083
+#: src/slic3r/GUI/Platter.cpp:2083
 msgid "Arranging done."
 msgstr "佈局完成."
 
-#: src/slic3r/GUI/Plater.cpp:2124
+#: src/slic3r/GUI/Platter.cpp:2124
 msgid "Orientation search canceled"
 msgstr "方向搜索已取消"
 
-#: src/slic3r/GUI/Plater.cpp:2129
+#: src/slic3r/GUI/Platter.cpp:2129
 msgid "Searching for optimal orientation"
 msgstr "尋找最佳方向"
 
-#: src/slic3r/GUI/Plater.cpp:2190
+#: src/slic3r/GUI/Platter.cpp:2190
 msgid "Orientation found."
 msgstr "找到方向。"
 
-#: src/slic3r/GUI/Plater.cpp:2211
+#: src/slic3r/GUI/Platter.cpp:2211
 msgid ""
 "The selected object can't be split because it contains more than one volume/"
 "material."
 msgstr "無法拆分所選對象, 因爲它包含多個容量/材質。"
 
-#: src/slic3r/GUI/Plater.cpp:2337
+#: src/slic3r/GUI/Platter.cpp:2337
 msgid "Invalid data"
 msgstr "無效數據"
 
-#: src/slic3r/GUI/Plater.cpp:2346
+#: src/slic3r/GUI/Platter.cpp:2346
 msgid "Ready to slice"
 msgstr "準備切片"
 
-#: src/slic3r/GUI/Plater.cpp:2379 src/slic3r/GUI/PrintHostDialogs.cpp:220
+#: src/slic3r/GUI/Platter.cpp:2379 src/slic3r/GUI/PrintHostDialogs.cpp:220
 msgid "Cancelling"
 msgstr "取消中"
 
-#: src/slic3r/GUI/Plater.cpp:2396
+#: src/slic3r/GUI/Platter.cpp:2396
 msgid "Another export job is currently running."
 msgstr "另一個導出作業當前正在運行。"
 
-#: src/slic3r/GUI/Plater.cpp:2656
+#: src/slic3r/GUI/Platter.cpp:2656
 msgid "Export failed"
 msgstr "導出失敗"
 
-#: src/slic3r/GUI/Plater.cpp:2661 src/slic3r/GUI/PrintHostDialogs.cpp:221
+#: src/slic3r/GUI/Platter.cpp:2661 src/slic3r/GUI/PrintHostDialogs.cpp:221
 msgid "Cancelled"
 msgstr "已取消"
 
-#: src/slic3r/GUI/Plater.cpp:2747 src/slic3r/GUI/Plater.cpp:2759
-#: src/slic3r/GUI/Plater.cpp:2831
+#: src/slic3r/GUI/Platter.cpp:2747 src/slic3r/GUI/Platter.cpp:2759
+#: src/slic3r/GUI/Platter.cpp:2831
 msgid "Increase copies"
 msgstr "增加副本"
 
-#: src/slic3r/GUI/Plater.cpp:2825 src/slic3r/GUI/Plater.cpp:2843
+#: src/slic3r/GUI/Platter.cpp:2825 src/slic3r/GUI/Platter.cpp:2843
 msgid "Remove the selected object"
 msgstr "刪除選定的對象"
 
-#: src/slic3r/GUI/Plater.cpp:2831
+#: src/slic3r/GUI/Platter.cpp:2831
 msgid "Place one more copy of the selected object"
 msgstr "再放置所選對象的一個副本"
 
-#: src/slic3r/GUI/Plater.cpp:2833
+#: src/slic3r/GUI/Platter.cpp:2833
 msgid "Decrease copies"
 msgstr "減少副本"
 
-#: src/slic3r/GUI/Plater.cpp:2833
+#: src/slic3r/GUI/Platter.cpp:2833
 msgid "Remove one copy of the selected object"
 msgstr "刪除所選對象的一個副本"
 
-#: src/slic3r/GUI/Plater.cpp:2835
+#: src/slic3r/GUI/Platter.cpp:2835
 msgid "Set number of copies"
 msgstr "設置份數"
 
-#: src/slic3r/GUI/Plater.cpp:2835
+#: src/slic3r/GUI/Platter.cpp:2835
 msgid "Change the number of copies of the selected object"
 msgstr "更改所選對象的份數"
 
-#: src/slic3r/GUI/Plater.cpp:2858
+#: src/slic3r/GUI/Platter.cpp:2858
 msgid "Reload from Disk"
 msgstr "從磁盤重新加載"
 
-#: src/slic3r/GUI/Plater.cpp:2858
+#: src/slic3r/GUI/Platter.cpp:2858
 msgid "Reload the selected file from Disk"
 msgstr "從磁盤重新加載所選文件"
 
-#: src/slic3r/GUI/Plater.cpp:2861
+#: src/slic3r/GUI/Platter.cpp:2861
 msgid "Export the selected object as STL file"
 msgstr "將所選對象導出爲 STL 文件"
 
-#: src/slic3r/GUI/Plater.cpp:2873
+#: src/slic3r/GUI/Platter.cpp:2873
 msgid "Along X axis"
 msgstr "沿 X 軸"
 
-#: src/slic3r/GUI/Plater.cpp:2873
+#: src/slic3r/GUI/Platter.cpp:2873
 msgid "Mirror the selected object along the X axis"
 msgstr "沿 X 軸鏡像所選對象"
 
-#: src/slic3r/GUI/Plater.cpp:2875
+#: src/slic3r/GUI/Platter.cpp:2875
 msgid "Along Y axis"
 msgstr "沿 Y 軸"
 
-#: src/slic3r/GUI/Plater.cpp:2875
+#: src/slic3r/GUI/Platter.cpp:2875
 msgid "Mirror the selected object along the Y axis"
 msgstr "沿 Y 軸鏡像所選對象"
 
-#: src/slic3r/GUI/Plater.cpp:2877
+#: src/slic3r/GUI/Platter.cpp:2877
 msgid "Along Z axis"
 msgstr "沿 Z 軸"
 
-#: src/slic3r/GUI/Plater.cpp:2877
+#: src/slic3r/GUI/Platter.cpp:2877
 msgid "Mirror the selected object along the Z axis"
 msgstr "沿 Z 軸鏡像所選對象"
 
-#: src/slic3r/GUI/Plater.cpp:2880
+#: src/slic3r/GUI/Platter.cpp:2880
 msgid "Mirror"
 msgstr "鏡像"
 
-#: src/slic3r/GUI/Plater.cpp:2880
+#: src/slic3r/GUI/Platter.cpp:2880
 msgid "Mirror the selected object"
 msgstr "鏡像所選對象"
 
-#: src/slic3r/GUI/Plater.cpp:2898
+#: src/slic3r/GUI/Platter.cpp:2898
 msgid "To objects"
 msgstr "拆分到對象"
 
-#: src/slic3r/GUI/Plater.cpp:2898 src/slic3r/GUI/Plater.cpp:2920
+#: src/slic3r/GUI/Platter.cpp:2898 src/slic3r/GUI/Platter.cpp:2920
 msgid "Split the selected object into individual objects"
 msgstr "將所選對象拆分爲單個對象"
 
-#: src/slic3r/GUI/Plater.cpp:2900
+#: src/slic3r/GUI/Platter.cpp:2900
 msgid "To parts"
 msgstr "到零件"
 
-#: src/slic3r/GUI/Plater.cpp:2900 src/slic3r/GUI/Plater.cpp:2940
+#: src/slic3r/GUI/Platter.cpp:2900 src/slic3r/GUI/Platter.cpp:2940
 msgid "Split the selected object into individual sub-parts"
 msgstr "將所選對象拆分爲各個子部件"
 
-#: src/slic3r/GUI/Plater.cpp:2903 src/slic3r/GUI/Plater.cpp:2920
-#: src/slic3r/GUI/Plater.cpp:2940 src/libslic3r/PrintConfig.cpp:3075
+#: src/slic3r/GUI/Platter.cpp:2903 src/slic3r/GUI/Platter.cpp:2920
+#: src/slic3r/GUI/Platter.cpp:2940 src/libslic3r/PrintConfig.cpp:3075
 msgid "Split"
 msgstr "拆分"
 
-#: src/slic3r/GUI/Plater.cpp:2903
+#: src/slic3r/GUI/Platter.cpp:2903
 msgid "Split the selected object"
 msgstr "拆分所選對象"
 
-#: src/slic3r/GUI/Plater.cpp:2926
+#: src/slic3r/GUI/Platter.cpp:2926
 msgid "Optimize orientation"
 msgstr "優化方向"
 
-#: src/slic3r/GUI/Plater.cpp:2926
+#: src/slic3r/GUI/Platter.cpp:2926
 msgid "Optimize the rotation of the object for better print results."
 msgstr "優化對象的旋轉, 以獲得更好的列印效果。"
 
-#: src/slic3r/GUI/Plater.cpp:3342
+#: src/slic3r/GUI/Platter.cpp:3342
 msgid "Save G-code file as:"
 msgstr "將 G-code 文件另存爲:"
 
-#: src/slic3r/GUI/Plater.cpp:3342
+#: src/slic3r/GUI/Platter.cpp:3342
 msgid "Save SL1 file as:"
 msgstr "將 SL1 文件另存爲:"
 
-#: src/slic3r/GUI/Plater.cpp:3397
+#: src/slic3r/GUI/Platter.cpp:3397
 #, c-format
 msgid "STL file exported to %s"
 msgstr "STL 文件導出到 %s"
 
-#: src/slic3r/GUI/Plater.cpp:3413
+#: src/slic3r/GUI/Platter.cpp:3413
 #, c-format
 msgid "AMF file exported to %s"
 msgstr "AMF 文件導出到 %s"
 
-#: src/slic3r/GUI/Plater.cpp:3416
+#: src/slic3r/GUI/Platter.cpp:3416
 #, c-format
 msgid "Error exporting AMF file %s"
 msgstr "導出 AMF 文件 %s 時出錯"
 
-#: src/slic3r/GUI/Plater.cpp:3442
+#: src/slic3r/GUI/Platter.cpp:3442
 #, c-format
 msgid "3MF file exported to %s"
 msgstr "3MF 文件導出到 %s"
 
-#: src/slic3r/GUI/Plater.cpp:3445
+#: src/slic3r/GUI/Platter.cpp:3445
 #, c-format
 msgid "Error exporting 3MF file %s"
 msgstr "導出3MF 文件 %s 時出錯"
 
-#: src/slic3r/GUI/Plater.cpp:3673
+#: src/slic3r/GUI/Platter.cpp:3673
 msgid "Export"
 msgstr "導出"
 
-#: src/slic3r/GUI/Plater.cpp:3674
+#: src/slic3r/GUI/Platter.cpp:3674
 msgid "Send G-code"
 msgstr "發送 G 代碼"
 
@@ -4910,7 +4910,7 @@ msgid "Distance between copies"
 msgstr "複製物體之間的距離"
 
 #: src/libslic3r/PrintConfig.cpp:341
-msgid "Distance used for the auto-arrange feature of the plater."
+msgid "Distance used for the auto-arrange feature of the platter."
 msgstr "自動分佈時所使用的距離。"
 
 #: src/libslic3r/PrintConfig.cpp:348
@@ -5081,7 +5081,7 @@ msgstr "半徑"
 msgid ""
 "Set this to the clearance radius around your extruder. If the extruder is "
 "not centered, choose the largest value for safety. This setting is used to "
-"check for collisions and to display the graphical preview in the plater."
+"check for collisions and to display the graphical preview in the platter."
 msgstr ""
 "設置爲擠出頭周圍的空隙半徑。如果擠出頭未置中，安全起見請選擇最大值。該參數用"
 "於檢查碰撞，並在界面中顯示圖形預覽。"

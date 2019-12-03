@@ -181,7 +181,7 @@ void GLGizmoCut::perform_cut(const Selection& selection)
 
     wxCHECK_RET(instance_idx >= 0 && object_idx >= 0, "GLGizmoCut: Invalid object selection");
 
-    wxGetApp().plater()->cut(object_idx, instance_idx, m_cut_z, m_keep_upper, m_keep_lower, m_rotate_lower);
+    wxGetApp().platter()->cut(object_idx, instance_idx, m_cut_z, m_keep_upper, m_keep_lower, m_rotate_lower);
 }
 
 double GLGizmoCut::calc_projection(const Linef3& mouse_ray) const

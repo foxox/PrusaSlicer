@@ -689,7 +689,7 @@ void GLCanvas3D::LayersEditing::accept_changes(GLCanvas3D& canvas)
 {
     if (last_object_id >= 0) {
         if (m_layer_height_profile_modified) {
-            wxGetApp().plater()->take_snapshot(_(L("Layer height profile-Manual edit")));
+            wxGetApp().platter()->take_snapshot(_(L("Layer height profile-Manual edit")));
             const_cast<ModelObject*>(m_model_object)->layer_height_profile = m_layer_height_profile;
 			canvas.post_event(SimpleEvent(EVT_GLCANVAS_SCHEDULE_BACKGROUND_PROCESS));
         }
@@ -1002,7 +1002,7 @@ void GLCanvas3D::LegendTexture::fill_color_print_legend_items(  const GLCanvas3D
                                                                 std::vector<float>& colors,
                                                                 std::vector<std::string>& cp_legend_items)
 {
-    std::vector<Model::CustomGCode> custom_gcode_per_height = wxGetApp().plater()->model().custom_gcode_per_height;
+    std::vector<Model::CustomGCode> custom_gcode_per_height = wxGetApp().platter()->model().custom_gcode_per_height;
 
     const int extruders_cnt = wxGetApp().extruders_edited_cnt();
     if (extruders_cnt == 1) 
@@ -1667,7 +1667,7 @@ bool GLCanvas3D::is_layers_editing_allowed() const
 #if ENABLE_ADAPTIVE_LAYER_HEIGHT_PROFILE
 void GLCanvas3D::reset_layer_height_profile()
 {
-    wxGetApp().plater()->take_snapshot(_(L("Layer height profile-Reset")));
+    wxGetApp().platter()->take_snapshot(_(L("Layer height profile-Reset")));
     m_layers_editing.reset_layer_height_profile(*this);
     m_layers_editing.state = LayersEditing::Completed;
     m_dirty = true;
@@ -1675,7 +1675,7 @@ void GLCanvas3D::reset_layer_height_profile()
 
 void GLCanvas3D::adaptive_layer_height_profile(float cusp)
 {
-    wxGetApp().plater()->take_snapshot(_(L("Layer height profile-Adaptive")));
+    wxGetApp().platter()->take_snapshot(_(L("Layer height profile-Adaptive")));
     m_layers_editing.adaptive_layer_height_profile(*this, cusp);
     m_layers_editing.state = LayersEditing::Completed;
     m_dirty = true;
@@ -1683,7 +1683,7 @@ void GLCanvas3D::adaptive_layer_height_profile(float cusp)
 
 void GLCanvas3D::smooth_layer_height_profile(const HeightProfileSmoothingParams& smoothing_params)
 {
-    wxGetApp().plater()->take_snapshot(_(L("Layer height profile-Smooth all")));
+    wxGetApp().platter()->take_snapshot(_(L("Layer height profile-Smooth all")));
     m_layers_editing.smooth_layer_height_profile(*this, smoothing_params);
     m_layers_editing.state = LayersEditing::Completed;
     m_dirty = true;
@@ -1911,7 +1911,7 @@ void GLCanvas3D::render()
     m_camera.debug_render();
 #endif // ENABLE_CAMERA_STATISTICS
 
-    wxGetApp().plater()->get_mouse3d_controller().render_settings_dialog((unsigned int)cnv_size.get_width(), (unsigned int)cnv_size.get_height());
+    wxGetApp().platter()->get_mouse3d_controller().render_settings_dialog((unsigned int)cnv_size.get_width(), (unsigned int)cnv_size.get_height());
 
     wxGetApp().imgui()->render();
 
@@ -2614,7 +2614,7 @@ void GLCanvas3D::on_idle(wxIdleEvent& evt)
     m_dirty |= m_main_toolbar.update_items_state();
     m_dirty |= m_undoredo_toolbar.update_items_state();
     m_dirty |= m_view_toolbar.update_items_state();
-    bool mouse3d_controller_applied = wxGetApp().plater()->get_mouse3d_controller().apply(m_camera);
+    bool mouse3d_controller_applied = wxGetApp().platter()->get_mouse3d_controller().apply(m_camera);
     m_dirty |= mouse3d_controller_applied;
 
     if (!m_dirty)
@@ -2681,7 +2681,7 @@ void GLCanvas3D::on_char(wxKeyEvent& evt)
         case WXK_CONTROL_M:
 #endif /* __APPLE__ */
             {
-                Mouse3DController& controller = wxGetApp().plater()->get_mouse3d_controller();
+                Mouse3DController& controller = wxGetApp().platter()->get_mouse3d_controller();
                 controller.show_settings_dialog(!controller.is_settings_dialog_shown());
                 m_dirty = true;
                 break;
@@ -2862,7 +2862,7 @@ void GLCanvas3D::on_key(wxKeyEvent& evt)
 void GLCanvas3D::on_mouse_wheel(wxMouseEvent& evt)
 {
     // try to filter out events coming from mouse 3d 
-    Mouse3DController& controller = wxGetApp().plater()->get_mouse3d_controller();
+    Mouse3DController& controller = wxGetApp().platter()->get_mouse3d_controller();
     if (controller.process_mouse_wheel())
         return;
 
@@ -3293,7 +3293,7 @@ void GLCanvas3D::on_mouse(wxMouseEvent& evt)
         {
             do_move(L("Move Object"));
             wxGetApp().obj_manipul()->set_dirty();
-            // Let the plater know that the dragging finished, so a delayed refresh
+            // Let the platter know that the dragging finished, so a delayed refresh
             // of the scene with the background processing data should be performed.
             post_event(SimpleEvent(EVT_GLCANVAS_MOUSE_DRAGGING_FINISHED));
         }
@@ -3467,7 +3467,7 @@ void GLCanvas3D::do_move(const std::string& snapshot_type)
         return;
 
     if (!snapshot_type.empty())
-        wxGetApp().plater()->take_snapshot(_(snapshot_type));
+        wxGetApp().platter()->take_snapshot(_(snapshot_type));
 
     std::set<std::pair<int, int>> done;  // keeps track of modified instances
     bool object_moved = false;
@@ -3529,7 +3529,7 @@ void GLCanvas3D::do_rotate(const std::string& snapshot_type)
         return;
 
     if (!snapshot_type.empty())
-        wxGetApp().plater()->take_snapshot(_(snapshot_type));
+        wxGetApp().platter()->take_snapshot(_(snapshot_type));
 
     std::set<std::pair<int, int>> done;  // keeps track of modified instances
 
@@ -3589,7 +3589,7 @@ void GLCanvas3D::do_scale(const std::string& snapshot_type)
         return;
 
     if (!snapshot_type.empty())
-        wxGetApp().plater()->take_snapshot(_(snapshot_type));
+        wxGetApp().platter()->take_snapshot(_(snapshot_type));
 
     std::set<std::pair<int, int>> done;  // keeps track of modified instances
 
@@ -3643,7 +3643,7 @@ void GLCanvas3D::do_scale(const std::string& snapshot_type)
 void GLCanvas3D::do_flatten(const Vec3d& normal, const std::string& snapshot_type)
 {
     if (!snapshot_type.empty())
-        wxGetApp().plater()->take_snapshot(_(snapshot_type));
+        wxGetApp().platter()->take_snapshot(_(snapshot_type));
 
     m_selection.flattening_rotate(normal);
     do_rotate(""); // avoid taking another snapshot
@@ -3655,7 +3655,7 @@ void GLCanvas3D::do_mirror(const std::string& snapshot_type)
         return;
 
     if (!snapshot_type.empty())
-        wxGetApp().plater()->take_snapshot(_(snapshot_type));
+        wxGetApp().platter()->take_snapshot(_(snapshot_type));
 
     std::set<std::pair<int, int>> done;  // keeps track of modified instances
 
@@ -3827,7 +3827,7 @@ bool GLCanvas3D::_is_shown_on_screen() const
 // Getter for the const char*[]
 static bool string_getter(const bool is_undo, int idx, const char** out_text)
 {
-    return wxGetApp().plater()->undo_redo_string_getter(is_undo, idx, out_text);
+    return wxGetApp().platter()->undo_redo_string_getter(is_undo, idx, out_text);
 }
 
 void GLCanvas3D::_render_undo_redo_stack(const bool is_undo, float pos_x)
@@ -3853,7 +3853,7 @@ void GLCanvas3D::_render_undo_redo_stack(const bool is_undo, float pos_x)
         m_imgui_undo_redo_hovered_pos = -1;
 
     if (selected >= 0)
-        is_undo ? wxGetApp().plater()->undo_to(selected) : wxGetApp().plater()->redo_to(selected);
+        is_undo ? wxGetApp().platter()->undo_to(selected) : wxGetApp().platter()->redo_to(selected);
 
     imgui->text(wxString::Format(is_undo ? _L_PLURAL("Undo %1$d Action", "Undo %1$d Actions", hovered + 1) : _L_PLURAL("Redo %1$d Action", "Redo %1$d Actions", hovered + 1), hovered + 1));
 
@@ -4264,7 +4264,7 @@ bool GLCanvas3D::_init_main_toolbar()
     item.tooltip = _utf8(L("Delete")) + " [Del]";
     item.sprite_id = 1;
     item.left.action_callback = [this]() { if (m_canvas != nullptr) wxPostEvent(m_canvas, SimpleEvent(EVT_GLTOOLBAR_DELETE)); };
-    item.enabling_callback = []()->bool { return wxGetApp().plater()->can_delete(); };
+    item.enabling_callback = []()->bool { return wxGetApp().platter()->can_delete(); };
     if (!m_main_toolbar.add_item(item))
         return false;
 
@@ -4273,7 +4273,7 @@ bool GLCanvas3D::_init_main_toolbar()
     item.tooltip = _utf8(L("Delete all")) + " [" + GUI::shortkey_ctrl_prefix() + "Del]";
     item.sprite_id = 2;
     item.left.action_callback = [this]() { if (m_canvas != nullptr) wxPostEvent(m_canvas, SimpleEvent(EVT_GLTOOLBAR_DELETE_ALL)); };
-    item.enabling_callback = []()->bool { return wxGetApp().plater()->can_delete_all(); };
+    item.enabling_callback = []()->bool { return wxGetApp().platter()->can_delete_all(); };
     if (!m_main_toolbar.add_item(item))
         return false;
 
@@ -4282,7 +4282,7 @@ bool GLCanvas3D::_init_main_toolbar()
     item.tooltip = _utf8(L("Arrange")) + " [A]\n" + _utf8(L("Arrange selection")) + " [Shift+A]";
     item.sprite_id = 3;
     item.left.action_callback = [this]() { if (m_canvas != nullptr) wxPostEvent(m_canvas, SimpleEvent(EVT_GLTOOLBAR_ARRANGE)); };
-    item.enabling_callback = []()->bool { return wxGetApp().plater()->can_arrange(); };
+    item.enabling_callback = []()->bool { return wxGetApp().platter()->can_arrange(); };
     if (!m_main_toolbar.add_item(item))
         return false;
 
@@ -4294,7 +4294,7 @@ bool GLCanvas3D::_init_main_toolbar()
     item.tooltip = _utf8(L("Copy")) + " [" + GUI::shortkey_ctrl_prefix() + "C]";
     item.sprite_id = 4;
     item.left.action_callback = [this]() { if (m_canvas != nullptr) wxPostEvent(m_canvas, SimpleEvent(EVT_GLTOOLBAR_COPY)); };
-    item.enabling_callback = []()->bool { return wxGetApp().plater()->can_copy_to_clipboard(); };
+    item.enabling_callback = []()->bool { return wxGetApp().platter()->can_copy_to_clipboard(); };
     if (!m_main_toolbar.add_item(item))
         return false;
 
@@ -4303,7 +4303,7 @@ bool GLCanvas3D::_init_main_toolbar()
     item.tooltip = _utf8(L("Paste")) + " [" + GUI::shortkey_ctrl_prefix() + "V]";
     item.sprite_id = 5;
     item.left.action_callback = [this]() { if (m_canvas != nullptr) wxPostEvent(m_canvas, SimpleEvent(EVT_GLTOOLBAR_PASTE)); };
-    item.enabling_callback = []()->bool { return wxGetApp().plater()->can_paste_from_clipboard(); };
+    item.enabling_callback = []()->bool { return wxGetApp().platter()->can_paste_from_clipboard(); };
     if (!m_main_toolbar.add_item(item))
         return false;
 
@@ -4316,7 +4316,7 @@ bool GLCanvas3D::_init_main_toolbar()
     item.sprite_id = 6;
     item.left.action_callback = [this]() { if (m_canvas != nullptr) wxPostEvent(m_canvas, SimpleEvent(EVT_GLTOOLBAR_MORE)); };
     item.visibility_callback = []()->bool { return wxGetApp().get_mode() != comSimple; };
-    item.enabling_callback = []()->bool { return wxGetApp().plater()->can_increase_instances(); };
+    item.enabling_callback = []()->bool { return wxGetApp().platter()->can_increase_instances(); };
 
     if (!m_main_toolbar.add_item(item))
         return false;
@@ -4327,7 +4327,7 @@ bool GLCanvas3D::_init_main_toolbar()
     item.sprite_id = 7;
     item.left.action_callback = [this]() { if (m_canvas != nullptr) wxPostEvent(m_canvas, SimpleEvent(EVT_GLTOOLBAR_FEWER)); };
     item.visibility_callback = []()->bool { return wxGetApp().get_mode() != comSimple; };
-    item.enabling_callback = []()->bool { return wxGetApp().plater()->can_decrease_instances(); };
+    item.enabling_callback = []()->bool { return wxGetApp().platter()->can_decrease_instances(); };
     if (!m_main_toolbar.add_item(item))
         return false;
 
@@ -4340,7 +4340,7 @@ bool GLCanvas3D::_init_main_toolbar()
     item.sprite_id = 8;
     item.left.action_callback = [this]() { if (m_canvas != nullptr) wxPostEvent(m_canvas, SimpleEvent(EVT_GLTOOLBAR_SPLIT_OBJECTS)); };
     item.visibility_callback = GLToolbarItem::Default_Visibility_Callback;
-    item.enabling_callback = []()->bool { return wxGetApp().plater()->can_split_to_objects(); };
+    item.enabling_callback = []()->bool { return wxGetApp().platter()->can_split_to_objects(); };
     if (!m_main_toolbar.add_item(item))
         return false;
 
@@ -4350,7 +4350,7 @@ bool GLCanvas3D::_init_main_toolbar()
     item.sprite_id = 9;
     item.left.action_callback = [this]() { if (m_canvas != nullptr) wxPostEvent(m_canvas, SimpleEvent(EVT_GLTOOLBAR_SPLIT_VOLUMES)); };
     item.visibility_callback = []()->bool { return wxGetApp().get_mode() != comSimple; };
-    item.enabling_callback = []()->bool { return wxGetApp().plater()->can_split_to_volumes(); };
+    item.enabling_callback = []()->bool { return wxGetApp().platter()->can_split_to_volumes(); };
     if (!m_main_toolbar.add_item(item))
         return false;
 
@@ -4372,7 +4372,7 @@ bool GLCanvas3D::_init_main_toolbar()
 
         return res;
     };
-    item.enabling_callback = []()->bool { return wxGetApp().plater()->can_layers_editing(); };
+    item.enabling_callback = []()->bool { return wxGetApp().platter()->can_layers_editing(); };
     if (!m_main_toolbar.add_item(item))
         return false;
 
@@ -4417,7 +4417,7 @@ bool GLCanvas3D::_init_undoredo_toolbar()
     item.right.action_callback = [this]() { m_imgui_undo_redo_hovered_pos = -1; };
     item.right.render_callback = [this](float left, float right, float, float) { if (m_canvas != nullptr) _render_undo_redo_stack(true, 0.5f * (left + right)); };
     item.enabling_callback = [this]()->bool {
-        bool can_undo = wxGetApp().plater()->can_undo();
+        bool can_undo = wxGetApp().platter()->can_undo();
         int id = m_undoredo_toolbar.get_item_id("undo");
 
         std::string curr_additional_tooltip;
@@ -4426,7 +4426,7 @@ bool GLCanvas3D::_init_undoredo_toolbar()
         std::string new_additional_tooltip = "";
         if (can_undo) {
         	std::string action;
-            wxGetApp().plater()->undo_redo_topmost_string_getter(true, action);
+            wxGetApp().platter()->undo_redo_topmost_string_getter(true, action);
             new_additional_tooltip = (boost::format(_utf8(L("Next Undo action: %1%"))) % action).str();
         }
 
@@ -4449,7 +4449,7 @@ bool GLCanvas3D::_init_undoredo_toolbar()
     item.right.action_callback = [this]() { m_imgui_undo_redo_hovered_pos = -1; };
     item.right.render_callback = [this](float left, float right, float, float) { if (m_canvas != nullptr) _render_undo_redo_stack(false, 0.5f * (left + right)); };
     item.enabling_callback = [this]()->bool {
-        bool can_redo = wxGetApp().plater()->can_redo();
+        bool can_redo = wxGetApp().platter()->can_redo();
         int id = m_undoredo_toolbar.get_item_id("redo");
 
         std::string curr_additional_tooltip;
@@ -4458,7 +4458,7 @@ bool GLCanvas3D::_init_undoredo_toolbar()
         std::string new_additional_tooltip = "";
         if (can_redo) {
         	std::string action;
-            wxGetApp().plater()->undo_redo_topmost_string_getter(false, action);
+            wxGetApp().platter()->undo_redo_topmost_string_getter(false, action);
             new_additional_tooltip = (boost::format(_utf8(L("Next Redo action: %1%"))) % action).str();
         }
 
@@ -6374,7 +6374,7 @@ void GLCanvas3D::_update_selection_from_hover()
         // the selection is going to be modified (Add)
         if (!contains_all)
         {
-            wxGetApp().plater()->take_snapshot(_(L("Selection-Add from rectangle")));
+            wxGetApp().platter()->take_snapshot(_(L("Selection-Add from rectangle")));
             selection_changed = true;
         }
     }
@@ -6393,7 +6393,7 @@ void GLCanvas3D::_update_selection_from_hover()
         // the selection is going to be modified (Remove)
         if (contains_any)
         {
-            wxGetApp().plater()->take_snapshot(_(L("Selection-Remove from rectangle")));
+            wxGetApp().platter()->take_snapshot(_(L("Selection-Remove from rectangle")));
             selection_changed = true;
         }
     }
@@ -6401,7 +6401,7 @@ void GLCanvas3D::_update_selection_from_hover()
     if (!selection_changed)
         return;
 
-    Plater::SuppressSnapshots suppress(wxGetApp().plater());
+    Platter::SuppressSnapshots suppress(wxGetApp().platter());
 
     if ((state == GLSelectionRectangle::Select) && !ctrl_pressed)
         m_selection.clear();

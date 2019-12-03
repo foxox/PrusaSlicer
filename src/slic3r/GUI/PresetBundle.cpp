@@ -2,7 +2,7 @@
 
 #include "PresetBundle.hpp"
 #include "BitmapCache.hpp"
-#include "Plater.hpp"
+#include "Platter.hpp"
 #include "I18N.hpp"
 #include "wxExtensions.hpp"
 

@@ -113,7 +113,7 @@ void KBShortcutsDialog::fill_shortcuts()
     main_shortcuts.push_back(Shortcut(ctrl+"R"          ,L("(Re)slice")));
 //    main_shortcuts.push_back(Shortcut(ctrl+"U"          ,L("Quick slice")));
 //    main_shortcuts.push_back(Shortcut(ctrl+"Shift+U"    ,L("Repeat last quick slice")));
-    main_shortcuts.push_back(Shortcut(ctrl+"1"          ,L("Select Plater Tab")));
+    main_shortcuts.push_back(Shortcut(ctrl+"1"          ,L("Select Platter Tab")));
 //    main_shortcuts.push_back(Shortcut(ctrl+alt+"U"      ,L("Quick slice and Save as")));
     main_shortcuts.push_back(Shortcut(ctrl+"2"          ,L("Select Print Settings Tab")));
     main_shortcuts.push_back(Shortcut(ctrl+"3"          ,L("Select Filament Settings Tab")));
@@ -131,40 +131,40 @@ void KBShortcutsDialog::fill_shortcuts()
     m_full_shortcuts.push_back(std::make_pair(_(L("Main Shortcuts")), std::make_pair(main_shortcuts, szLeft)));
 
 
-    Shortcuts plater_shortcuts;
-    plater_shortcuts.reserve(20);
+    Shortcuts platter_shortcuts;
+    platter_shortcuts.reserve(20);
 
-    plater_shortcuts.push_back(Shortcut("A",        L("Arrange")));
-    plater_shortcuts.push_back(Shortcut("Shift+A",  L("Arrange selection")));
-    plater_shortcuts.push_back(Shortcut(ctrl+"A",   L("Select All objects")));
-    plater_shortcuts.push_back(Shortcut("Del",      L("Delete selected")));
-    plater_shortcuts.push_back(Shortcut(ctrl+"Del", L("Delete All")));
-    plater_shortcuts.push_back(Shortcut(ctrl+"C",   L("Copy to clipboard")));
-    plater_shortcuts.push_back(Shortcut(ctrl+"V",   L("Paste from clipboard")));
-    plater_shortcuts.push_back(Shortcut("M",        L("Gizmo move")));
-    plater_shortcuts.push_back(Shortcut("S",        L("Gizmo scale")));
-    plater_shortcuts.push_back(Shortcut("R",        L("Gizmo rotate")));
-    plater_shortcuts.push_back(Shortcut("C",        L("Gizmo cut")));
-    plater_shortcuts.push_back(Shortcut("F",        L("Gizmo Place face on bed")));
-    plater_shortcuts.push_back(Shortcut("L",        L("Gizmo SLA support points")));
-    plater_shortcuts.push_back(Shortcut("Shift+",   L("Press to activate selection rectangle\nor to snap by 5% in Gizmo scale\nor to snap by 1mm in Gizmo move")));
-    plater_shortcuts.push_back(Shortcut("F",        L("Press to scale selection to fit print volume\nin Gizmo scale")));
-    plater_shortcuts.push_back(Shortcut(alt,        L("Press to activate deselection rectangle\nor to scale or rotate selected objects\naround their own center")));
-    plater_shortcuts.push_back(Shortcut(ctrl,       L("Press to activate one direction scaling in Gizmo scale")));
-    plater_shortcuts.push_back(Shortcut("K",        L("Change camera type (perspective, orthographic)")));
-    plater_shortcuts.push_back(Shortcut("B",        L("Zoom to Bed")));
-    plater_shortcuts.push_back(Shortcut("Z",        L("Zoom to all objects in scene, if none selected")));
-    plater_shortcuts.push_back(Shortcut("Z",        L("Zoom to selected object")));
-    plater_shortcuts.push_back(Shortcut("I",        L("Zoom in")));
-    plater_shortcuts.push_back(Shortcut("O",        L("Zoom out")));
-    plater_shortcuts.push_back(Shortcut(ctrl+"M",   L("Show/Hide 3Dconnexion devices settings dialog")));
-    plater_shortcuts.push_back(Shortcut("ESC",      L("Unselect gizmo / Clear selection")));
+    platter_shortcuts.push_back(Shortcut("A",        L("Arrange")));
+    platter_shortcuts.push_back(Shortcut("Shift+A",  L("Arrange selection")));
+    platter_shortcuts.push_back(Shortcut(ctrl+"A",   L("Select All objects")));
+    platter_shortcuts.push_back(Shortcut("Del",      L("Delete selected")));
+    platter_shortcuts.push_back(Shortcut(ctrl+"Del", L("Delete All")));
+    platter_shortcuts.push_back(Shortcut(ctrl+"C",   L("Copy to clipboard")));
+    platter_shortcuts.push_back(Shortcut(ctrl+"V",   L("Paste from clipboard")));
+    platter_shortcuts.push_back(Shortcut("M",        L("Gizmo move")));
+    platter_shortcuts.push_back(Shortcut("S",        L("Gizmo scale")));
+    platter_shortcuts.push_back(Shortcut("R",        L("Gizmo rotate")));
+    platter_shortcuts.push_back(Shortcut("C",        L("Gizmo cut")));
+    platter_shortcuts.push_back(Shortcut("F",        L("Gizmo Place face on bed")));
+    platter_shortcuts.push_back(Shortcut("L",        L("Gizmo SLA support points")));
+    platter_shortcuts.push_back(Shortcut("Shift+",   L("Press to activate selection rectangle\nor to snap by 5% in Gizmo scale\nor to snap by 1mm in Gizmo move")));
+    platter_shortcuts.push_back(Shortcut("F",        L("Press to scale selection to fit print volume\nin Gizmo scale")));
+    platter_shortcuts.push_back(Shortcut(alt,        L("Press to activate deselection rectangle\nor to scale or rotate selected objects\naround their own center")));
+    platter_shortcuts.push_back(Shortcut(ctrl,       L("Press to activate one direction scaling in Gizmo scale")));
+    platter_shortcuts.push_back(Shortcut("K",        L("Change camera type (perspective, orthographic)")));
+    platter_shortcuts.push_back(Shortcut("B",        L("Zoom to Bed")));
+    platter_shortcuts.push_back(Shortcut("Z",        L("Zoom to all objects in scene, if none selected")));
+    platter_shortcuts.push_back(Shortcut("Z",        L("Zoom to selected object")));
+    platter_shortcuts.push_back(Shortcut("I",        L("Zoom in")));
+    platter_shortcuts.push_back(Shortcut("O",        L("Zoom out")));
+    platter_shortcuts.push_back(Shortcut(ctrl+"M",   L("Show/Hide 3Dconnexion devices settings dialog")));
+    platter_shortcuts.push_back(Shortcut("ESC",      L("Unselect gizmo / Clear selection")));
 #if ENABLE_RENDER_PICKING_PASS
     // Don't localize debugging texts.
-    plater_shortcuts.push_back(Shortcut("T",        "Toggle picking pass texture rendering on/off"));
+    platter_shortcuts.push_back(Shortcut("T",        "Toggle picking pass texture rendering on/off"));
 #endif // ENABLE_RENDER_PICKING_PASS
 
-    m_full_shortcuts.push_back(std::make_pair(_(L("Plater Shortcuts")), std::make_pair(plater_shortcuts, szRight)));
+    m_full_shortcuts.push_back(std::make_pair(_(L("Platter Shortcuts")), std::make_pair(platter_shortcuts, szRight)));
 
 
 //     Shortcuts gizmo_shortcuts;

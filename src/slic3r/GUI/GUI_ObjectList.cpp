@@ -72,7 +72,7 @@ static int extruders_count()
 
 static void take_snapshot(const wxString& snapshot_name) 
 {
-    wxGetApp().plater()->take_snapshot(snapshot_name);
+    wxGetApp().platter()->take_snapshot(snapshot_name);
 }
 
 ObjectList::ObjectList(wxWindow* parent) :
@@ -529,7 +529,7 @@ void ObjectList::update_extruder_in_config(const wxDataViewItem& item)
     m_config->set_key_value("extruder", new ConfigOptionInt(extruder));
 
     // update scene
-    wxGetApp().plater()->update();
+    wxGetApp().platter()->update();
 }
 
 void ObjectList::update_name_in_model(const wxDataViewItem& item) const 
@@ -626,7 +626,7 @@ void ObjectList::selection_changed()
 
     fix_multiselection_conflicts();
 
-    // update object selection on Plater
+    // update object selection on Platter
     if (!m_prevent_canvas_selection_update)
         update_selections_on_canvas();
 
@@ -645,7 +645,7 @@ void ObjectList::selection_changed()
             wxGetApp().obj_layers()->reset_selection();
             
             if (type & itLayerRoot)
-                wxGetApp().plater()->canvas3D()->handle_sidebar_focus_event("", false);
+                wxGetApp().platter()->canvas3D()->handle_sidebar_focus_event("", false);
             else {
                 wxGetApp().obj_layers()->set_selectable_range(m_objects_model->GetLayerRangeByItem(item));
                 wxGetApp().obj_layers()->update_scene_from_editor_selection();
@@ -753,7 +753,7 @@ void ObjectList::paste_objects_into_list(const std::vector<size_t>& object_idxs)
         items.Add(m_objects_model->GetItemById(object));
     }
 
-    wxGetApp().plater()->changed_objects(object_idxs);
+    wxGetApp().platter()->changed_objects(object_idxs);
 
     select_items(items);
 //#ifndef __WXOSX__ //#ifdef __WXMSW__ // #ys_FIXME
@@ -779,7 +779,7 @@ void ObjectList::OnChar(wxKeyEvent& event)
 void ObjectList::OnContextMenu(wxDataViewEvent&)
 {
     // Do not show the context menu if the user pressed the right mouse button on the 3D scene and released it on the objects list
-    GLCanvas3D* canvas = wxGetApp().plater()->canvas3D();
+    GLCanvas3D* canvas = wxGetApp().platter()->canvas3D();
     bool evt_context_menu = (canvas != nullptr) ? !canvas->is_mouse_dragging() : true;
     if (!evt_context_menu)
         canvas->mouse_up_cleanup();
@@ -859,7 +859,7 @@ void ObjectList::show_context_menu(const bool evt_context_menu)
     if (multiple_selection())
     {
         if (selected_instances_of_same_object())
-            wxGetApp().plater()->PopupMenu(&m_menu_instance);
+            wxGetApp().platter()->PopupMenu(&m_menu_instance);
         else
             show_multi_selection_menu();
 
@@ -886,7 +886,7 @@ void ObjectList::show_context_menu(const bool evt_context_menu)
         menu = &m_menu_default;
 
     if (menu)
-        wxGetApp().plater()->PopupMenu(menu);
+        wxGetApp().platter()->PopupMenu(menu);
 }
 
 void ObjectList::extruder_editing()
@@ -934,7 +934,7 @@ void ObjectList::copy()
     //     fill_layer_config_ranges_cache();
     // else {
     //     m_layer_config_ranges_cache.clear();
-        wxPostEvent((wxEvtHandler*)wxGetApp().plater()->canvas3D()->get_wxglcanvas(), SimpleEvent(EVT_GLTOOLBAR_COPY));
+        wxPostEvent((wxEvtHandler*)wxGetApp().platter()->canvas3D()->get_wxglcanvas(), SimpleEvent(EVT_GLTOOLBAR_COPY));
     // }
 }
 
@@ -943,17 +943,17 @@ void ObjectList::paste()
     // if (!m_layer_config_ranges_cache.empty())
     //     paste_layers_into_list();
     // else
-        wxPostEvent((wxEvtHandler*)wxGetApp().plater()->canvas3D()->get_wxglcanvas(), SimpleEvent(EVT_GLTOOLBAR_PASTE));
+        wxPostEvent((wxEvtHandler*)wxGetApp().platter()->canvas3D()->get_wxglcanvas(), SimpleEvent(EVT_GLTOOLBAR_PASTE));
 }
 
 void ObjectList::undo()
 {
-	wxGetApp().plater()->undo();
+	wxGetApp().platter()->undo();
 }
 
 void ObjectList::redo()
 {
-	wxGetApp().plater()->redo();	
+	wxGetApp().platter()->redo();	
 }
 
 #ifndef __WXOSX__
@@ -1063,7 +1063,7 @@ void ObjectList::OnDrop(wxDataViewEvent &event)
 
     if (m_dragged_data.type() == itInstance)
     {
-        Plater::TakeSnapshot snapshot(wxGetApp().plater(),_(L("Instances to Separated Objects")));
+        Platter::TakeSnapshot snapshot(wxGetApp().platter(),_(L("Instances to Separated Objects")));
         instances_to_separated_object(m_dragged_data.obj_idx(), m_dragged_data.inst_idxs());
         m_dragged_data.clear();
         return;
@@ -1357,7 +1357,7 @@ void ObjectList::show_settings(const wxDataViewItem settings_item)
 
     select_item(settings_item);
     
-    // update object selection on Plater
+    // update object selection on Platter
     if (!m_prevent_canvas_selection_update)
         update_selections_on_canvas();
 }
@@ -1421,7 +1421,7 @@ wxMenuItem* ObjectList::append_menu_item_split(wxMenu* menu)
 {
     return append_menu_item(menu, wxID_ANY, _(L("Split to parts")), "",
         [this](wxCommandEvent&) { split(); }, "split_parts_SMALL", menu, 
-        [this]() { return is_splittable(); }, wxGetApp().plater());
+        [this]() { return is_splittable(); }, wxGetApp().platter());
 }
 
 wxMenuItem* ObjectList::append_menu_item_layers_editing(wxMenu* menu) 
@@ -1510,13 +1510,13 @@ wxMenuItem* ObjectList::append_menu_item_change_type(wxMenu* menu)
 wxMenuItem* ObjectList::append_menu_item_instance_to_object(wxMenu* menu, wxWindow* parent)
 {
     return append_menu_item(menu, wxID_ANY, _(L("Set as a Separated Object")), "",
-        [this](wxCommandEvent&) { split_instances(); }, "", menu, [](){return wxGetApp().plater()->can_set_instance_to_object(); }, parent);
+        [this](wxCommandEvent&) { split_instances(); }, "", menu, [](){return wxGetApp().platter()->can_set_instance_to_object(); }, parent);
 }
 
 wxMenuItem* ObjectList::append_menu_item_printable(wxMenu* menu, wxWindow* /*parent*/)
 {
     return append_menu_check_item(menu, wxID_ANY, _(L("Printable")), "", [](wxCommandEvent&) {
-        wxGetApp().plater()->canvas3D()->get_selection().toggle_instance_printable_state();
+        wxGetApp().platter()->canvas3D()->get_selection().toggle_instance_printable_state();
         }, menu);
 }
 
@@ -1532,10 +1532,10 @@ wxMenuItem* ObjectList::append_menu_item_fix_through_netfabb(wxMenu* menu)
 {
     if (!is_windows10())
         return nullptr;
-    Plater* plater = wxGetApp().plater();
+    Platter* platter = wxGetApp().platter();
     wxMenuItem* menu_item = append_menu_item(menu, wxID_ANY, _(L("Fix through the Netfabb")), "",
         [this](wxCommandEvent&) { fix_through_netfabb(); }, "", menu, 
-        [plater]() {return plater->can_fix_through_netfabb(); }, plater);
+        [platter]() {return platter->can_fix_through_netfabb(); }, platter);
     menu->AppendSeparator();
 
     return menu_item;
@@ -1544,14 +1544,14 @@ wxMenuItem* ObjectList::append_menu_item_fix_through_netfabb(wxMenu* menu)
 void ObjectList::append_menu_item_export_stl(wxMenu* menu) const 
 {
     append_menu_item(menu, wxID_ANY, _(L("Export as STL")) + dots, "",
-        [](wxCommandEvent&) { wxGetApp().plater()->export_stl(false, true); }, "", menu);
+        [](wxCommandEvent&) { wxGetApp().platter()->export_stl(false, true); }, "", menu);
     menu->AppendSeparator();
 }
 
 void ObjectList::append_menu_item_reload_from_disk(wxMenu* menu) const
 {
     append_menu_item(menu, wxID_ANY, _(L("Reload from disk")), _(L("Reload the selected volumes from disk")),
-        [this](wxCommandEvent&) { wxGetApp().plater()->reload_from_disk(); }, "", menu, []() { return wxGetApp().plater()->can_reload_from_disk(); }, wxGetApp().plater());
+        [this](wxCommandEvent&) { wxGetApp().platter()->reload_from_disk(); }, "", menu, []() { return wxGetApp().platter()->can_reload_from_disk(); }, wxGetApp().platter());
 }
 
 void ObjectList::append_menu_item_change_extruder(wxMenu* menu) const
@@ -1594,7 +1594,7 @@ void ObjectList::append_menu_item_delete(wxMenu* menu)
 void ObjectList::append_menu_item_scale_selection_to_fit_print_volume(wxMenu* menu)
 {
     append_menu_item(menu, wxID_ANY, _(L("Scale to print volume")), _(L("Scale the selected object to fit the print volume")),
-        [](wxCommandEvent&) { wxGetApp().plater()->scale_selection_to_fit_print_volume(); }, "", menu);
+        [](wxCommandEvent&) { wxGetApp().platter()->scale_selection_to_fit_print_volume(); }, "", menu);
 }
 
 void ObjectList::create_object_popupmenu(wxMenu *menu)
@@ -1656,16 +1656,16 @@ void ObjectList::create_part_popupmenu(wxMenu *menu)
 
 void ObjectList::create_instance_popupmenu(wxMenu*menu)
 {
-    m_menu_item_split_instances = append_menu_item_instance_to_object(menu, wxGetApp().plater());
+    m_menu_item_split_instances = append_menu_item_instance_to_object(menu, wxGetApp().platter());
 
     /* New behavior logic:
      * 1. Split Object to several separated object, if ALL instances are selected
      * 2. Separate selected instances from the initial object to the separated object,
      *    if some (not all) instances are selected
      */
-    wxGetApp().plater()->Bind(wxEVT_UPDATE_UI, [](wxUpdateUIEvent& evt) {
+    wxGetApp().platter()->Bind(wxEVT_UPDATE_UI, [](wxUpdateUIEvent& evt) {
 //         evt.Enable(can_split_instances()); }, m_menu_item_split_instances->GetId());
-        evt.SetText(wxGetApp().plater()->canvas3D()->get_selection().is_single_full_object() ? 
+        evt.SetText(wxGetApp().platter()->canvas3D()->get_selection().is_single_full_object() ? 
                     _(L("Set as a Separated Objects")) : _(L("Set as a Separated Object")));
     }, m_menu_item_split_instances->GetId());
 }
@@ -1756,7 +1756,7 @@ void ObjectList::load_subobject(ModelVolumeType type)
     changed_object(obj_idx);
     if (type == ModelVolumeType::MODEL_PART)
         // update printable state on canvas
-        wxGetApp().plater()->canvas3D()->update_instance_printable_state_for_object((size_t)obj_idx);
+        wxGetApp().platter()->canvas3D()->update_instance_printable_state_for_object((size_t)obj_idx);
 
     wxDataViewItem sel_item;
     for (const auto& volume : volumes_info )
@@ -1818,7 +1818,7 @@ static TriangleMesh create_mesh(const std::string& type_name, const BoundingBoxf
 {
     TriangleMesh mesh;
 
-    const double side = wxGetApp().plater()->canvas3D()->get_size_proportional_to_max_bed_size(0.1);
+    const double side = wxGetApp().platter()->canvas3D()->get_size_proportional_to_max_bed_size(0.1);
 
     if (type_name == "Box")
         // Sitting on the print bed, left front front corner at (0, 0).
@@ -1850,7 +1850,7 @@ void ObjectList::load_generic_subobject(const std::string& type_name, const Mode
     if (obj_idx < 0) 
         return;
 
-    const Selection& selection = wxGetApp().plater()->canvas3D()->get_selection();
+    const Selection& selection = wxGetApp().platter()->canvas3D()->get_selection();
     assert(obj_idx == selection.get_object_idx());
 
     /** Any changes of the Object's composition is duplicated for all Object's Instances
@@ -1898,7 +1898,7 @@ void ObjectList::load_generic_subobject(const std::string& type_name, const Mode
     changed_object(obj_idx);
     if (type == ModelVolumeType::MODEL_PART)
         // update printable state on canvas
-        wxGetApp().plater()->canvas3D()->update_instance_printable_state_for_object((size_t)obj_idx);
+        wxGetApp().platter()->canvas3D()->update_instance_printable_state_for_object((size_t)obj_idx);
 
     const auto object_item = m_objects_model->GetTopParent(GetSelection());
     select_item(m_objects_model->AddVolumeChild(object_item, name, type, 
@@ -1910,7 +1910,7 @@ void ObjectList::load_generic_subobject(const std::string& type_name, const Mode
 
 void ObjectList::load_shape_object(const std::string& type_name)
 {
-    const Selection& selection = wxGetApp().plater()->canvas3D()->get_selection();
+    const Selection& selection = wxGetApp().platter()->canvas3D()->get_selection();
     assert(selection.get_object_idx() == -1); // Add nothing is something is selected on 3DScene
     if (selection.get_object_idx() != -1)
         return;
@@ -1926,7 +1926,7 @@ void ObjectList::load_shape_object(const std::string& type_name)
     TriangleMesh mesh = create_mesh(type_name, bb);
 
     // Add mesh to model as a new object
-    Model& model = wxGetApp().plater()->model();
+    Model& model = wxGetApp().platter()->model();
     const wxString name = _(L("Shape")) + "-" + _(type_name);
 
 #ifdef _DEBUG
@@ -1947,7 +1947,7 @@ void ObjectList::load_shape_object(const std::string& type_name)
     new_object->center_around_origin();
     new_object->ensure_on_bed();
 
-    const BoundingBoxf bed_shape = wxGetApp().plater()->bed_shape_bb();
+    const BoundingBoxf bed_shape = wxGetApp().platter()->bed_shape_bb();
     new_object->instances[0]->set_offset(Slic3r::to_3d(bed_shape.center().cast<double>(), -new_object->origin_translation(2)));
 
     object_idxs.push_back(model.objects.size() - 1);
@@ -1964,7 +1964,7 @@ void ObjectList::load_shape_object(const std::string& type_name)
 
 void ObjectList::del_object(const int obj_idx)
 {
-    wxGetApp().plater()->delete_object_from_model(obj_idx);
+    wxGetApp().platter()->delete_object_from_model(obj_idx);
 }
 
 // Delete subobject
@@ -2202,7 +2202,7 @@ void ObjectList::layers_editing()
 
     // to correct visual hints for layers editing on the Scene, reset previous selection
     wxGetApp().obj_layers()->reset_selection();
-    wxGetApp().plater()->canvas3D()->handle_sidebar_focus_event("", false);
+    wxGetApp().platter()->canvas3D()->handle_sidebar_focus_event("", false);
 
     // select LayerRoor item and expand
     select_item(layers_item);
@@ -2290,14 +2290,14 @@ bool ObjectList::selected_instances_of_same_object()
 
 bool ObjectList::can_split_instances()
 {
-    const Selection& selection = wxGetApp().plater()->canvas3D()->get_selection();
+    const Selection& selection = wxGetApp().platter()->canvas3D()->get_selection();
     return selection.is_multiple_full_instance() || selection.is_single_full_instance();
 }
 
 // NO_PARAMETERS function call means that changed object index will be determine from Selection() 
 void ObjectList::changed_object(const int obj_idx/* = -1*/) const 
 {
-    wxGetApp().plater()->changed_object(obj_idx < 0 ? get_selected_obj_idx() : obj_idx);
+    wxGetApp().platter()->changed_object(obj_idx < 0 ? get_selected_obj_idx() : obj_idx);
 }
 
 void ObjectList::part_selection_changed()
@@ -2318,7 +2318,7 @@ void ObjectList::part_selection_changed()
     {
         og_name = _(L("Group manipulation"));
 
-        const Selection& selection = wxGetApp().plater()->canvas3D()->get_selection();
+        const Selection& selection = wxGetApp().platter()->canvas3D()->get_selection();
         // don't show manipulation panel for case of all Object's parts selection 
         update_and_show_manipulations = !selection.is_single_full_instance();
     }
@@ -2402,7 +2402,7 @@ void ObjectList::part_selection_changed()
     Sidebar& panel = wxGetApp().sidebar();
     panel.Freeze();
 
-    wxGetApp().plater()->canvas3D()->handle_sidebar_focus_event("", false);
+    wxGetApp().platter()->canvas3D()->handle_sidebar_focus_event("", false);
     wxGetApp().obj_manipul() ->UpdateAndShow(update_and_show_manipulations);
     wxGetApp().obj_settings()->UpdateAndShow(update_and_show_settings);
     wxGetApp().obj_layers()  ->UpdateAndShow(update_and_show_layers);
@@ -2594,7 +2594,7 @@ void ObjectList::delete_from_model_and_list(const std::vector<ItemForDelete>& it
                     const wxString extruder = wxString::Format("%d", (*m_objects)[item->obj_idx]->config.option<ConfigOptionInt>("extruder")->value);
                     m_objects_model->SetExtruder(extruder, m_objects_model->GetItemById(item->obj_idx));
                 }
-                wxGetApp().plater()->canvas3D()->ensure_on_bed(item->obj_idx);
+                wxGetApp().platter()->canvas3D()->ensure_on_bed(item->obj_idx);
             }
             else
                 m_objects_model->Delete(m_objects_model->GetItemByInstanceId(item->obj_idx, item->sub_obj_idx));
@@ -2692,7 +2692,7 @@ void ObjectList::remove()
         parent = delete_item(GetSelection());
     else
     {
-        Plater::TakeSnapshot snapshot = Plater::TakeSnapshot(wxGetApp().plater(), _(L("Delete Selected")));
+        Platter::TakeSnapshot snapshot = Platter::TakeSnapshot(wxGetApp().platter(), _(L("Delete Selected")));
 
         for (auto& item : sels)
         {
@@ -2787,7 +2787,7 @@ void ObjectList::add_layer_range_after_current(const t_layer_height_range& curre
             
             t_layer_height_range new_range = { midl_layer, next_range.second };
 
-            Plater::TakeSnapshot snapshot(wxGetApp().plater(), _(L("Add Height Range")));
+            Platter::TakeSnapshot snapshot(wxGetApp().platter(), _(L("Add Height Range")));
 
             // create new 2 layers instead of deleted one
 
@@ -2926,7 +2926,7 @@ int ObjectList::get_selected_layers_range_idx() const
 
 void ObjectList::update_selections()
 {
-    const Selection& selection = wxGetApp().plater()->canvas3D()->get_selection();
+    const Selection& selection = wxGetApp().platter()->canvas3D()->get_selection();
     wxDataViewItemArray sels;
 
     if ( ( m_selection_mode & (smSettings|smLayer|smLayerRoot) ) == 0)
@@ -3081,12 +3081,12 @@ void ObjectList::update_selections()
 
 void ObjectList::update_selections_on_canvas()
 {
-    Selection& selection = wxGetApp().plater()->canvas3D()->get_selection();
+    Selection& selection = wxGetApp().platter()->canvas3D()->get_selection();
 
     const int sel_cnt = GetSelectedItemsCount();
     if (sel_cnt == 0) {
         selection.remove_all();
-        wxGetApp().plater()->canvas3D()->update_gizmos_on_off_state();
+        wxGetApp().platter()->canvas3D()->update_gizmos_on_off_state();
         return;
     }
 
@@ -3148,7 +3148,7 @@ void ObjectList::update_selections_on_canvas()
         volume_idxs = selection.get_missing_volume_idxs_from(volume_idxs);
         if (volume_idxs.size() > 0)
         {
-            Plater::TakeSnapshot snapshot(wxGetApp().plater(), _(L("Selection-Remove from list")));
+            Platter::TakeSnapshot snapshot(wxGetApp().platter(), _(L("Selection-Remove from list")));
             selection.remove_volumes(mode, volume_idxs);
         }
     }
@@ -3156,12 +3156,12 @@ void ObjectList::update_selections_on_canvas()
     {
         // add
         volume_idxs = selection.get_unselected_volume_idxs_from(volume_idxs);
-        Plater::TakeSnapshot snapshot(wxGetApp().plater(), _(L("Selection-Add from list")));
+        Platter::TakeSnapshot snapshot(wxGetApp().platter(), _(L("Selection-Add from list")));
         selection.add_volumes(mode, volume_idxs, single_selection);
     }
 
-    wxGetApp().plater()->canvas3D()->update_gizmos_on_off_state();
-    wxGetApp().plater()->canvas3D()->render();
+    wxGetApp().platter()->canvas3D()->update_gizmos_on_off_state();
+    wxGetApp().platter()->canvas3D()->render();
 }
 
 void ObjectList::select_item(const wxDataViewItem& item)
@@ -3596,7 +3596,7 @@ void ObjectList::instances_to_separated_object(const int obj_idx, const std::set
     }
 
     // update printable state for new volumes on canvas3D
-    wxGetApp().plater()->canvas3D()->update_instance_printable_state_for_object(new_obj_indx);
+    wxGetApp().platter()->canvas3D()->update_instance_printable_state_for_object(new_obj_indx);
 }
 
 void ObjectList::instances_to_separated_objects(const int obj_idx)
@@ -3628,17 +3628,17 @@ void ObjectList::instances_to_separated_objects(const int obj_idx)
     }
 
     // update printable state for new volumes on canvas3D
-    wxGetApp().plater()->canvas3D()->update_instance_printable_state_for_objects(object_idxs);
+    wxGetApp().platter()->canvas3D()->update_instance_printable_state_for_objects(object_idxs);
 }
 
 void ObjectList::split_instances()
 {
-    const Selection& selection = wxGetApp().plater()->canvas3D()->get_selection();
+    const Selection& selection = wxGetApp().platter()->canvas3D()->get_selection();
     const int obj_idx = selection.get_object_idx();
     if (obj_idx == -1)
         return;
 
-    Plater::TakeSnapshot snapshot(wxGetApp().plater(), _(L("Instances to Separated Objects")));
+    Platter::TakeSnapshot snapshot(wxGetApp().platter(), _(L("Instances to Separated Objects")));
 
     if (selection.is_single_full_object())
     {
@@ -3704,7 +3704,7 @@ void ObjectList::fix_through_netfabb()
     int obj_idx, vol_idx;
     get_selected_item_indexes(obj_idx, vol_idx);
 
-    wxGetApp().plater()->fix_through_netfabb(obj_idx, vol_idx);
+    wxGetApp().platter()->fix_through_netfabb(obj_idx, vol_idx);
     
     update_item_error_icon(obj_idx, vol_idx);
 }
@@ -3872,18 +3872,18 @@ void ObjectList::set_extruder_for_selected_items(const int extruder) const
         const int obj_idx = type & itObject ? m_objects_model->GetIdByItem(item) :
                             m_objects_model->GetIdByItem(m_objects_model->GetTopParent(item));
 
-        wxGetApp().plater()->canvas3D()->ensure_on_bed(obj_idx);
+        wxGetApp().platter()->canvas3D()->ensure_on_bed(obj_idx);
     }
 
     // update scene
-    wxGetApp().plater()->update();
+    wxGetApp().platter()->update();
 }
 
 void ObjectList::update_after_undo_redo()
 {
     m_prevent_canvas_selection_update = true;
 
-    Plater::SuppressSnapshots suppress(wxGetApp().plater());
+    Platter::SuppressSnapshots suppress(wxGetApp().platter());
 
     // Unselect all objects before deleting them, so that no change of selection is emitted during deletion.
     unselect_objects();//this->UnselectAll();
@@ -3903,9 +3903,9 @@ void ObjectList::update_after_undo_redo()
     m_prevent_canvas_selection_update = false;
 
     // update printable states on canvas
-    wxGetApp().plater()->canvas3D()->update_instance_printable_state_for_objects(obj_idxs);
+    wxGetApp().platter()->canvas3D()->update_instance_printable_state_for_objects(obj_idxs);
     // update scene
-    wxGetApp().plater()->update();
+    wxGetApp().platter()->update();
 }
 
 void ObjectList::update_printable_state(int obj_idx, int instance_idx)
@@ -3943,16 +3943,16 @@ void ObjectList::toggle_printable_state(wxDataViewItem item)
             inst->printable = printable;
 
         // update printable state on canvas
-        wxGetApp().plater()->canvas3D()->update_instance_printable_state_for_object((size_t)obj_idx);
+        wxGetApp().platter()->canvas3D()->update_instance_printable_state_for_object((size_t)obj_idx);
 
         // update printable state in ObjectList
         m_objects_model->SetObjectPrintableState(printable ? piPrintable : piUnprintable , item);
     }
     else
-        wxGetApp().plater()->canvas3D()->get_selection().toggle_instance_printable_state(); 
+        wxGetApp().platter()->canvas3D()->get_selection().toggle_instance_printable_state(); 
 
     // update scene
-    wxGetApp().plater()->update();
+    wxGetApp().platter()->update();
 }
 
 ModelObject* ObjectList::object(const int obj_idx) const
