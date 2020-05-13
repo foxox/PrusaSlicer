@@ -72,7 +72,7 @@ Color GCodePreviewData::RangeBase::get_color_at(float value) const
 {
     // Input value scaled to the color range
     float step = step_size();
-    const float global_t = (step != 0.0f) ? std::max(0.0f, value - min()) / step_size() : 0.0f; // lower limit of 0.0f
+    const float global_t = (step != 0.0f) ? std::max(0.0f, value - min()) / step : 0.0f; // lower limit of 0.0f
 
     constexpr std::size_t color_max_idx = range_rainbow_colors.size() - 1;
 
@@ -117,6 +117,8 @@ const Color GCodePreviewData::Extrusion::Default_Extrusion_Role_Colors[erCount] 
     Color(1.0f, 1.0f, 0.0f, 1.0f),   // erInternalInfill
     Color(1.0f, 0.0f, 1.0f, 1.0f),   // erSolidInfill
     Color(0.0f, 1.0f, 1.0f, 1.0f),   // erTopSolidInfill
+//    Color(1.0f, 0.7f, 0.61f, 1.0f),   // erIroning
+    Color(1.0f, 0.55f, 0.41f, 1.0f),   // erIroning
     Color(0.5f, 0.5f, 0.5f, 1.0f),   // erBridgeInfill
     Color(1.0f, 1.0f, 1.0f, 1.0f),   // erGapFill
     Color(0.5f, 0.0f, 0.0f, 1.0f),   // erSkirt
@@ -241,6 +243,7 @@ void GCodePreviewData::reset()
     ranges.width.reset();
     ranges.height.reset();
     ranges.feedrate.reset();
+    ranges.fan_speed.reset();
     ranges.volumetric_rate.reset();
     extrusion.layers.clear();
     travel.polylines.clear();

@@ -65,6 +65,8 @@ sla::SupportConfig make_support_cfg(const SLAPrintObjectConfig& c)
         c.support_base_safety_distance.getFloat() < EPSILON ?
             scfg.safety_distance_mm : c.support_base_safety_distance.getFloat();
     
+    scfg.max_bridges_on_pillar = unsigned(c.support_max_bridges_on_pillar.getInt());
+    
     return scfg;
 }
 
@@ -225,6 +227,8 @@ SLAPrint::ApplyStatus SLAPrint::apply(const Model &model, DynamicPrintConfig con
     m_material_config.apply_only(config, material_diff, true);
     // Handle changes to object config defaults
     m_default_object_config.apply_only(config, object_diff, true);
+    
+    if (m_printer) m_printer->apply(m_printer_config);
 
     struct ModelObjectStatus {
         enum Status {
@@ -480,7 +484,6 @@ SLAPrint::ApplyStatus SLAPrint::apply(const Model &model, DynamicPrintConfig con
     }
 
     if(m_objects.empty()) {
-        m_printer.reset();
         m_printer_input = {};
         m_print_statistics = {};
     }
@@ -655,6 +658,12 @@ std::string SLAPrint::validate() const
     return "";
 }
 
+void SLAPrint::set_printer(SLAPrinter *arch)
+{
+    invalidate_step(slapsRasterize);
+    m_printer = arch;
+}
+
 bool SLAPrint::invalidate_step(SLAPrintStep step)
 {
     bool invalidated = Inherited::invalidate_step(step);
@@ -674,7 +683,7 @@ void SLAPrint::process()
     // Assumption: at this point the print objects should be populated only with
     // the model objects we have to process and the instances are also filtered
     
-    Steps printsteps{this};
+    Steps printsteps(this);
 
     // We want to first process all objects...
     std::vector<SLAPrintObjectStep> level1_obj_steps = {
@@ -727,7 +736,7 @@ void SLAPrint::process()
                     throw_if_canceled();
                     po->set_done(step);
                 }
-
+                
                 incr = printsteps.progressrange(step);
             }
         }
@@ -752,7 +761,7 @@ void SLAPrint::process()
             throw_if_canceled();
             set_done(currentstep);
         }
-
+        
         st += printsteps.progressrange(currentstep);
     }
 
@@ -853,36 +862,6 @@ bool SLAPrint::invalidate_state_by_config_options(const std::vector<t_config_opt
     return invalidated;
 }
 
-sla::RasterWriter & SLAPrint::init_printer()
-{
-    sla::Raster::Resolution res;
-    sla::Raster::PixelDim   pxdim;
-    std::array<bool, 2>     mirror;
-
-    double w  = m_printer_config.display_width.getFloat();
-    double h  = m_printer_config.display_height.getFloat();
-    auto   pw = size_t(m_printer_config.display_pixels_x.getInt());
-    auto   ph = size_t(m_printer_config.display_pixels_y.getInt());
-
-    mirror[X] = m_printer_config.display_mirror_x.getBool();
-    mirror[Y] = m_printer_config.display_mirror_y.getBool();
-
-    auto orientation = get_printer_orientation();
-    if (orientation == sla::Raster::roPortrait) {
-        std::swap(w, h);
-        std::swap(pw, ph);
-    }
-
-    res   = sla::Raster::Resolution{pw, ph};
-    pxdim = sla::Raster::PixelDim{w / pw, h / ph};
-    sla::Raster::Trafo tr{orientation, mirror};
-    tr.gamma = m_printer_config.gamma_correction.getFloat();
-    
-    m_printer.reset(new sla::RasterWriter(res, pxdim, tr));
-    m_printer->set_config(m_full_print_config);
-    return *m_printer;
-}
-
 // Returns true if an object step is done on all objects and there's at least one object.
 bool SLAPrint::is_step_done(SLAPrintObjectStep step) const
 {
@@ -946,6 +925,7 @@ bool SLAPrintObject::invalidate_state_by_config_options(const std::vector<t_conf
             || opt_key == "support_head_penetration"
             || opt_key == "support_head_width"
             || opt_key == "support_pillar_diameter"
+            || opt_key == "support_max_bridges_on_pillar"
             || opt_key == "support_pillar_connection_mode"
             || opt_key == "support_buildplate_only"
             || opt_key == "support_base_diameter"

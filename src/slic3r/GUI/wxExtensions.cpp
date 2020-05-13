@@ -603,7 +603,9 @@ void apply_extruder_selector(wxBitmapComboBox** ctrl,
             ++i;
         }
 
-        (*ctrl)->Append(use_full_item_name ? wxString::Format("%s %d", str, i) : wxString::Format("%d", i), *bmp);
+        (*ctrl)->Append(use_full_item_name
+                        ? Slic3r::GUI::from_u8((boost::format("%1% %2%") % str % i).str())
+                        : wxString::Format("%d", i), *bmp);
         ++i;
     }
     (*ctrl)->SetSelection(0);
@@ -700,8 +702,9 @@ ModeButton::ModeButton( wxWindow*           parent,
 
 void ModeButton::Init(const wxString &mode)
 {
-    m_tt_focused = wxString::Format(_(L("Switch to the %s mode")), mode);
-    m_tt_selected = wxString::Format(_(L("Current mode is %s")), mode);
+    std::string mode_str = std::string(mode.ToUTF8());
+    m_tt_focused  = Slic3r::GUI::from_u8((boost::format(_utf8(L("Switch to the %s mode"))) % mode_str).str());
+    m_tt_selected = Slic3r::GUI::from_u8((boost::format(_utf8(L("Current mode is %s"))) % mode_str).str());
 
     SetBitmapMargins(3, 0);
 
@@ -751,7 +754,8 @@ ModeSizer::ModeSizer(wxWindow *parent, int hgap/* = 0*/) :
 
     std::vector < std::pair < wxString, std::string >> buttons = {
         {_(L("Simple")),    "mode_simple"},
-        {_(L("Advanced")),  "mode_advanced"},
+//        {_(L("Advanced")),  "mode_advanced"},
+        {_CTX(L_CONTEXT("Advanced", "Mode"), "Mode"), "mode_advanced"},
         {_(L("Expert")),    "mode_expert"},
     };
 
@@ -936,6 +940,41 @@ void ScalableButton::msw_rescale()
         wxSize size(m_width * em, m_height * em);
         SetMinSize(size);
     }
+}
+
+
+// ----------------------------------------------------------------------------
+// BlinkingBitmap
+// ----------------------------------------------------------------------------
+
+BlinkingBitmap::BlinkingBitmap(wxWindow* parent, const std::string& icon_name) :
+    wxStaticBitmap(parent, wxID_ANY, wxNullBitmap, wxDefaultPosition, wxSize(int(1.6 * Slic3r::GUI::wxGetApp().em_unit()), -1))
+{
+    bmp = ScalableBitmap(parent, icon_name);
+}
+
+void BlinkingBitmap::msw_rescale()
+{
+    bmp.msw_rescale();
+    this->SetSize(bmp.GetBmpSize());
+    this->SetMinSize(bmp.GetBmpSize());
+}
+
+void BlinkingBitmap::invalidate()
+{
+    this->SetBitmap(wxNullBitmap);
+}
+
+void BlinkingBitmap::activate()
+{
+    this->SetBitmap(bmp.bmp());
+    show = true;
+}
+
+void BlinkingBitmap::blink()
+{
+    show = !show;
+    this->SetBitmap(show ? bmp.bmp() : wxNullBitmap);
 }
 
 

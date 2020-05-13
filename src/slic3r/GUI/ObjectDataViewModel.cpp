@@ -5,6 +5,8 @@
 #include "GUI_ObjectList.hpp"
 #include "I18N.hpp"
 
+#include "libslic3r/Model.hpp"
+
 #include <wx/bmpcbox.h>
 #include <wx/dc.h>
 
@@ -1708,10 +1710,11 @@ bool BitmapChoiceRenderer::Render(wxRect rect, wxDC* dc, int state)
     {
         dc->DrawBitmap(icon, rect.x, rect.y + (rect.height - icon.GetHeight()) / 2);
         xoffset = icon.GetWidth() + 4;
+
+        if (rect.height==0)
+          rect.height= icon.GetHeight();
     }
 
-    if (rect.height==0)
-        rect.height= icon.GetHeight();
     RenderText(m_value.GetText(), xoffset, rect, dc, state);
 
     return true;

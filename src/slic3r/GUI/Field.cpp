@@ -9,6 +9,7 @@
 #include <regex>
 #include <wx/numformatter.h>
 #include <wx/tooltip.h>
+#include <wx/notebook.h>
 #include <boost/algorithm/string/predicate.hpp>
 
 #ifdef __WXOSX__
@@ -57,6 +58,8 @@ void Field::PostInitialize()
     m_Undo_btn->Bind(wxEVT_BUTTON, ([this](wxCommandEvent) { on_back_to_initial_value(); }));
 	m_Undo_to_sys_btn->Bind(wxEVT_BUTTON, ([this](wxCommandEvent) { on_back_to_sys_value(); }));
 
+	m_blinking_bmp		= new BlinkingBitmap(m_parent);
+
 	switch (m_opt.type)
 	{
 	case coPercents:
@@ -77,6 +80,29 @@ void Field::PostInitialize()
     m_em_unit = em_unit(m_parent);
 
 	BUILD();
+
+	// For the mode, when settings are in non-modal dialog, neither dialog nor tabpanel doesn't receive wxEVT_KEY_UP event, when some field is selected.
+	// So, like a workaround check wxEVT_KEY_UP event for the Filed and switch between tabs if Ctrl+(1-4) was pressed 
+	if (getWindow())
+		getWindow()->Bind(wxEVT_KEY_UP, [](wxKeyEvent& evt) {
+		    if ((evt.GetModifiers() & wxMOD_CONTROL) != 0) {
+			    int tab_id = -1;
+			    switch (evt.GetKeyCode()) {
+			    case '1': { tab_id = 0; break; }
+			    case '2': { tab_id = 1; break; }
+				case '3': { tab_id = 2; break; }
+				case '4': { tab_id = 3; break; }
+			    default: break;
+			    }
+			    if (tab_id >= 0)
+					wxGetApp().mainframe->select_tab(tab_id);
+				if (tab_id > 0)
+					// tab panel should be focused for correct navigation between tabs
+				    wxGetApp().tab_panel()->SetFocus();
+		    }
+			    
+		    evt.Skip();
+	    });
 }
 
 // Values of width to alignments of fields
@@ -172,7 +198,7 @@ void Field::get_value_by_opt_type(wxString& str, const bool check_value/* = true
 			if		(label.Last() == '\n')	label.RemoveLast();
 			while	(label.Last() == ' ')	label.RemoveLast();
 			if		(label.Last() == ':')	label.RemoveLast();
-			show_error(m_parent, wxString::Format(_(L("%s doesn't support percentage")), label));
+            show_error(m_parent, from_u8((boost::format(_utf8(L("%s doesn't support percentage"))) % label).str()));
 			set_value(double_to_string(m_opt.min), true);
 			m_value = double(m_opt.min);
 			break;
@@ -237,12 +263,12 @@ void Field::get_value_by_opt_type(wxString& str, const bool check_value/* = true
 
                 const std::string sidetext = m_opt.sidetext.rfind("mm/s") != std::string::npos ? "mm/s" : "mm";
                 const wxString stVal = double_to_string(val, 2);
-                const wxString msg_text = wxString::Format(_(L("Do you mean %s%% instead of %s %s?\n"
+                const wxString msg_text = from_u8((boost::format(_utf8(L("Do you mean %s%% instead of %s %s?\n"
                     "Select YES if you want to change this value to %s%%, \n"
-                    "or NO if you are sure that %s %s is a correct value.")), stVal, stVal, sidetext, stVal, stVal, sidetext);
+                    "or NO if you are sure that %s %s is a correct value."))) % stVal % stVal % sidetext % stVal % stVal % sidetext).str());
                 wxMessageDialog dialog(m_parent, msg_text, _(L("Parameter validation")) + ": " + m_opt_id , wxICON_WARNING | wxYES | wxNO);
                 if (dialog.ShowModal() == wxID_YES) {
-                    set_value(wxString::Format("%s%%", stVal), false/*true*/);
+                    set_value(from_u8((boost::format("%s%%") % stVal).str()), false/*true*/);
                     str += "%%";
                 }
 				else
@@ -375,12 +401,11 @@ void TextCtrl::BUILD() {
 	{
 		e.Skip();
 #ifdef __WXOSX__
-		// OSX issue: For some unknown reason wxEVT_KILL_FOCUS is emitted twice in a row
+		// OSX issue: For some unknown reason wxEVT_KILL_FOCUS is emitted twice in a row in some cases 
+	    // (like when information dialog is shown during an update of the option value)
 		// Thus, suppress its second call
-		if (bKilledFocus) {
-			bKilledFocus = false;
+		if (bKilledFocus)
 			return;
-		}
 		bKilledFocus = true;
 #endif // __WXOSX__
 
@@ -391,8 +416,12 @@ void TextCtrl::BUILD() {
             bEnterPressed = false;
 		else
             propagate_value();
+#ifdef __WXOSX__
+		// After processing of KILL_FOCUS event we should to invalidate a bKilledFocus flag
+		bKilledFocus = false;
+#endif // __WXOSX__
 	}), temp->GetId());
-
+/*
 	// select all text using Ctrl+A
 	temp->Bind(wxEVT_CHAR, ([temp](wxKeyEvent& event)
 	{
@@ -400,7 +429,7 @@ void TextCtrl::BUILD() {
 			temp->SetSelection(-1, -1); //select all
 		event.Skip();
 	}));
-
+*/
     // recast as a wxWindow to fit the calling convention
     window = dynamic_cast<wxWindow*>(temp);
 }	
@@ -511,7 +540,7 @@ void TextCtrl::disable() { dynamic_cast<wxTextCtrl*>(window)->Disable(); dynamic
 #ifdef __WXGTK__
 void TextCtrl::change_field_value(wxEvent& event)
 {
-	if (bChangedValueEvent = (event.GetEventType()==wxEVT_KEY_UP))
+    if ((bChangedValueEvent = (event.GetEventType()==wxEVT_KEY_UP)))
 		on_change_field();
     event.Skip();
 };
@@ -940,7 +969,7 @@ void Choice::set_value(const boost::any& value, bool change_event)
 	}
 	case coEnum: {
 		int val = boost::any_cast<int>(value);
-		if (m_opt_id == "top_fill_pattern" || m_opt_id == "bottom_fill_pattern")
+		if (m_opt_id == "top_fill_pattern" || m_opt_id == "bottom_fill_pattern" || m_opt_id == "fill_pattern")
 		{
 			if (!m_opt.enum_values.empty()) {
 				std::string key;
@@ -1010,7 +1039,7 @@ boost::any& Choice::get_value()
 	if (m_opt.type == coEnum)
 	{
 		int ret_enum = field->GetSelection(); 
-		if (m_opt_id == "top_fill_pattern" || m_opt_id == "bottom_fill_pattern")
+		if (m_opt_id == "top_fill_pattern" || m_opt_id == "bottom_fill_pattern" || m_opt_id == "fill_pattern")
 		{
 			if (!m_opt.enum_values.empty()) {
 				std::string key = m_opt.enum_values[ret_enum];
@@ -1022,8 +1051,8 @@ boost::any& Choice::get_value()
 			else
 				m_value = static_cast<InfillPattern>(0);
 		}
-		if (m_opt_id.compare("fill_pattern") == 0)
-			m_value = static_cast<InfillPattern>(ret_enum);
+		else if (m_opt_id.compare("ironing_type") == 0)
+			m_value = static_cast<IroningType>(ret_enum);
 		else if (m_opt_id.compare("gcode_flavor") == 0)
 			m_value = static_cast<GCodeFlavor>(ret_enum);
 		else if (m_opt_id.compare("support_material_pattern") == 0)
@@ -1239,12 +1268,24 @@ void PointCtrl::msw_rescale(bool rescale_sidetext/* = false*/)
     y_textctrl->SetMinSize(field_size);
 }
 
+bool PointCtrl::value_was_changed(wxTextCtrl* win)
+{
+	if (m_value.empty())
+		return true;
+
+	boost::any val = m_value;
+	// update m_value!
+	get_value();
+
+	return boost::any_cast<Vec2d>(m_value) != boost::any_cast<Vec2d>(val);
+}
+
 void PointCtrl::propagate_value(wxTextCtrl* win)
 {
-    if (!win->GetValue().empty()) 
-        on_change_field();
-    else
+    if (win->GetValue().empty())
         on_kill_focus();
+	else if (value_was_changed(win))
+        on_change_field();
 }
 
 void PointCtrl::set_value(const Vec2d& value, bool change_event)
@@ -1276,8 +1317,25 @@ void PointCtrl::set_value(const boost::any& value, bool change_event)
 boost::any& PointCtrl::get_value()
 {
 	double x, y;
-	x_textctrl->GetValue().ToDouble(&x);
-	y_textctrl->GetValue().ToDouble(&y);
+	if (!x_textctrl->GetValue().ToDouble(&x) ||
+		!y_textctrl->GetValue().ToDouble(&y))
+	{
+		set_value(m_value.empty() ? Vec2d(0.0, 0.0) : m_value, true);
+		show_error(m_parent, _L("Invalid numeric input."));
+	}
+	else
+	if (m_opt.min > x || x > m_opt.max ||
+		m_opt.min > y || y > m_opt.max)
+	{		
+		if (m_opt.min > x) x = m_opt.min;
+		if (x > m_opt.max) x = m_opt.max;
+		if (m_opt.min > y) y = m_opt.min;
+		if (y > m_opt.max) y = m_opt.max;
+		set_value(Vec2d(x, y), true);
+
+		show_error(m_parent, _L("Input value is out of range"));
+	}
+
 	return m_value = Vec2d(x, y);
 }
 
